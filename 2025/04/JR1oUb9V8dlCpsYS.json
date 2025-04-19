@@ -1,0 +1,1791 @@
+{
+  "active": false,
+  "connections": {
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "For Each Chunk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WEB UI": {
+      "main": [
+        [
+          {
+            "node": "Generate Webpage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Markdown": {
+      "main": [
+        [
+          {
+            "node": "Map Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10req/min": {
+      "main": [
+        [
+          {
+            "node": "Get Query",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "429 Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Query": {
+      "main": [
+        [
+          {
+            "node": "Get Embeddings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Group Ref": {
+      "main": [
+        [
+          {
+            "node": "Extract Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Ref": {
+      "main": [
+        [
+          {
+            "node": "Get Video Subtitles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SEARCH API": {
+      "main": [
+        [
+          {
+            "node": "Incr Rate Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "429 Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer Query": {
+      "main": [
+        [
+          {
+            "node": "Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Results?": {
+      "main": [
+        [
+          {
+            "node": "Transcripts to Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate Empty Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Results?1": {
+      "main": [
+        [
+          {
+            "node": "Groups to Items1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate Empty Response1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "For Each Chunk": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "For Each Group": {
+      "main": [
+        [
+          {
+            "node": "Combine Results",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Group Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "For Each Video": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Vectorise Subworkflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Embeddings": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Groups Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chunk Subtitles": {
+      "main": [
+        [
+          {
+            "node": "Chunks to Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chunks to Items": {
+      "main": [
+        [
+          {
+            "node": "For Each Chunk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Up Output": {
+      "main": [
+        [
+          {
+            "node": "Sort By Video ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Combine Results": {
+      "main": [
+        [
+          {
+            "node": "Has Results?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Results": {
+      "main": [
+        [
+          {
+            "node": "For Each Group",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Incr Rate Limit": {
+      "main": [
+        [
+          {
+            "node": "10req/min",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Webpage": {
+      "main": [
+        [
+          {
+            "node": "Render Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groups to Items1": {
+      "main": [
+        [
+          {
+            "node": "For Each Group",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Latest Youtube Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort By Video ID": {
+      "main": [
+        [
+          {
+            "node": "Generate Template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Template": {
+      "main": [
+        [
+          {
+            "node": "Answer Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Extract Results",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer Query",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video Subtitles": {
+      "main": [
+        [
+          {
+            "node": "Chunk Subtitles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ignore Already Seen": {
+      "main": [
+        [
+          {
+            "node": "For Each Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Groups Search": {
+      "main": [
+        [
+          {
+            "node": "Has Results?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcripts to Items": {
+      "main": [
+        [
+          {
+            "node": "Clean Up Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vectorise Subworkflow": {
+      "main": [
+        [
+          {
+            "node": "For Each Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vectorise Subworkflow1": {
+      "main": [
+        [
+          {
+            "node": "Video Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Empty Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Empty Response1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Latest Youtube Videos": {
+      "main": [
+        [
+          {
+            "node": "Ignore Already Seen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get Latest Youtube Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-05T09:53:47.820Z",
+  "id": "JR1oUb9V8dlCpsYS",
+  "meta": null,
+  "name": "Youtube RAG Search with Apify Qdrant AI",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f40dba74-2360-4ff0-b94d-d012b2a624c6",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        560,
+        700
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "https://api.apify.com/v2/acts/streamers~youtube-channel-scraper/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n{\n  \"downloadSubtitles\": true,\n  \"hasCC\": false,\n  \"hasLocation\": false,\n  \"hasSubtitles\": false,\n  \"is360\": false,\n  \"is3D\": false,\n  \"is4K\": false,\n  \"isBought\": false,\n  \"isHD\": false,\n  \"isHDR\": false,\n  \"isLive\": false,\n  \"isVR180\": false,\n  \"maxResultStreams\": 0,\n  \"maxResults\": 1,\n  \"maxResultsShorts\": 0,\n  \"preferAutoGeneratedSubtitles\": false,\n  \"saveSubsToKVS\": false,\n  \"startUrls\": [\n    {\n      \"url\": $json.url,\n      \"method\": \"GET\"\n    }\n  ],\n  \"subtitlesFormat\": \"vtt\",\n  \"subtitlesLanguage\": \"en\"\n}\n}}",
+        "options": {}
+      },
+      "id": "be36ca2d-e5c2-400e-acb2-151fd07cfe39",
+      "name": "Get Video Subtitles",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2200,
+        800
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fa613ce2-3a2f-42e4-9add-88df00efdb85",
+              "name": "vtt",
+              "type": "array",
+              "value": "={{\nArray(\n  Math.ceil($json.subtitles[0].vtt.length/30_000)\n).fill(0)\n  .map((_,idx) => $json.subtitles[0].vtt.substr(idx*30_000,(idx * 30_000) + 30_000))\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ce8b68ca-08d5-4aae-b721-c59cdb54eb48",
+      "name": "Chunk Subtitles",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        2400,
+        800
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "mode": "list",
+          "value": "n8n_videos",
+          "cachedResultName": "n8n_videos"
+        },
+        "options": {}
+      },
+      "id": "9f361985-6435-4b23-a436-c01451f1a054",
+      "name": "Qdrant Vector Store",
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "position": [
+        3140,
+        640
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.vtt.replaceAll('\\n\\n', '\\n') }}",
+        "options": {
+          "metadata": {
+            "metadataValues": [
+              {
+                "name": "videoId",
+                "value": "={{ $('Video Ref').item.json.id }}"
+              },
+              {
+                "name": "title",
+                "value": "={{ $('Video Ref').item.json.title }}"
+              },
+              {
+                "name": "channelId",
+                "value": "={{ $('Video Ref').item.json.channelId }}"
+              },
+              {
+                "name": "url",
+                "value": "={{ $('Video Ref').item.json.url }}"
+              },
+              {
+                "name": "type",
+                "value": "={{ $('Video Ref').item.json.type }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "31a2959a-c4be-47ab-ab6b-1f833be90408",
+      "name": "Default Data Loader",
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "position": [
+        3240,
+        800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "718ebf46-b9a9-4990-bd42-131169d142bf",
+      "name": "Embeddings",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "position": [
+        3120,
+        800
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "chunkSize": 3000,
+        "options": {}
+      },
+      "id": "a40a7f03-8dda-4818-b18a-1a9060c4ffd7",
+      "name": "Text Splitter",
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "position": [
+        3320,
+        920
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "38d8261c-cd0a-4f6d-8726-1c1556d38fca",
+      "name": "For Each Video",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        1260,
+        800
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {},
+      "id": "dfa001ff-a062-4fa2-8678-4975622f9a36",
+      "name": "Video Ref",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        2000,
+        800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "970e5cd6-b700-4ec3-9729-9829aa7fa2fb",
+      "name": "For Each Chunk",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        2900,
+        760
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "id": "e0ea8b56-a696-48b1-9e03-910783f7e145",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        3580,
+        760
+      ],
+      "webhookId": "45ae600a-d26f-444b-bbe0-792c5602fe8d",
+      "executeOnce": true,
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e9a68e02-1559-4ce5-b338-5259f1030d25",
+              "name": "title",
+              "type": "string",
+              "value": "={{ $json.title }}"
+            },
+            {
+              "id": "3fb553d6-79a1-41f2-8b72-581d667adcea",
+              "name": "url",
+              "type": "string",
+              "value": "=https://www.youtube.com/watch?v={{ $json.videoId }}"
+            },
+            {
+              "id": "9f435790-5b84-4a23-ac39-561c87d0eea1",
+              "name": "extract",
+              "type": "string",
+              "value": "={{ $json.extract.replaceAll('\\n', ' ') }}"
+            },
+            {
+              "id": "f3d63c6e-d5c9-40b6-a9a7-ebfe7c6c9a41",
+              "name": "timestamp",
+              "type": "string",
+              "value": "={{\n(function(str){\n  return str.length === 3\n  ? str[1] + ':' + str[2]\n  : str.join(':');\n})($json.timestamp.split(':'))\n}}"
+            },
+            {
+              "id": "f937c492-ddbe-40fe-8e12-a21c21832e4a",
+              "name": "videoId",
+              "type": "string",
+              "value": "={{ $json.videoId }}"
+            },
+            {
+              "id": "2245a7b6-cf9e-4c39-875b-5bf80b1353bc",
+              "name": "video_ts",
+              "type": "string",
+              "value": "={{\n(function(timestamp){\n  const buffer = 5;\n  let [hr,min,sec] = timestamp.map(x => Number(x));\n  if (sec === undefined){ sec = min; min = hr; hr = 0 }\n  return Math.max((hr * 60 * 60) + (min * 60) + sec - buffer, 0);\n})($json.timestamp.split(':'))\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5a669906-59b4-4802-bf1e-4ffe0d6b833e",
+      "name": "Clean Up Output",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3760,
+        1320
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "videoId"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b2ed4faf-89d3-4e0b-aecc-803b13572186",
+      "name": "Sort By Video ID",
+      "type": "n8n-nodes-base.sort",
+      "position": [
+        3940,
+        1320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "=<div id=\"answer\">\n  <div id=\"answer-legend\">AI Summary</div>\n  {{ $json.text }}\n</div>\n{{ $json.results }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html"
+              }
+            ]
+          }
+        }
+      },
+      "id": "6f6714bd-91a1-415c-af11-1d9991da0826",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        5280,
+        1380
+      ],
+      "executeOnce": false,
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "text": "=<transcripts>\n{{ $json.hits\n  .map(item => `<transcript>${item.toJsonString()}</transcript>`).join('\\n')\n}}\n</transcripts>\n<user_query>\n{{ $('Get Query').first().json.query }}\n</user_query>",
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\":\"object\",\n    \"required\": [\n      \"title\",\"url\",\"extract\",\"timestamp\",\"videoId\"\n    ],\n    \"properties\": {\n      \"title\": { \"type\": \"string\" },\n       \"extract\": {\n         \"type\": \"string\",\n         \"description\": \"extract and transcribe the relevant parts of the transcript removing vtt annotations and markers.\"\n       },\n       \"timestamp\": { \"type\": \"string\" },\n       \"videoId\": { \"type\": \"string\" }\n    }\n  }\n}",
+        "options": {
+          "systemPromptTemplate": "=Your task is to analyse the collection of video transcripts and extract the parts relevant to the user's query.\n* When returning your response, provide from 3 and up to 10 results as extracts of the transcript combined with their timestamps (MM:SS) and include the video title and url.\n* When getting the extract for the results, as this will be read by the user, return only the text of the transcript and remove any vtt tags, annotations, markers.\n* Refer to the metadata for video title and video url."
+        }
+      },
+      "id": "948e8b59-cca1-4d31-87b4-d36afc0d03c4",
+      "name": "Extract Results",
+      "type": "@n8n/n8n-nodes-langchain.informationExtractor",
+      "position": [
+        2740,
+        1460
+      ],
+      "executeOnce": false,
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "path": "n8n_videos/api/search",
+        "responseMode": "responseNode",
+        "options": {
+          "ignoreBots": false
+        }
+      },
+      "id": "3a96dc2f-5d97-48d0-a553-f924458b8fa8",
+      "name": "SEARCH API",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        560,
+        1520
+      ],
+      "webhookId": "e2768373-66ad-4ad2-948f-c5e278d39595",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{\n{\n  query: ((($('SEARCH API').first().json.query?.q\n      .removeTags())\n      .removeTags())\n      .replaceSpecialChars()).substr(0,128),\n  type: ['video', 'stream'].includes($('SEARCH API').first().json.query.type)\n    ? $('SEARCH API').first().json.query.type\n    : undefined\n}\n}}",
+        "options": {}
+      },
+      "id": "e48f6db7-85fe-4f49-89ef-e7f6169462e2",
+      "name": "Get Query",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1300,
+        1400
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3e4daf29-906b-4469-b107-6cbc142dab44",
+              "name": "results",
+              "type": "string",
+              "value": "={{\n(function(items) {\n  const groupByVideoId = items.reduce((acc, item) => {\n    if (!acc[item.videoId]) acc[item.videoId] = [];\n    acc[item.videoId].push(item);\n    return acc;\n  }, {});\n  \n  const results = Object.keys(groupByVideoId).map(key => {\n    const parts = groupByVideoId[key]\n      .toSorted((a,b) => Number(a.video_ts) - Number(b.video_ts));\n    const {title,url} = parts[0];\n    return `<li video-id=\"${key}\">\n      <div class=\"resultSource\">\n        <a\n          href=\"${url}\"\n          target=\"_blank\"\n          hx-on:click=\"loadVideo('${key}',0); event.preventDefault()\"\n        >\n          <div class=\"resultSourceTitle\">${title}</div>\n          <div class=\"resultSourceUrl\">${url}</div>\n        </a>\n      </div>\n      ${parts.map(item => `\n        <div class=\"resultContent\">\n          <a\n            class=\"resultTimestamp\"\n            href=\"${item.url}&t=${item.video_ts}\n            \"target=\"_blank\"\n            hx-on:click=\"loadVideo('${item.videoId}',${item.video_ts}); event.preventDefault()\"\n          >\n            [${item.timestamp}]\n            <span>...${item.extract}...</span>\n          </a>\n        </div>`).join('\\n')}\n    </li>`\n  }).join('\\n')\n\n  return `<div id=\"resultsCount\">${Object.keys(groupByVideoId).length} Video Result${Object.keys(groupByVideoId).length === 1 ? '' : 's'}</div>${results}`;\n})(\n  $input.all().map(item => item.json).filter(item => item.videoId)\n)\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dc12fb4d-a621-45b9-b18f-d38ffdc311d4",
+      "name": "Generate Template",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        4120,
+        1320
+      ],
+      "executeOnce": true,
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<results>{{ $json.results }}</results>\n<user_query>\n{{ $('Get Query').first().json.query }}\n</user_query>",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Using the available results, generate a 1 or 2 sentence answer for the user's query. You may format your answer using markdown."
+            }
+          ]
+        }
+      },
+      "id": "569de6ad-139e-49d0-9bb7-e4c9b867eb50",
+      "name": "Answer Query",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "position": [
+        4420,
+        1340
+      ],
+      "executeOnce": true,
+      "typeVersion": 1.5
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "81f8ec3e-be33-469c-8bf5-c3d3575e3764",
+              "operator": {
+                "type": "object",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "045ed780-3128-4813-830a-ae61ef02d02a",
+      "name": "Has Results?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        3380,
+        1420
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7c4bd999-49b1-4532-89ca-c53e98da6b17",
+              "name": "text",
+              "type": "string",
+              "value": "={{ '' }}"
+            },
+            {
+              "id": "916221de-2ec9-4fd9-8029-d7a3de88f395",
+              "name": "results",
+              "type": "string",
+              "value": "=<div id=\"resultsCount\">0 Video Results</div>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1807742c-ce0c-4c97-92c7-f5daebe9aca0",
+      "name": "Generate Empty Response",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3580,
+        1520
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "36bb30ce-6baf-492a-ad8c-4bec175e85a0",
+              "name": "text",
+              "type": "string",
+              "value": "={{ $json.data }}"
+            },
+            {
+              "id": "60fb3d9d-0342-41c2-80bb-1899773f4bd7",
+              "name": "results",
+              "type": "string",
+              "value": "={{ $('Generate Template').first().json.results }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "28bb3f47-e51f-4d3d-a557-e7016990d41b",
+      "name": "Map Fields",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        5060,
+        1380
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "operation": "incr",
+        "key": "=n8n_videos_session_{{ $json.headers['x-forwarded-for'] }}",
+        "expire": true
+      },
+      "id": "dc1c7051-d924-42a6-a79a-d4b05a614810",
+      "name": "Incr Rate Limit",
+      "type": "n8n-nodes-base.redis",
+      "position": [
+        760,
+        1520
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "032093e1-b223-45f4-b1bc-5603134acfe8",
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              },
+              "leftValue": "={{ Object.values($json)[0] }}",
+              "rightValue": 11
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3d1d7b1d-4b63-4289-ae59-ba371257d59f",
+      "name": "10req/min",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        940,
+        1520
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $workflow.id }}"
+        },
+        "workflowInputs": {
+          "value": {},
+          "schema": [],
+          "mappingMode": "defineBelow",
+          "matchingColumns": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "ecfcdeb4-9240-4613-bd38-ab8ba9e1464c",
+      "name": "Vectorise Subworkflow",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "position": [
+        1480,
+        800
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "6e1959b4-8a4d-4417-8805-dcd5a4bdc8f8",
+      "name": "Vectorise Subworkflow1",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        1800,
+        800
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "path": "n8n_videos/",
+        "responseMode": "responseNode",
+        "options": {
+          "ignoreBots": true
+        }
+      },
+      "id": "6b8c0218-9d5b-411f-9f74-aa50f25abc1f",
+      "name": "WEB UI",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        540,
+        2080
+      ],
+      "webhookId": "8b531d97-c5d7-4a98-8ef0-f19e59cf886f",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://qdrant:6333/collections/n8n_videos/points/search/groups",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "qdrantApi",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "={{ 4 }}"
+            },
+            {
+              "name": "filter",
+              "value": "={{\n$('Get Query').first().json.type\n  ? {\n    \"must\": [\n      {\n        \"key\": \"metadata.type\",\n        \"match\": {\n          \"any\": [].concat($('Get Query').first().json.type)\n        }\n      }\n    ]\n  }\n  : undefined\n}}"
+            },
+            {
+              "name": "with_payload",
+              "value": "={{ true }}"
+            },
+            {
+              "name": "group_by",
+              "value": "metadata.videoId"
+            },
+            {
+              "name": "group_size",
+              "value": "={{ 3 }}"
+            },
+            {
+              "name": "vector",
+              "value": "={{ $json.data[0].embedding }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9b97528a-8361-437b-bcb6-7dc6d49a5981",
+      "name": "Qdrant Groups Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1660,
+        1400
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/embeddings",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "input",
+              "value": "={{ $json.query }}"
+            },
+            {
+              "name": "model",
+              "value": "text-embedding-3-small"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "80e225f9-c780-4d77-974a-df9520ec6a56",
+      "name": "Get Embeddings",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1480,
+        1400
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1427b402-77e1-4464-b15a-b7a02d4e9d30",
+      "name": "For Each Group",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [
+        2400,
+        1380
+      ],
+      "typeVersion": 3
+    },
+    {
+      "parameters": {},
+      "id": "f4b3199c-457a-4a76-ab35-28e4192decf9",
+      "name": "Group Ref",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        2560,
+        1460
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f797071b-f722-4273-a672-932370123fc0",
+              "name": "output",
+              "type": "array",
+              "value": "={{ $input.all().flatMap(item => item.json.output) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5640a33a-76d5-4a71-9194-bd7b0b6f3c7d",
+      "name": "Combine Results",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        3200,
+        1420
+      ],
+      "executeOnce": true,
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output",
+        "options": {}
+      },
+      "id": "2813d0a4-621d-4be3-844c-ab4c68361b98",
+      "name": "Transcripts to Items",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        3580,
+        1320
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "=<div id=\"answer\">{{ $json.text }}</div>\n{{ $json.results }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "c94a407b-cb8e-4d26-bbd4-3de6ceaa430a",
+      "name": "Respond to Webhook2",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        1480,
+        1620
+      ],
+      "executeOnce": false,
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "=<div id=\"answer\">{{ $json.text }}</div>\n{{ $json.results }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "c294cfdd-ae62-4e9c-88b9-b18ba1bc02c5",
+      "name": "Respond to Webhook3",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        3760,
+        1520
+      ],
+      "executeOnce": false,
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                6
+              ],
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "id": "7b8d84c7-d209-46f7-8ef4-83d8bf7c60ac",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        560,
+        880
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "operation": "removeItemsSeenInPreviousExecutions",
+        "dedupeValue": "={{ $json.id }}",
+        "options": {}
+      },
+      "id": "b1d46156-1669-42cf-95f8-2fa72720c7ea",
+      "name": "Ignore Already Seen",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "position": [
+        1040,
+        800
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "content": "## 1. Fetch Latest Videos with [Apify.com](https://www.apify.com?fpr=414q6)\n[Learn more about Apify.com](https://www.apify.com?fpr=414q6) - [Youtube Scraper](https://apify.com/streamers/youtube-scraper?fpr=414q6)\n\nIf you want to save serious time and effort and avoid the low usage limits of the official Youtube API, then you probably want to sign-up for a third-party youtube scraper like the ones found on Apify. Here, I'm using a Youtube Scraper to get the latest videos and livestream recordings from the official n8n channel. Running them through a \"remove duplicates\" node ensures they aren't processed more than once.",
+        "height": 560,
+        "width": 1200,
+        "color": 7
+      },
+      "id": "d3490d38-07bc-4356-837c-8033d57577da",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        480,
+        520
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "url": "https://api.apify.com/v2/acts/streamers~youtube-channel-scraper/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n{\n  \"maxResultStreams\": 10,\n  \"maxResults\": 10,\n  \"maxResultsShorts\": 0,\n  \"oldestPostDate\": \"2025-01-01\",\n  \"startUrls\": [\n    {\n      \"url\": \"https://www.youtube.com/@n8n-io\",\n      \"method\": \"GET\"\n    }\n  ]\n}\n}}",
+        "options": {}
+      },
+      "id": "4a1f666f-8c2c-4460-850a-4d860b65f6a7",
+      "name": "Get Latest Youtube Videos",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        840,
+        800
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "content": "## 2. Get Video Transcript with [Apify.com](https://www.apify.com?fpr=414q6)\n[Learn more about subworkflows](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.executeworkflowtrigger)\n\n**Note: You won't see this run in editor mode! It runs in the background - see executions tab!**\nI've chosen to use a subworkflow to help with performance as processing transcripts into embeddings tends to accumulate a lot of data client side if done otherwise. Here, we're once again using a Youtube scraper on Apify to download the video transcripts - note that technically, these are auto-generated subtitles but are good enough to serve our needs.",
+        "height": 560,
+        "width": 860,
+        "color": 7
+      },
+      "id": "f126359b-c9dd-42b1-bb3b-33fe4ee9444f",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1720,
+        520
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 3. Populate Qdrant Vector Store to Build a Search Index\n[Learn more about Qdrant Vector Store](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreqdrant)\n\nUsing Qdrant is a usually my personal preference but for this template, I saw a great use-case for its advanced search APIs which we'll get to later.\nDue to the size of the transcripts, we're forced to break them down into smaller chunks to populate our vector store. Note the metadata will be super important for later filtering so best practice, always spend some time to design how you will use your metadata upfront!",
+        "height": 660,
+        "width": 1200,
+        "color": 7
+      },
+      "id": "5a7666a9-162c-4ab2-b10b-2e016fa5cbc0",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2600,
+        420
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "vtt",
+        "options": {}
+      },
+      "id": "029505bb-b68d-40ce-a410-878cc8746e7f",
+      "name": "Chunks to Items",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        2680,
+        760
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 4. Search API with Rate Limiting\n[Learn more about Redis](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.redis)\n\nWebhooks are a great feature to build simple APIs with n8n. This particular webhook will serve as your search API which takes user queries as input, searches our vector store of n8n videos and returns a list of matching results as output. A Redis counter can be used as a simple rate limiter to manage resources through feel free to remove if you're publishing the webUI to the public. ",
+        "height": 520,
+        "width": 680,
+        "color": 7
+      },
+      "id": "8674aae3-4018-48dc-8b1b-838006617ee4",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        480,
+        1240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7c4bd999-49b1-4532-89ca-c53e98da6b17",
+              "name": "text",
+              "type": "string",
+              "value": "={{ '' }}"
+            },
+            {
+              "id": "916221de-2ec9-4fd9-8029-d7a3de88f395",
+              "name": "results",
+              "type": "string",
+              "value": "=<div id=\"resultsCount\">Search Limit Reached!</div>\n<div>\nSearch requests are limited to 3 per minute.\n<br/>Need more? Download the free template and run it yourself!\n</div>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7320611c-4906-4794-bbaf-b4d4497d8d86",
+      "name": "429 Response",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1300,
+        1620
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "content": "## 5. Qdrant Advanced Search - Point Groups\n[Learn more about Qdrant's Search Groups API](https://qdrant.tech/documentation/concepts/search/#search-groups)\n\nOur goal is to return videos and timestamps within them which are relevant to our user's query. We could using simple similarity search but the problem is your results might be too in-depth on the first and second videos. If we want to increase the breadth ie. cover more videos, then we can use something like Qdrant's Search Group API. This search API uses metadata to group results allowing you to specify a max results limit per video. Unfortunately, as this API is not supported by n8n, we'll have to use the HTTP request node - **Be sure to configure the node's credentials before use!**",
+        "height": 680,
+        "width": 1080,
+        "color": 7
+      },
+      "id": "1a03dd51-2617-4a9d-9dba-6bd35f311ea9",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1180,
+        1140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 6. Contextually Understanding Transcripts with AI\n[Read more about the Information Extractor](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor)\n\nOne of the great use-cases for AI/LLM data extraction is that it can save a lot of parsing effort traditional done via code. Here, we provide the raw transcript blocks and the AI will help us pick out only the relevant parts with timestamps which answer our user's query.",
+        "height": 640,
+        "width": 800,
+        "color": 7
+      },
+      "id": "df99c202-c0c7-46a6-8725-c2e587a505e5",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2300,
+        1140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 7. Generate Results HTML Template\n[Learn more about the Edit Fields node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.set)\n\nOnce we have our extracted transcript parts, we just need to re-group the results and build the results list HTML to be rendered back to the user.\nI'm using the excellent **htmx** (htmx.org) framework for the Web UI which is perfect for single page applications. The results HTML template generated is heavily influenced by this so it may look strange if you're unfamiliar. Feel free to use whatever is comfortable!",
+        "height": 620,
+        "width": 1180,
+        "color": 7
+      },
+      "id": "1080ece1-2ddc-41fa-a59d-54d323c9e8bb",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3120,
+        1140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 8. Summarise Results to Generate Answer\n[Read more about the Basic LLM node](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainllm)\n\nThis is a nice extra bit of UX to try and answer the user's query based on the search results. A basic LLM node is perfect for this simple prompt.",
+        "height": 560,
+        "width": 600,
+        "color": 7
+      },
+      "id": "af487dd7-0a73-4441-9732-0197f3063763",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4320,
+        1140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 9. Return Answer & Search Results\n[Learn more about the webhook node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.respondtowebhook/)\n\nFinally, we combine the AI answer and results list as a HTML response for the Web UI.\nPhew, that was a lot to get through! Beyond this template, you can play with different search parameters or approaches to reduce latency, include other content types etc.",
+        "height": 560,
+        "width": 600,
+        "color": 7
+      },
+      "id": "a69cfe2e-bd95-475e-b995-d2fdb2eb97ca",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4940,
+        1140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## 10. N8N Video Search Frontend using Web UI\n[Learn more about the HTML node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.html/)\n\nBuilding and deploying simple webpages using n8n is quite easy and great if you don't want to worry too much about the technical details. Once the n8n template is set to active, you can visit [https://<n8n_url>/webhook/n8n_video](/webhook/n8n_video) to use it.",
+        "height": 480,
+        "width": 840,
+        "color": 7
+      },
+      "id": "f7ba82b6-e97a-4c18-acc4-71e57dce2284",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        480,
+        1860
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html"
+              }
+            ]
+          }
+        }
+      },
+      "id": "79033c63-1049-4875-84da-cbb031f91fca",
+      "name": "Render Page",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        900,
+        2080
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "html": "<!DOCTYPE html>\n\n<html>\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>N8N Videos Search</title>\n  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css\" integrity=\"sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls\" crossorigin=\"anonymous\">\n  <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css\" />\n  <script src=\"https://unpkg.com/htmx.org@2.0.4\" integrity=\"sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+\" crossorigin=\"anonymous\"></script>\n  <style>\n    body { font-family: sans-serif;}\n    .header { padding: 1rem 2rem; }\n    .title { color:#000; text-decoration:none}\n    .title-main { display:block; font-weight: 700; }\n    .title-sub { font-size: 0.9rem; }\n    .container { max-width: 1280px; @media screen and (min-width: 80em) { margin-left: 10rem; } }\n    \n    #search-panel { padding: 0 2rem 1rem; }\n    \n    #results-panel { padding: 0 4rem 4rem 2rem; }\n    #results { margin: 0; padding: 0; }\n    #results li { padding: 1rem 0 0 0; margin-left: 1rem; }\n    .resultSource { display:inline-block; margin-bottom:0.5rem; a { text-decoration: none } }\n    .resultSourceTitle { font-size: 0.8rem; font-weight: 700; color: #000}\n    .resultSourceUrl { font-size: 0.8rem;}\n    .resultContent { font-size: 0.9rem; margin-bottom:0.5rem; a { text-decoration: none; span { color: #000; } &:hover { text-decoration: underline;} } }\n    #resultsCount { font-weight: 700;padding: 1rem 0;}\n    #answer-legend {font-size: 0.8rem; font-weight: 700;color: blue;margin-bottom: 0.5rem;}\n    #answer { margin-bottom: 1rem; border-left: 5px solid blue; padding-left: 1rem;  p { margin:0}}\n    \n    #video-panel { position:sticky;top:0; padding: 0 0 2rem; }\n    \n    #about-panel { padding: 1rem 0 0; border-top:1px solid #eee; h2 {font-size:1rem;;margin-bottom:1rem; } p {font-size: 0.8rem;margin-bottom:1rem;} }\n    #about-services { font-size: 0.8rem;margin: 0;padding-left: 1rem;margin-bottom: 1rem; li { margin-bottom: 0.5rem;} }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n      <div class=\"header\">\n        <div class=\"home-menu pure-menu pure-menu-horizontal\">\n          <a class=\"title\" href=\"/webhook/n8n_videos\">\n            <span class=\"title-main\">Search the Official N8N Youtube Channel</span>\n            <span class=\"title-sub\">Cover a wide range of videos in seconds!</span>\n          </a>\n        </div>\n      </div>\n    \n      <div class=\"pure-g\">\n        <div class=\"pure-u-1-2 pure-u-lg-3-5\">\n          <div id=\"search-panel\">\n            <form\n              id=\"search-form\"\n              class=\"pure-form\"\n              hx-get=\"/webhook/n8n_videos/api/search\"\n              hx-target=\"#results\"\n            >\n              <fieldset>\n                <input\n                  type=\"text\"\n                  name=\"q\"\n                  placeholder=\"Eg. When is the next n8n meetup?\"\n                  class=\"pure-input-1-2\"\n                  required\n                />\n                <select name=\"type\">\n                  <option value=\"all\">All</option>\n                  <option value=\"video\">Videos</option>\n                  <option value=\"stream\">LiveStreams</option>\n                </select>\n                <button\n                  type=\"submit\"\n                  class=\"pure-button pure-button-primary\"\n                  style=\"width:100px\"\n                >\n                  Search\n                </button>\n              </fieldset>\n            </form>\n          </div>\n          <div id=\"results-panel\">\n            <ul id=\"results\"></ul>\n          </div>\n        </div>\n        <div class=\"pure-u-1-2 pure-u-lg-2-5\">\n          <div id=\"video-panel\">\n            <div\n              id=\"ytplayer\"\n              style=\"display:flex;align-items:center;justify-content:center;width:100%;height:320px;background-color:#eee;color:#999;font-size:0.9rem\"\n            >\n              <div>Video will show here.</div>\n            </div>\n          </div>\n          <div id=\"about-panel\">\n            <h2>About N8N Video Search</h2>\n            <img\n              class=\"logo\"\n              src=\"https://res.cloudinary.com/daglih2g8/image/upload/f_auto,q_auto/v1/n8n-workflows/dscioipkxomw8gnj3h2v\"\n              width=\"70%\"\n            />\n            <p>\n              This demo has the ability to search recent video and livestream recordings from the official n8n.io Youtube channel.\n              The results are picked out of the transcripts allowing users to jump to the exact timestamp relevant to their query.\n              This application was built with the following services:\n            </p>\n            <ul id=\"about-services\">\n              <li>\n                <a href=\"https://www.apify.com?fpr=414q6\">Apify.com</a> - \n                Searches for \"n8n @ scale\" Youtube livestream recordings and downloads the transcripts. \n                Use my code <strong>\"20JIMLEUK\"</strong> at checkout for 20% OFF an Apify subscription (*expires May 2025).\n              </li>\n              <li>\n                <a href=\"https://qdrant.tech\">Qdrant.tech</a> - \n                Video transcripts are chunked and vectorised into a Qdrant Vector Store. Qdrant is super fast and have a robust search and filtering capabilities.\n              </li>\n              <li>\n                <a href=\"https://n8n.partnerlinks.io/ee7izbliiw0n\">n8n.io</a> - \n                n8n serves as our automation platform, backend API and frontend Interface for this demo! Really easy to put together quick AI projects like this one.\n                <a href=\"https://n8n.io/creators/jimleuk/\">Also be sure to checkout my other free n8n x AI templates here!</a>\n              </li>\n            </ul>\n            <p>\n              <strong>Questions or Comments?</strong> Check out my forum post here!\n            </p>\n            <p>\n              {{ $now.format('yyyy') }} &copy; Jim Le. \n              If you've enjoyed this demo, connect and follow me on \n              <a href=\"https://linkedin.com/in/jimleuk\">linkedin.com/in/jimleuk</a> and \n              <a href=\"https://x.com/jimle_uk\">x.com/jimle_uk</a>.\n            </p>\n          </div>\n        </div>\n    </div>\n  </div>\n  \n  <script>\n    const form = document.getElementById('search-form');\n    const button = form.querySelector('button[type=submit]');\n\n    document.body.addEventListener('htmx:beforeRequest', function(evt) {\n      form.disabled = true;\n      button.innerHTML = `<img\n        width=\"16px\"\n        height=\"16px\"\n        src=\"https://samherbert.net/svg-loaders/svg-loaders/oval.svg\"\n      />`;\n      button.disabled = true;\n    });\n  \n    document.body.addEventListener('htmx:afterRequest', function(evt) {\n      form.disabled = false;\n      button.innerHTML = 'Search';\n      button.disabled = false;\n    });\n  </script>\n  <script>\n    let player;\n\n    function loadVideo(id,ts) {\n      if (!player) {\n        player = new YT.Player('ytplayer', {\n          height: '390',\n          width: '640',\n          videoId: id,\n          playerVars: {\n            'playsinline': 1,\n            'origin': window.location.origin,\n            'start': ts\n          },\n          events: {\n            'onReady': (event) => { event.target.playVideo(); },\n            'onError': (event) => { console.error('onError', event) }\n          }\n        });\n        return;\n      }\n      \n      if (player && player.loadVideoById) {\n        player.loadVideoById(id, ts);\n      }\n    }\n\n    // Load the YouTube API asynchronously\n    const tag = document.createElement('script');\n    tag.src = \"https://www.youtube.com/iframe_api\";\n    document.body.appendChild(tag);\n  \n    // Create the player when API is ready\n    function onYouTubeIframeAPIReady() {\n      console.log('Youtube Player Ready!');\n    }\n  </script>\n</body>\n</html>"
+      },
+      "id": "0b8adefa-c06a-4ca8-b2a8-54acbebf4fb1",
+      "name": "Generate Webpage",
+      "type": "n8n-nodes-base.html",
+      "position": [
+        720,
+        2080
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "mode": "markdownToHtml",
+        "markdown": "={{ $json.text }}",
+        "options": {}
+      },
+      "id": "9203b9be-28e6-4297-a0d1-154a3cb80e15",
+      "name": "Markdown",
+      "type": "n8n-nodes-base.markdown",
+      "position": [
+        4740,
+        1340
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Fig 1. N8N Video Search Frontend**\n![screenshot of web frontend](https://res.cloudinary.com/daglih2g8/image/upload/f_auto,q_auto/v1/n8n-workflows/lqd2giei1ap2owjgbuth#full-width)",
+        "height": 420,
+        "width": 540,
+        "color": 7
+      },
+      "id": "d8761493-dd3d-4dc9-8e33-231384940190",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1120,
+        2040
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "**Create Qdrant Collection**\nYou may need to create the qdrant collection manually. Run this in the qdrant dashboard's console.\n```\nPUT collections/n8n_videos\n{\n  \"vectors\": {\n      \"distance\": \"Cosine\",\n      \"size\": 1536\n  }\n}\n```",
+        "height": 240,
+        "width": 400,
+        "color": 5
+      },
+      "id": "652a8b0f-ee39-4d1f-bc4c-903d3eed1599",
+      "name": "Sticky Note11",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3820,
+        420
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Try It Out!\n### Ever wanted to build your own RAG search over Youtube videos? Well, now you can! This n8n template shows how you can build a very capable Youtube search engine powered by Apify, Qdrant and your LLM of choice to quickly and efficiently browse over many videos for research or viewing pleasure.\n\nI originally started to template to ask questions on the \"n8n @ scale office-hours\" livestream videos but then extended it to include the latest videos on the official channel.\n\n**Check out a demo here**: [https://jimleuk.app.n8n.cloud/webhook/n8n_videos](https://jimleuk.app.n8n.cloud/webhook/n8n_videos)\n\n### How it works\n* Stage 1 is to collect the Youtube video transcripts into a vector database. For this, I've used Apify to scrape and Qdrant to store.\n* Transcripts are broken down into smaller chunks and carefully tagged with metadata to assist in later search and filtering.\n* Stage 2 is to build a web frontend for the user to query the vectorised transcripts. I'm using a webhook to serve a simple web app and API to dynamically fetch the results.\n* When searching for a video, I've opted to use Qdrant's search groups API which in this use-case, performs better as it returns a wider range of videos results.\n* In the web frontend, when the user clicks on the results, the matching Youtube video plays in an embedded video player.\n\n### How to use\n* Once credentials are all set, first run steps 1 - 3 to populate your vector store.\n* Next, set the workflow to active to expose the web frontend. Visit the webhook  [https://<n8n_url>/webhook/n8n_videos](/webhook/n8n_videos) in your browser to use it.\n* If only for personal use, you may want to remove. the rate limiting mechanism in step 4.\n\n### Customising the template\n* Not interested in official n8n videos? Swap to a different channel.\n* Google Gemini may perform better when extracting from transcripts.\n\n### Need Help?\nJoin the [Discord](https://discord.com/invite/XPKeKXeB7d) or ask in the [Forum](https://community.n8n.io/)!",
+        "height": 1080,
+        "width": 440
+      },
+      "id": "905d15c3-d7ab-431d-88a3-bbb46f66f2ca",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "0eb32753-8fd7-4266-a32f-a8f51bf77e93",
+              "operator": {
+                "type": "array",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.result.groups }}",
+              "rightValue": ""
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1988adb0-9922-4b79-b319-023a95e51b21",
+      "name": "Has Results?1",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        1840,
+        1400
+      ],
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7c4bd999-49b1-4532-89ca-c53e98da6b17",
+              "name": "text",
+              "type": "string",
+              "value": "={{ '' }}"
+            },
+            {
+              "id": "916221de-2ec9-4fd9-8029-d7a3de88f395",
+              "name": "results",
+              "type": "string",
+              "value": "=<div id=\"resultsCount\">0 Video Results</div>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8ae68f55-6f9c-459d-9638-72f26eb822ec",
+      "name": "Generate Empty Response1",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        1840,
+        1620
+      ],
+      "typeVersion": 3.4
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "=<div id=\"answer\">{{ $json.text }}</div>\n{{ $json.results }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "09953ac2-c0f4-4e65-a1a8-536cd81041b9",
+      "name": "Respond to Webhook4",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        2040,
+        1620
+      ],
+      "executeOnce": false,
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "result.groups",
+        "options": {}
+      },
+      "id": "619f4578-c98e-49f7-810f-64bd2507e8fe",
+      "name": "Groups to Items1",
+      "type": "n8n-nodes-base.splitOut",
+      "position": [
+        2040,
+        1400
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "7b3586c9-5827-4a4e-a348-3a3d3046ceba",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        2740,
+        1620
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "id": "4ce96e6f-b808-49d9-992f-2a109e3f5c46",
+      "name": "OpenAI Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        4420,
+        1500
+      ],
+      "typeVersion": 1.2
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n",
+  "repo_owner": "prochattools",
+  "repo_path": "JR1oUb9V8dlCpsYS.json",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-05T09:53:55.702Z",
+  "versionId": "72e2e24c-ba60-4b7a-a377-ad292fb2fa15"
+}
