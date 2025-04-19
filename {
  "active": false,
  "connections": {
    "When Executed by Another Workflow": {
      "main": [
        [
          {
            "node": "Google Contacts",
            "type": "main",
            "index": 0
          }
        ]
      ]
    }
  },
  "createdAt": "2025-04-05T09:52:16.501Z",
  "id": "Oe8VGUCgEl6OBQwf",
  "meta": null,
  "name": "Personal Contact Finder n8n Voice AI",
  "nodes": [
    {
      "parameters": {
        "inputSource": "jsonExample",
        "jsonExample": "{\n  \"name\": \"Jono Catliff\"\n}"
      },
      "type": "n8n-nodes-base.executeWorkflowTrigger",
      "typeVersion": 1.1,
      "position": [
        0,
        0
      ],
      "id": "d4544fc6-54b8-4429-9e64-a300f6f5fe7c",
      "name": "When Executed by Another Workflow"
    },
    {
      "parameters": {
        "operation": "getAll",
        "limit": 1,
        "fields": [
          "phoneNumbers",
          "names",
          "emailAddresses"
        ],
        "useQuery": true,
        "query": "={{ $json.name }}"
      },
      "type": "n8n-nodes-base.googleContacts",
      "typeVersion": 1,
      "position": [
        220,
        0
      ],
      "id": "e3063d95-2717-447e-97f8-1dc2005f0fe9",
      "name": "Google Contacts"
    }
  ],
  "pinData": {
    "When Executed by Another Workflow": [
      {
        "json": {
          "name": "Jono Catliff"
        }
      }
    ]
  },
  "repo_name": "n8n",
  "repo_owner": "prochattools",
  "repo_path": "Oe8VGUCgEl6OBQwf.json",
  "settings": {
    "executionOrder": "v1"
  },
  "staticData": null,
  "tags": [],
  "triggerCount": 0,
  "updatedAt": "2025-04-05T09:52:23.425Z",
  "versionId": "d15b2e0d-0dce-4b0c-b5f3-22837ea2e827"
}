@@ -1,0 +1,77 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Google Contacts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-05T09:52:16.501Z",
+  "id": "Oe8VGUCgEl6OBQwf",
+  "meta": null,
+  "name": "Personal Contact Finder n8n Voice AI",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"name\": \"Jono Catliff\"\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d4544fc6-54b8-4429-9e64-a300f6f5fe7c",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 1,
+        "fields": [
+          "phoneNumbers",
+          "names",
+          "emailAddresses"
+        ],
+        "useQuery": true,
+        "query": "={{ $json.name }}"
+      },
+      "type": "n8n-nodes-base.googleContacts",
+      "typeVersion": 1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "e3063d95-2717-447e-97f8-1dc2005f0fe9",
+      "name": "Google Contacts"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "name": "Jono Catliff"
+        }
+      }
+    ]
+  },
+  "repo_name": "n8n",
+  "repo_owner": "prochattools",
+  "repo_path": "Oe8VGUCgEl6OBQwf.json",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-05T09:52:23.425Z",
+  "versionId": "d15b2e0d-0dce-4b0c-b5f3-22837ea2e827"
+}
