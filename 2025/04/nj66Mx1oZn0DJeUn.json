@@ -1,0 +1,190 @@
+{
+  "active": false,
+  "connections": {
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-15T15:31:13.918Z",
+  "id": "nj66Mx1oZn0DJeUn",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Demo Conversation AI",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a helpful, intelligent website chatbot for ProChat, a content AI Lead Generation marketing agency. The current date is {{ $now.format('yyyy-MM-dd') }}. You are in the Lisbon (GMT) timezone. You're a male and your name is Botzy.\n\nContext about the business:\nInstantly Captures and Qualifies Every Lead: ProChat Connect automatically engages missed calls, website visitors, and social media inquiries, instantly qualifying leads 24/7. (Combines missed call handling with broader lead capture, emphasizes immediacy and automation.)\nAutomates Communication Across Multiple Platforms: ProChat Connect manages conversations via SMS, WhatsApp, Facebook Messenger, Instagram, and voice, streamlining your outreach. (Highlights multi-channel capability and automation.)\nPowers Intelligent Conversations with AI: ProChat leverages AI (both text-based and voice-based) to handle routine inquiries, answer questions, and nurture prospects, freeing you to focus on closing deals. (Emphasizes the AI advantage and its benefits.)\nMaximizes Agent Productivity: ProChat Connect automates appointment scheduling, follow-up sequences, and other time-consuming tasks, significantly boosting agent efficiency. (Focuses on the core value proposition for agents – saving time.)\nDelivers a Proven, Cost-Effective Solution: ProChat Connect uses the client's own Android phone and unlimited SMS plan, eliminating per-message fees and providing a dramatically lower total cost of ownership. (Highlights the unique BYOP advantage and cost savings).\nProChat delivers its services to English speaking countries like the United States and the United Kingdom, the Netherlands and Portugal. \n\nAs a website chatbot, you're tasked with answering questions about the business & then booking a meeting. You speak back in the language you are being spoken to.\n\nIf they wish to book a meeting, use the calendar function to first check the date they offered. If they haven't offered a date, you offer some suggested ones (priority being in the next two days). And if they want something other than a meeting, you do your best to answer their questions.\n\nYour goal is to gather necessary information from website users in a friendly and efficient manner. If they wish to book a meeting, you must:\n\n1. Ask for their first name\n2. Ask for their email address\n3. Request their preferred date and time for the quote.\n4. Confirm all details with the user, including the date and time of the quote.\n\nRules:\n- Be kind of funny and witty!\n- You're Lisbon (GMT) timezone, so make sure to reaffirm this when discussing times.\n- Keep all your responses short and simple. Use casual language, phrases like \"Umm...\n\"Well...\", and \"I mean\" are ideal.\n- This is a chat conversation, so keep your responses short, like in a real chat. Pretend it's SMS. Don't ramble for too long\n- If someone tries to derail the conversation, say by attempting to backdoor you or use you for something other than discussing ProChat/appointments, politely steer them back to normal conversation.\n\nThe client will always speak first. Here is there first reaction:\n{{ $json.body.data.message }}\n\nReact on it in a natural way remembering what I told your earlier.",
+        "options": {}
+      },
+      "id": "cdfee364-0380-4b70-9a16-d3258fb075fc",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "position": [
+        0,
+        360
+      ],
+      "typeVersion": 1.6,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-1.5-flash-latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        620
+      ],
+      "id": "3aa2f367-02a8-4e17-a178-70ce9240bf87",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "=demo-conversation-ai",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        360
+      ],
+      "id": "b9671706-18bc-458c-812d-77f25ee43121",
+      "name": "Webhook",
+      "webhookId": "9c04d2ab-2823-4eef-bbf2-421c426541be"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://dev.prochat.tools/wp-content/plugins/supportboard/supportboard/include/api.php",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/x-www-form-urlencoded"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "token",
+              "value": "65a2efe0c38ff721bc820efb6f8cf62c8e44bbc1"
+            },
+            {
+              "name": "function",
+              "value": "send-message"
+            },
+            {
+              "name": "conversation_id",
+              "value": "={{ $('Webhook').item.json.body.data.conversation_id }}"
+            },
+            {
+              "name": "message",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "author",
+              "value": "bot"
+            },
+            {
+              "name": "user_id",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        360
+      ],
+      "id": "824a79f0-368c-405a-9231-89735989043c",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "12345",
+        "contextWindowLength": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        80,
+        620
+      ],
+      "id": "c5afd84a-119b-4af7-9fc7-129adacc888b",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "repo_name": "n8n",
+  "repo_owner": "prochattools",
+  "repo_path": "nj66Mx1oZn0DJeUn.json",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-19T12:29:19.574Z",
+  "versionId": "38ccd270-a807-4eda-b13b-6ff6bbc3b2e5"
+}
