@@ -1,0 +1,145 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Scrape Lead Website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape Lead Website": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-05T09:51:21.601Z",
+  "id": "b9P7K5asGcEeDOmx",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Connect Auto Create AI Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "b1824994-e846-4cf9-b516-254e6af8e8de",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "de6aa0ff-94c9-4a39-8f4e-e6db68d040aa",
+      "name": "Webhook",
+      "webhookId": "b1824994-e846-4cf9-b516-254e6af8e8de"
+    },
+    {
+      "parameters": {
+        "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_rpbqb3xgsBeyac4iMiAmZeHfigIhpV16yKQw",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"https://focushypotheken.nl\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
+        "options": {}
+      },
+      "id": "088ff069-2fbc-4978-94a4-0e1b08d33386",
+      "name": "Scrape Lead Website",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        240,
+        -20
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Write me custom instruction for a Awaz AI calling agent for my my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{289647891__pageContent__text}}",
+        "messages": {
+          "messageValues": [
+            {}
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.6,
+      "position": [
+        560,
+        0
+      ],
+      "id": "6c99c459-60f0-48b8-8931-c2a642516bc8",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-1.5-pro",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        520,
+        220
+      ],
+      "id": "02ecec33-552e-445a-a7eb-23004a923cf1",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      },
+      "notes": "Write me custom instruction for a Awaz AI calling agent for my my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n"
+    }
+  ],
+  "pinData": {
+    "Basic LLM Chain": [
+      {
+        "json": {
+          "name": "First item",
+          "code": 1
+        }
+      },
+      {
+        "json": {
+          "name": "Second item",
+          "code": 2
+        }
+      }
+    ]
+  },
+  "repo_name": "n8n",
+  "repo_owner": "prochattools",
+  "repo_path": "b9P7K5asGcEeDOmx.json",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-12T17:09:21.747Z",
+  "versionId": "45c57ae3-aeb1-4e15-87b0-f6f108a8947f"
+}
