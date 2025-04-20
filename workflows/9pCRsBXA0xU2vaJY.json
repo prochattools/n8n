@@ -1,0 +1,2634 @@
+{
+  "active": false,
+  "connections": {
+    "Wait 10 Sec.1": {
+      "main": [
+        [
+          {
+            "node": "Message 1.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.15": {
+      "main": [
+        [
+          {
+            "node": "Message 1.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.16": {
+      "main": [
+        [
+          {
+            "node": "Message 2.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.17": {
+      "main": [
+        [
+          {
+            "node": "Message 2.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.18": {
+      "main": [
+        [
+          {
+            "node": "Message 3.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.19": {
+      "main": [
+        [
+          {
+            "node": "Message 3.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.20": {
+      "main": [
+        [
+          {
+            "node": "Message 4.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.21": {
+      "main": [
+        [
+          {
+            "node": "Message 4.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.22": {
+      "main": [
+        [
+          {
+            "node": "Message 5.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.23": {
+      "main": [
+        [
+          {
+            "node": "Message 5.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 Days1": {
+      "main": [
+        [
+          {
+            "node": "4th DND Status Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 1 Min1": {
+      "main": [
+        [
+          {
+            "node": "1st DND Status Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 7 Days1": {
+      "main": [
+        [
+          {
+            "node": "5th DND Status Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.24": {
+      "main": [
+        [
+          {
+            "node": "Message 6.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 10 Sec.25": {
+      "main": [
+        [
+          {
+            "node": "Message 6.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 1 Day1": {
+      "main": [
+        [
+          {
+            "node": "3rd DND Status Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 Mins1": {
+      "main": [
+        [
+          {
+            "node": "2nd DND Status Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 [6]1": {
+      "main": [
+        [
+          {
+            "node": "Message 6.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 [5]1": {
+      "main": [
+        [
+          {
+            "node": "Message 5.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 [4]1": {
+      "main": [
+        [
+          {
+            "node": "Message 4.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 [3]1": {
+      "main": [
+        [
+          {
+            "node": "Message 3.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 [2]1": {
+      "main": [
+        [
+          {
+            "node": "Message 2.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 [1]1": {
+      "main": [
+        [
+          {
+            "node": "Message 1.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1st Update": {
+      "main": [
+        [
+          {
+            "node": "Wait 1 Min1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2nd Update": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 Mins1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3rd Update": {
+      "main": [
+        [
+          {
+            "node": "Wait 1 Day1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "4th Update": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 Days1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5th Update": {
+      "main": [
+        [
+          {
+            "node": "Wait 7 Days1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1st DND Status Check": {
+      "main": [
+        [
+          {
+            "node": "If Check 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2nd DND Status Check": {
+      "main": [
+        [
+          {
+            "node": "If Check 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3rd DND Status Check": {
+      "main": [
+        [
+          {
+            "node": "If Check 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "4th DND Status Check": {
+      "main": [
+        [
+          {
+            "node": "If Check 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5th DND Status Check": {
+      "main": [
+        [
+          {
+            "node": "If Check 5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 1.1": {
+      "main": [
+        [
+          {
+            "node": "If Succes 1.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 1.2": {
+      "main": [
+        [
+          {
+            "node": "If Succes 1.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 2.1": {
+      "main": [
+        [
+          {
+            "node": "If Succes 2.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 2.2": {
+      "main": [
+        [
+          {
+            "node": "If Succes 2.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 3.1": {
+      "main": [
+        [
+          {
+            "node": "If Succes 3.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 4.1": {
+      "main": [
+        [
+          {
+            "node": "If Succes 4.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 4.2": {
+      "main": [
+        [
+          {
+            "node": "If Succes 4.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 5.1": {
+      "main": [
+        [
+          {
+            "node": "If Succes 5.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 5.2": {
+      "main": [
+        [
+          {
+            "node": "If Succes 5.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 6.1": {
+      "main": [
+        [
+          {
+            "node": "If Succes 6.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 6.2": {
+      "main": [
+        [
+          {
+            "node": "If Succes 6.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 1.1": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 [1]1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 1.2": {
+      "main": [
+        [
+          {
+            "node": "1st Update",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Check 1": {
+      "main": [
+        [
+          {
+            "node": "Message 2.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Check 2": {
+      "main": [
+        [
+          {
+            "node": "Message 3.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Check 3": {
+      "main": [
+        [
+          {
+            "node": "Message 4.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Check 4": {
+      "main": [
+        [
+          {
+            "node": "Message 5.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Check 5": {
+      "main": [
+        [
+          {
+            "node": "Message 6.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 2.1": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 [2]1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 2.2": {
+      "main": [
+        [
+          {
+            "node": "2nd Update",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 3.1": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 [3]1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message 3.2": {
+      "main": [
+        [
+          {
+            "node": "If Succes 3.2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 3.2": {
+      "main": [
+        [
+          {
+            "node": "3rd Update",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 4.1": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 [4]1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 4.2": {
+      "main": [
+        [
+          {
+            "node": "4th Update",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 5.1": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 [5]1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 5.2": {
+      "main": [
+        [
+          {
+            "node": "5th Update",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 6.1": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 [6]1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Succes 6.2": {
+      "main": [
+        [
+          {
+            "node": "6th Update",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait 10 Sec.25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Update DND Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Android Missed Call": {
+      "main": [
+        [
+          {
+            "node": "New Missed Call Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Android DND SMS": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New Missed Call Contact": {
+      "main": [
+        []
+      ]
+    },
+    "GHL Start SMS Demo": {
+      "main": [
+        [
+          {
+            "node": "Get Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Contact": {
+      "main": [
+        [
+          {
+            "node": "Message 1.1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update DND Status": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-04-17T21:08:48.998Z",
+  "id": "9pCRsBXA0xU2vaJY",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "SMS Demo Automation (PT)",
+  "nodes": [
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -660,
+        3460
+      ],
+      "id": "6d87c26b-648c-46b8-bac3-edae83990e68",
+      "name": "Wait 10 Sec.1",
+      "webhookId": "f8b2dd4c-f4c1-485b-b138-545b86564ed8",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        3320
+      ],
+      "id": "87d8f280-f308-4d3a-b96b-ccc428991207",
+      "name": "Wait 10 Sec.15",
+      "webhookId": "c4cfb411-857c-42bc-8ad5-1dc6c24abc43",
+      "executeOnce": false,
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -700,
+        4120
+      ],
+      "id": "b01728b2-e816-4e90-8235-312cfbd912f1",
+      "name": "Wait 10 Sec.16",
+      "webhookId": "1ab48d03-5ede-41c3-bfc4-8605b6139d76",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -40,
+        3980
+      ],
+      "id": "f094d9a3-971c-449d-a311-c72ae7005ae4",
+      "name": "Wait 10 Sec.17",
+      "webhookId": "38d7cc8c-b89f-481f-82d8-5712c3589852",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -660,
+        4780
+      ],
+      "id": "0a738a26-09f3-4c4f-9e86-b6393eb727c2",
+      "name": "Wait 10 Sec.18",
+      "webhookId": "0fe807c5-6b2d-405c-ae62-73b53139eb49",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        4660
+      ],
+      "id": "df971f5d-f4ac-44e4-b871-5e572f51278c",
+      "name": "Wait 10 Sec.19",
+      "webhookId": "a1571701-333c-4e71-9668-ce530c321a0d",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1480,
+        3540
+      ],
+      "id": "8ea0240d-fe4a-4003-96a2-426fb51ca789",
+      "name": "Wait 10 Sec.20",
+      "webhookId": "252b9113-ba75-4fdc-9069-912b41ce9d60",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2140,
+        3420
+      ],
+      "id": "c9f8a7bd-4c42-4617-b17a-64d6e9f49963",
+      "name": "Wait 10 Sec.21",
+      "webhookId": "05a3fada-b877-477c-a8c8-d3b988f2a0e3",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1480,
+        4160
+      ],
+      "id": "b3e64649-f522-4f71-aa0a-8e4caeb2c12e",
+      "name": "Wait 10 Sec.22",
+      "webhookId": "267c1396-e04c-4089-af84-e44890c46e53",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2140,
+        4040
+      ],
+      "id": "f00d5f70-b292-4542-baa9-d507ce482f6d",
+      "name": "Wait 10 Sec.23",
+      "webhookId": "3d490826-29c9-453c-b9cc-98d700c42683",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        3600
+      ],
+      "id": "c0bb01bf-5720-4c06-8e4e-7f8320efcdc6",
+      "name": "Wait 3 Days1",
+      "webhookId": "956aa967-c485-4c00-b271-b420f8035321"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        260,
+        3520
+      ],
+      "id": "78a834b9-a4f4-4289-b49d-a13426a08bbd",
+      "name": "Wait 1 Min1",
+      "webhookId": "880f1a63-cee7-42ae-8af7-73bb3f9ee98e"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        4220
+      ],
+      "id": "a572d494-0054-4702-aa19-946f60d1cd18",
+      "name": "Wait 7 Days1",
+      "webhookId": "580e1f03-88af-40b3-a1cc-7290fcef0634"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1480,
+        4780
+      ],
+      "id": "7aace092-2342-4317-97d0-0aa872d6ae4e",
+      "name": "Wait 10 Sec.24",
+      "webhookId": "37e90c46-19c6-4b94-b12c-efe8c330b464",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2140,
+        4660
+      ],
+      "id": "01ef43eb-f74e-4e79-98fa-850ee4d39fa7",
+      "name": "Wait 10 Sec.25",
+      "webhookId": "701a3086-bf41-4a71-a6a1-11021cad709e",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        280,
+        4400
+      ],
+      "id": "17949690-f043-46f8-b34c-8be59ffa6618",
+      "name": "Wait 1 Day1",
+      "webhookId": "a1591537-bf53-4af3-8e56-11996297714f"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        280,
+        4180
+      ],
+      "id": "d7797cff-64a5-444b-bf58-130e5b76ef7b",
+      "name": "Wait 3 Mins1",
+      "webhookId": "08f51e7c-1d6e-4765-86f2-e9df7a80ff62"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1480,
+        4560
+      ],
+      "id": "3ed038ad-b10b-4072-b01a-8a7d75c86314",
+      "name": "Wait 3 [6]1",
+      "webhookId": "f1d657a8-698a-419e-a090-e8ae9b12c8dc"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1480,
+        3940
+      ],
+      "id": "9a04c3a8-21f3-4da7-b1fc-40b0b4e10f3c",
+      "name": "Wait 3 [5]1",
+      "webhookId": "70b6108b-fd5f-415b-abd6-61a03c2cb4b8"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1480,
+        3320
+      ],
+      "id": "715b874c-7c3b-47a0-8350-f8f6331fd686",
+      "name": "Wait 3 [4]1",
+      "webhookId": "20e0e8b1-e132-43fe-8ad7-372225fd8d1c"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -660,
+        4560
+      ],
+      "id": "7f21cfdb-b0e8-45ae-92cf-e3c6379ac04c",
+      "name": "Wait 3 [3]1",
+      "webhookId": "aa034833-628f-416e-b952-b30d7818de7b",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -700,
+        3880
+      ],
+      "id": "bfc7d71f-d6ee-478d-803d-f001a35b81f4",
+      "name": "Wait 3 [2]1",
+      "webhookId": "2bb03f85-1122-48e4-8125-027870f85d93",
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -660,
+        3240
+      ],
+      "id": "442e2cb2-34d4-4f8b-8fec-7e2a02bec3e0",
+      "name": "Wait 3 [1]1",
+      "webhookId": "81369610-7d42-4654-95da-4f1a49987126"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $('Get Contact').item.json.id }}",
+        "updateFields": {
+          "tags": "={{ $('Get Contact').item.json.tags[0] }}, 1st message"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        0,
+        3080
+      ],
+      "id": "d95a9894-eb5b-4d36-8e66-311269fc5db4",
+      "name": "1st Update",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $('Get Contact').item.json.id }}",
+        "updateFields": {
+          "tags": "={{ $('Get Contact').item.json.tags[0] }}, 1st message, 2nd message"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        -40,
+        3760
+      ],
+      "id": "8bb8345f-4a18-40b4-8f2c-433c01ebce3b",
+      "name": "2nd Update",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $('Get Contact').item.json.id }}",
+        "updateFields": {
+          "tags": "={{ $('Get Contact').item.json.tags[0] }}, 1st message, 2nd message, 3rd message"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        20,
+        4400
+      ],
+      "id": "ed00c0b1-7638-40b9-96cd-eb80e22f1dac",
+      "name": "3rd Update",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $('Get Contact').item.json.id }}",
+        "updateFields": {
+          "tags": "={{ $('Get Contact').item.json.tags[0] }}, 1st message, 2nd message, 3rd message, 4th message"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        2140,
+        3200
+      ],
+      "id": "f51846c1-0f34-46a7-8a17-ee18f9c8c822",
+      "name": "4th Update",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $('Get Contact').item.json.id }}",
+        "updateFields": {
+          "tags": "={{ $('Get Contact').item.json.tags[0] }}, 1st message, 2nd message, 3rd message, 4th message, 5th message"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        2140,
+        3820
+      ],
+      "id": "a0e4adae-3d5c-4e63-8ce0-812c7f0b9063",
+      "name": "5th Update",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $('Get Contact').item.json.id }}",
+        "updateFields": {
+          "tags": "={{ $('Get Contact').item.json.tags[0] }}, 1st message, 2nd message, 3rd message, 4th message, 5th message, 6th message"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        2140,
+        4440
+      ],
+      "id": "1fcf6655-3872-4165-8144-04f561d133cc",
+      "name": "6th Update",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $('1st Update').item.json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        -1520,
+        4040
+      ],
+      "id": "a74f69ea-2cd6-429f-8ab8-5d0829ded5f4",
+      "name": "1st DND Status Check",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $('1st Update').item.json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        -1520,
+        4680
+      ],
+      "id": "c27a92d3-c547-4b59-944f-b044aeeceb0b",
+      "name": "2nd DND Status Check",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $('1st Update').item.json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        660,
+        3460
+      ],
+      "id": "80af03a2-81b8-41f0-b3b2-0f291aec5a3d",
+      "name": "3rd DND Status Check",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $('1st Update').item.json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        660,
+        4080
+      ],
+      "id": "a44a65a3-5a3b-489e-ae43-93a918842c10",
+      "name": "4th DND Status Check",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $('1st Update').item.json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        660,
+        4700
+      ],
+      "id": "98d41026-98b8-4cf0-9047-bb70a3cabe31",
+      "name": "5th DND Status Check",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $json.phone }}\",     \"message\": \"ProChat SMS Demo: Je ervaart nu onmiddellijke SMS-automatisering. Stel je de volgende scenario's eens voor, voor JOUW bedrijf! [SMS 1/2]\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1100,
+        3360
+      ],
+      "id": "9237bdae-c322-4aee-9d65-d5721cc2c622",
+      "name": "Message 1.1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $('Get Contact').item.json.phone }}\",     \"message\": \"Nu volgt een korte demonstratie hoe SMS automatiseringen werkt voor verschillende gemiste oproepen scenario's... [SMS 2/2 - Afmelden? SMS 'STOP']\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -440,
+        3240
+      ],
+      "id": "9af71ffe-342d-4fb3-a2e1-327d6d1b97a9",
+      "name": "Message 1.2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $json.phone }}\",     \"message\": \"Scenario 1: Antwoord op gemiste oproep: 'Sorry dat we je oproep gemist hebben! We zijn op het moment even niet beschikbaar' [SMS 1/2]\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1100,
+        4020
+      ],
+      "id": "e1ce9ca8-2548-40f8-9de3-cefb024911d3",
+      "name": "Message 2.1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $('1st Update').item.json.phone }}\", \"message\": \"'Boek een afspraak in onze agenda: [Jouw Agenda Link]' - Nooit meer een verloren lead en hoge klantevredenheid! - [SMS 2/2 - Afmelden? SMS 'STOP']\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -480,
+        3880
+      ],
+      "id": "c66c75d0-440d-44b7-8aa4-a5a5a2d3b26b",
+      "name": "Message 2.2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $json.phone }}\",     \"message\": \"Scenario 2: Antwoord buiten sluitingstijd: 'Helaas zijn we gesloten maar we zijn weer beschikbaar op [Kantooruren].' [SMS 1/2]\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1100,
+        4680
+      ],
+      "id": "d42333d2-f9d5-41cf-adb1-068b0980d5f6",
+      "name": "Message 3.1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $json.phone }}\",     \"message\": \"De kracht van SMS-automatisering. Met ProChat mis je NOOIT meer leads, maak je meer boekingen en bespaar je tijd en dus geld. [SMS 1/2]\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        3440
+      ],
+      "id": "ccdc7e05-2e7e-4b33-a78b-b3bb87874e86",
+      "name": "Message 4.1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $('3rd Update').item.json.phone }}\",     \"message\": \"Klaar om te zien hoe ProChat in JOUW bedrijf past? Start vandaag nog een GRATIS proefperiode: is.gd/KQJkjr. [SMS 2/2 - Afmelden? SMS 'STOP']\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        3320
+      ],
+      "id": "bed365f5-ea19-4844-aeb7-f969e9ee11dd",
+      "name": "Message 4.2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $json.phone }}\",     \"message\": \"Denk je nog steeds na over ProChat? Stel je eens voor dat je gemiste oproepen moeiteloos omzet in geboekte afspraken.. [SMS 1/2]\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        4060
+      ],
+      "id": "29d331fd-da63-4fa0-a8a5-7ee6e4330557",
+      "name": "Message 5.1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $('4th Update').item.json.phone }}\",     \"message\": \"Geen verloren leads meer die door de mazen van het net glippen! Probeer ProChat GRATIS & zie de impact: is.gd/KQJkjr. [SMS 2/2 - Afmelden? SMS 'STOP']\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        3940
+      ],
+      "id": "20d85855-d7e2-44a1-8b1f-1cef6cc00460",
+      "name": "Message 5.2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $json.phone }}\",     \"message\": \"Laatste kans om ProChat risicovrij te ervaren! Automatiseer SMS berichten, leg leads 24/7 vast en laat je bedrijf groeien. [SMS 1/2]\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        4680
+      ],
+      "id": "27c6def5-4930-4c51-9eb7-965af15ffe91",
+      "name": "Message 6.1",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $('5th Update').item.json.phone }}\",     \"message\": \"Start nu jouw GRATIS ProChat proefperiode - het is eenvoudiger dan je denkt: is.gd/KQJkjr. - [SMS 2/2 - Afmelden? SMS 'STOP']\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        4560
+      ],
+      "id": "f7fb69de-451e-48a7-b412-f7c5e8d535d9",
+      "name": "Message 6.2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -880,
+        3300
+      ],
+      "id": "05aac1e0-b710-43a6-a320-35fe9d6fe59f",
+      "name": "If Succes 1.1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -220,
+        3160
+      ],
+      "id": "3fe4908c-02a1-4a3e-b6a8-e0d863be4be2",
+      "name": "If Succes 1.2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9921d947-7dc0-4c6f-b4b8-ae5206d9ec93",
+              "leftValue": "={{ $json.dnd }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1360,
+        4040
+      ],
+      "id": "1d997024-b8c6-4376-8b70-b4c65a7bb189",
+      "name": "If Check 1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9921d947-7dc0-4c6f-b4b8-ae5206d9ec93",
+              "leftValue": "={{ $json.dnd }}",
+              "rightValue": "active",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1360,
+        4680
+      ],
+      "id": "c27d12b6-4c05-4463-bbfa-1aabc814443e",
+      "name": "If Check 2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9921d947-7dc0-4c6f-b4b8-ae5206d9ec93",
+              "leftValue": "={{ $json.dnd }}",
+              "rightValue": "active",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        820,
+        3460
+      ],
+      "id": "b55dac3c-0567-4050-8737-400e0cb156ff",
+      "name": "If Check 3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9921d947-7dc0-4c6f-b4b8-ae5206d9ec93",
+              "leftValue": "={{ $json.dnd }}",
+              "rightValue": "active",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        820,
+        4080
+      ],
+      "id": "9d15de62-85f1-4bae-bb53-8aeeef1deb99",
+      "name": "If Check 4"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9921d947-7dc0-4c6f-b4b8-ae5206d9ec93",
+              "leftValue": "={{ $json.dnd }}",
+              "rightValue": "active",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        820,
+        4700
+      ],
+      "id": "3e1a9cb1-7409-4839-89ea-f21de01cf964",
+      "name": "If Check 5"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -920,
+        3940
+      ],
+      "id": "e833537a-cf2b-44bd-96a5-f73afb59550a",
+      "name": "If Succes 2.1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -260,
+        3820
+      ],
+      "id": "d28bd526-80cb-41db-ae14-2e304711737b",
+      "name": "If Succes 2.2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -880,
+        4600
+      ],
+      "id": "dc2338a5-abbe-4b0a-85d4-290e10428358",
+      "name": "If Succes 3.1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://www.traccar.org/sms",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={     \"to\": \"{{ $('2nd Update').item.json.phone }}\",     \"message\": \"'Of boek een afspraak: [Jouw Agenda Link].' - ProChat kan jouw klanten 24/7 beantwoorden, ook op feestdagen. - [SMS 2/2 - Afmelden? SMS 'STOP']\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -440,
+        4560
+      ],
+      "id": "9c97bb45-110c-41cb-bd45-ec9dc2269f46",
+      "name": "Message 3.2",
+      "alwaysOutputData": false,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "iywM3XJKefBE7mp5",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -220,
+        4480
+      ],
+      "id": "00ae7937-a25f-4413-82fb-f4cc3afcf993",
+      "name": "If Succes 3.2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1260,
+        3380
+      ],
+      "id": "619f918d-2a4c-4d8f-a024-148e6f49f547",
+      "name": "If Succes 4.1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1920,
+        3240
+      ],
+      "id": "944086e1-ccb4-47b3-8e22-60cfcdce5d6b",
+      "name": "If Succes 4.2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1260,
+        4000
+      ],
+      "id": "0d278e0d-7139-4b42-9cea-d178d7154f9a",
+      "name": "If Succes 5.1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1920,
+        3860
+      ],
+      "id": "a27b5a96-d5dc-4acf-88f6-cf42e0c51488",
+      "name": "If Succes 5.2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1260,
+        4600
+      ],
+      "id": "1acc5ed2-3ce8-477a-aa96-5382d16c79e3",
+      "name": "If Succes 6.1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "02bc39d6-0ee1-4580-90d2-5bcc7888493a",
+              "leftValue": "={{ $json.successCount }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1920,
+        4480
+      ],
+      "id": "e102a4ea-e5c6-4d1f-9cc9-76a7660f464e",
+      "name": "If Succes 6.2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8ace2dc2-9e07-4e36-8ff2-29c02f4d0d3c",
+              "leftValue": "={{ $json.query.message }}",
+              "rightValue": "stop",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "e56f7b20-a538-4d8e-afb6-b46f8e9e63aa",
+              "leftValue": "={{ $json.query.message }}",
+              "rightValue": "STOP",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "76c8dba8-fec3-4f65-af64-6464ce1854cd",
+              "leftValue": "={{ $json.query.message }}",
+              "rightValue": "Stop",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -200,
+        2760
+      ],
+      "id": "43d5618b-8f5c-47c2-97f4-fbb9b8065577",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "content": "## STEP 1 - Initial missed call trigger from Android (Macrodroid)\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 360,
+        "width": 680
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        2660
+      ],
+      "id": "e0e8f41a-b1d7-43a9-9d4c-29b5bc550420",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Client SMS 'STOP' to unsubscribe\n**Triggered from Android (Macrodroid) [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 360,
+        "width": 900
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        2660
+      ],
+      "id": "be378f21-6a13-48db-ae45-8ad077d74e18",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "97cab1ba-a3af-482b-bd71-ee7e9efc6fd8",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        2800
+      ],
+      "id": "9274faef-2ea3-43cd-a986-952289494e98",
+      "name": "Android Missed Call",
+      "webhookId": "97cab1ba-a3af-482b-bd71-ee7e9efc6fd8"
+    },
+    {
+      "parameters": {
+        "path": "c65f8aba-abc4-4a0b-9764-1a2c9a8adc57",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        2760
+      ],
+      "id": "7a6cc41c-0091-48b4-8754-aab09a43038d",
+      "name": "Android DND SMS",
+      "webhookId": "c65f8aba-abc4-4a0b-9764-1a2c9a8adc57"
+    },
+    {
+      "parameters": {
+        "email": "={{ $json.query.email.replace(\" \",\"\") }}",
+        "phone": "={{ $json.query.number }}",
+        "additionalFields": {
+          "tags": "missed call"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        -840,
+        2800
+      ],
+      "id": "8d37eda7-cee9-4505-a869-ecadcb988a4d",
+      "name": "New Missed Call Contact",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "email": "={{ $json.query.email.replace(\" \",\"\") }}",
+        "phone": "={{ $('Android DND SMS').item.json.query.number }}",
+        "additionalFields": {
+          "dnd": true
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        100,
+        2740
+      ],
+      "id": "5c3790cc-1e3d-4d2d-977b-ce800110b010",
+      "name": "Update DND Status",
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "e63296cc-2f13-4d22-a37c-ac42708377a9",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1540,
+        3360
+      ],
+      "id": "d0a86905-5918-4ad5-806c-3091b5303c31",
+      "name": "GHL Start SMS Demo",
+      "webhookId": "e63296cc-2f13-4d22-a37c-ac42708377a9"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "contactId": "={{ $json.body.contact_id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 2,
+      "position": [
+        -1360,
+        3360
+      ],
+      "id": "0d11fe80-31ce-47cf-a27f-df8c6001c503",
+      "name": "Get Contact",
+      "alwaysOutputData": true,
+      "credentials": {
+        "highLevelOAuth2Api": {
+          "id": "67TI5Cl6OW9YWniD",
+          "name": "HighLevel account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Message 1 \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 640,
+        "width": 1600
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        3040
+      ],
+      "id": "c6ac5650-5000-42ba-9e6c-64e011a6da24",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Message 2\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 620,
+        "width": 1620
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        3720
+      ],
+      "id": "a8b5f89e-423f-4b3f-b95e-cf971da2caa3",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Message 3 \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 620,
+        "width": 1640
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        4380
+      ],
+      "id": "1ad0eac0-159f-4b58-90e3-c2c227ce0e99",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Message 4\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 620,
+        "width": 1540
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        980,
+        3140
+      ],
+      "id": "29e71951-1121-41ac-b5f0-82f94cfe94ec",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Message 5 \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 580,
+        "width": 1540
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        980,
+        3800
+      ],
+      "id": "06a1ee7a-3c63-44f0-8471-825dec9eb50d",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Message 6\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 600,
+        "width": 1440
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        960,
+        4420
+      ],
+      "typeVersion": 1,
+      "id": "b7d7b685-8837-40fc-8778-d85724599f87",
+      "name": "Sticky Note8"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 3,
+  "updatedAt": "2025-04-17T21:14:35.035Z",
+  "versionId": "e400a730-ed53-4af5-84fd-4ed1655cb8b2"
+}
