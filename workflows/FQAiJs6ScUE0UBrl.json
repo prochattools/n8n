@@ -1,0 +1,300 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-05T09:53:15.124Z",
+  "id": "FQAiJs6ScUE0UBrl",
+  "meta": null,
+  "name": "Voice AI Agent Feb 17",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "jsonExample",
+        "jsonExample": "{\n  \"date\": \"\",\n  \"start_time\": \"\",\n  \"end_time\": \"\",\n  \"context\": \"\",\n  \"first_message\": \"\",\n  \"goal\": \"\",\n  \"name\": \"\",\n  \"relationship\": \"\",\n  \"fall_back_plan\": \"\",\n  \"special_requests\": \"\",\n  \"special_request_required\": true\n}"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "804ea2c9-e28f-4e72-a13a-fcaf3aff70bc",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.vapi.ai/call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer <YOUR_API_KEY>"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"phoneNumberId\": \"ENTER_VALUE_HERE\",\n  \"assistantId\": \"ENTER_VALUE_HERE\",\n  \"customer\": {\n    \"number\": \"ENTER_VALUE_HERE\"\n  },\n  \"type\": \"outboundPhoneCall\",\n  \"assistant\": {\n        \"name\": \"Will\",\n        \"voice\": {\n          \"provider\": \"playht\",\n          \"voiceId\": \"will\"\n        },\n        \"firstMessageMode\": \"assistant-waits-for-user\",\n        \"backgroundSound\": \"off\",\n        \"firstMessage\": \"{{ $('When Executed by Another Workflow').item.json.first_message }}\",\n        \"model\": {\n        \"provider\": \"openai\",\n        \"model\": \"gpt-3.5-turbo\",\n        \"messages\": [\n          {\n            \"role\": \"system\",\n            \"content\": \"{{ $json.message.content.vapi_voice_call_context_prompt }}. If they ask for a call back number, they can reach me at 604-123-4567, and my email is email@gmail.com\"\n        }]\n      }\n    }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        580,
+        0
+      ],
+      "id": "030ba3a2-bac9-4e54-abb6-19df6c353d20",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "url": "=  https://api.vapi.ai/call/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer <YOUR_API_KEY>"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        820,
+        0
+      ],
+      "id": "8bed9022-f0b2-4dc7-973a-e74808ddb6ff",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        0
+      ],
+      "id": "3a736387-25bc-4dae-9cd5-81250f9a6269",
+      "name": "Wait",
+      "webhookId": "59fb23df-b7cd-4984-bb43-6b915413af49"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6317e9c3-fc74-4080-b8af-f24a00c1789b",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "ended",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1260,
+        0
+      ],
+      "id": "7e40f0ea-d0cf-4876-8eb5-31e7717192d8",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "33999b2c-11b6-41b4-b2c0-9ba40d2cf3f7",
+              "name": "call_transcript",
+              "value": "={{ $json.transcript }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1560,
+        0
+      ],
+      "id": "46d1615f-0151-4d03-b0fb-a840d3d685f0",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "You're an intelligent voice AI bot that is fantastic at creating prompts and opening call ines for Vapi outbound calls to schedule all types of meetings and appointments, such as barbershops, dinners, etc. for your client Jono.\n\n##Rules\n- The voice agent must sound happy, nice and upbeat. The conversation should be more casual.\n- The voice agent must be as detailed as possible so that Vapi can understand everything about the call and context.\n- Please enter in the backup plan if the goal cannot be met. If this is not provided, then the backup should be to call the place back to re-schedule.\nMake sure to structure the data strictly according to the JSON format provided",
+              "role": "system"
+            },
+            {
+              "content": "=Please create a Vapi opening line and call prompt for this type of call:\n {{ $json.context }}\nDate: {{ $json.date }} (if needed)\nStart time: {{ $json.start_time }} (if needed)\nEnd Time: {{ $json.end_time }} (if needed)\nThese times are a range, where I'm available within\nFirst Message: {{ $json.first_message }} (this is just for additional context)\nSpecial Requests: {{ $json.special_requests }}\nIs Special Request Required?\nGoal: {{ $json.goal }}\nName of place you're calling: {{ $json.name }}\nFriend or business: {{ $json.relationship }}\nFall Back Plan: {{ $json.fall_back_plan }}\nContext: {{ $json.context }}\n\n##Context\n- You are an AI voice agent making an outbound call on behalf of you client Jono\n- NEVER under any circumstances pretend like you're working or representing {{ $json.name }}. You're only representing Jono.\n- Your goal is: {{ $json.goal }}\n- The opening line should be the first thing that's said. For example: \"Hello, I'm giving {{ $json.name }} because I'm looking to make a dinner reservation\""
+            },
+            {
+              "content": "Strictly output the response in valid JSON format in 2 text fields. DO NOT PUT THIS INTO AN OBJECT. Only use the two text fields as exactly shown below:\n{\n  \"vapi_voice_call_first_message\": \"\",\n  \"vapi_voice_call_context_prompt\": \"\"\n}\n\nEnsure the response is correctly formatted as JSON, including the curly braces, key names, and values. Do not omit or modify any part of the structure.\n",
+              "role": "assistant"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        220,
+        0
+      ],
+      "id": "eba322e2-d0c9-4bb2-a8db-e7e871221e1c",
+      "name": "OpenAI"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "date": "February 17th 2025",
+          "start_time": "5pm",
+          "end_time": "8pm",
+          "context": "The user is looking to book a dinner reservation tonight between 5-8pm at Tandoori chicken to eat at the restaurant.",
+          "first_message": "Hello, I'd like to book a dinner reservation tonight.",
+          "goal": "To book a dinner reservation tonight between 5-8pm",
+          "name": "Tandoori Chicken",
+          "relationship": "business",
+          "fall_back_plan": "Please do not book the dinner reservation, instead politely mention that you'll have to call back in 10 minutes if you decide to book",
+          "special_requests": "I'd like to get a table by the window",
+          "special_request_required": true
+        }
+      }
+    ],
+    "OpenAI": [
+      {
+        "json": {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": {
+              "vapi_voice_call_first_message": "Hello, I'm calling Tandoori Chicken because I'm looking to make a dinner reservation.",
+              "vapi_voice_call_context_prompt": "Hi there! I'm an AI voice agent reaching out on behalf of my client, Jono. We're looking to book a dinner reservation at Tandoori Chicken for tonight, February 17th, 2025, anytime between 5 PM and 8 PM. Jono would love to have a table by the window if that's possible. If window seats aren't available, that's fine; we just want to ensure a spot within that timeframe. If we can't secure a reservation right away, please let us know, and we'll call back in 10 minutes to try again."
+            },
+            "refusal": null
+          },
+          "logprobs": null,
+          "finish_reason": "stop"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-05T09:53:20.769Z",
+  "versionId": "d5b5c77b-e428-4dc1-a227-a665a02e7df2"
+}
