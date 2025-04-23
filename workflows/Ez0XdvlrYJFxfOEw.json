@@ -690,7 +690,7 @@
       "credentials": {
         "slackOAuth2Api": {
           "id": "LBiEwTBLp7FARhOY",
-          "name": "ProChat - Slack Account"
+          "name": "ProChat - Slack account"
         }
       }
     },
@@ -720,7 +720,7 @@
       "credentials": {
         "slackOAuth2Api": {
           "id": "LBiEwTBLp7FARhOY",
-          "name": "ProChat - Slack Account"
+          "name": "ProChat - Slack account"
         }
       }
     },
@@ -751,7 +751,7 @@
       "credentials": {
         "slackOAuth2Api": {
           "id": "LBiEwTBLp7FARhOY",
-          "name": "ProChat - Slack Account"
+          "name": "ProChat - Slack account"
         }
       }
     },
@@ -775,7 +775,7 @@
               "id": "eee305e9-4164-462a-86bd-80f0d58a31ae",
               "name": "repo_path",
               "type": "string",
-              "value": "={{ $json.repo.path }}{{ $('Execute Workflow Trigger').item.json.id }}.json"
+              "value": "=/"
             }
           ]
         },
@@ -856,6 +856,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-19T22:44:56.657Z",
-  "versionId": "de9b4e17-ea53-4fd5-a728-6a7a5e765adb"
+  "updatedAt": "2025-04-23T22:03:23.539Z",
+  "versionId": "8f673fa6-7eba-49f3-b21f-edccb1995019"
 }
