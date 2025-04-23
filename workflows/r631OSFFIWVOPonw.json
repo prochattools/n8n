@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Scrape Lead Website",
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -71,7 +71,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "Awaz Calls",
             "type": "main",
             "index": 0
           },
@@ -98,6 +98,18 @@
       "main": [
         []
       ]
+    },
+    "Switch": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Scrape Lead Website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-12T17:13:28.235Z",
@@ -115,7 +127,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -340,
+        -920,
         -100
       ],
       "id": "8f9e2329-9989-4727-9f5d-b283f48f4950",
@@ -170,7 +182,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) Api account"
+          "name": "Google Gemini(PaLM) API account"
         }
       }
     },
@@ -322,6 +334,166 @@
     },
     {
       "parameters": {
+        "content": "## Voice AI Demo (NL) account\n**Login email** 54.car-culler@icloud.com\n**username** voice_ai_demo_nl",
+        "height": 320,
+        "width": 340
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -220
+      ],
+      "id": "c8f2c95c-8bf2-45ef-828d-f57ab4c585e8",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Direct to Awaz\nHave not got it to work for now.",
+        "height": 280,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        -380
+      ],
+      "id": "27cfdc5d-1495-4fd1-9143-561eb93913d9",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Via Zapier\nNeeds to be renewed every 14 days.",
+        "height": 280,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        0
+      ],
+      "id": "e09afc4c-2434-4b65-8c6a-62da0d7a99eb",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (us)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "b5ee5e49-b48a-472e-b044-b7ad5a701b04"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "27170b7b-19df-4dd3-a9ee-e5da1371ab71",
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (nl)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "525f1c33-e01e-4cdf-ac67-644574622760",
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (pt)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -660,
+        -100
+      ],
+      "id": "c4f6a6ed-163f-45e6-8a42-a85c4cd61cc1",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "content": "## Voice AI Demo (US) account\n**Login email** smiths.fights-5v@icloud.com\n**username** voice_ai_demo_us",
+        "height": 320,
+        "width": 340
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -580
+      ],
+      "id": "13440a32-cc95-42a4-b067-353e60facd34",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Voice AI Demo (PT) account\n**Login email** smiths.fights-5v@icloud.com\n**username** voice_ai_demo_pt",
+        "height": 320,
+        "width": 340
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        140
+      ],
+      "id": "eac5c652-8c7b-4632-9c01-b32aea787827",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "https://api.awaz.ai/v1/hooks/calls",
         "sendHeaders": true,
@@ -367,54 +539,9 @@
         -300
       ],
       "id": "5d8e3d6c-a73e-4cc1-a08a-43caf61b8b27",
-      "name": "HTTP Request",
+      "name": "Awaz Calls",
       "alwaysOutputData": false,
       "disabled": true
-    },
-    {
-      "parameters": {
-        "content": "## Voice AI Demo (NL) account\n**Login email** 54.car-culler@icloud.com\n**username** voice_ai_demo_nl",
-        "height": 320,
-        "width": 340
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -160,
-        -220
-      ],
-      "id": "c8f2c95c-8bf2-45ef-828d-f57ab4c585e8",
-      "name": "Sticky Note"
-    },
-    {
-      "parameters": {
-        "content": "## Direct to Awaz\nHave not got it to work for now.",
-        "height": 280,
-        "width": 260
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        1540,
-        -380
-      ],
-      "id": "27cfdc5d-1495-4fd1-9143-561eb93913d9",
-      "name": "Sticky Note1"
-    },
-    {
-      "parameters": {
-        "content": "## Via Zapier\nNeeds to be renewed every 14 days.",
-        "height": 280,
-        "width": 260
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        1540,
-        0
-      ],
-      "id": "e09afc4c-2434-4b65-8c6a-62da0d7a99eb",
-      "name": "Sticky Note2"
     }
   ],
   "pinData": {},
@@ -424,6 +551,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-15T12:42:22.212Z",
-  "versionId": "4a84eab7-0bd5-4021-b4ed-ac0331a3c444"
+  "updatedAt": "2025-04-23T21:42:39.044Z",
+  "versionId": "358e2e04-ea42-4c41-a25a-d4f700a5bca3"
 }
