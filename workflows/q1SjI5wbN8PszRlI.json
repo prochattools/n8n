@@ -276,7 +276,8 @@
   "createdAt": "2025-04-19T16:04:06.044Z",
   "id": "q1SjI5wbN8PszRlI",
   "meta": {
-    "templateId": "1534"
+    "templateId": "1534",
+    "templateCredsSetupCompleted": true
   },
   "name": "Back Up Your n8n Workflows To Github BACKUP",
   "nodes": [
@@ -330,7 +331,13 @@
         1260,
         420
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "n8nApi": {
+          "id": "8FHmdsfMo29slMGJ",
+          "name": "n8n API"
+        }
+      }
     },
     {
       "parameters": {
@@ -523,7 +530,13 @@
         1260
       ],
       "typeVersion": 1,
-      "webhookId": "46bee2d0-4322-4efe-bf21-3778470c885b"
+      "webhookId": "46bee2d0-4322-4efe-bf21-3778470c885b",
+      "credentials": {
+        "githubApi": {
+          "id": "vVNGcRx9B3m5utwa",
+          "name": "GitHub account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -551,7 +564,13 @@
         1060
       ],
       "typeVersion": 1,
-      "webhookId": "97840f0d-2318-48c1-b1bd-c3c4ca700b34"
+      "webhookId": "97840f0d-2318-48c1-b1bd-c3c4ca700b34",
+      "credentials": {
+        "githubApi": {
+          "id": "vVNGcRx9B3m5utwa",
+          "name": "GitHub account 2"
+        }
+      }
     },
     {
       "parameters": {
@@ -644,6 +663,7 @@
     },
     {
       "parameters": {
+        "authentication": "oAuth2",
         "select": "channel",
         "channelId": {
           "__rl": true,
@@ -663,7 +683,13 @@
         420
       ],
       "webhookId": "c02eb407-5547-4aa0-9ebf-46dab67b63b6",
-      "typeVersion": 2.2
+      "typeVersion": 2.2,
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "LBiEwTBLp7FARhOY",
+          "name": "ProChat - Slack account"
+        }
+      }
     },
     {
       "parameters": {
@@ -701,7 +727,13 @@
       ],
       "webhookId": "a0c6e8c8-5d71-40fa-b02b-63a7ed5726c4",
       "executeOnce": true,
-      "typeVersion": 2.2
+      "typeVersion": 2.2,
+      "credentials": {
+        "slackApi": {
+          "id": "PIpTArlKnbd7nATj",
+          "name": "Slack account"
+        }
+      }
     },
     {
       "parameters": {
@@ -724,7 +756,13 @@
         460
       ],
       "webhookId": "2a092edb-de12-490f-931b-34d70e7d7696",
-      "typeVersion": 2.2
+      "typeVersion": 2.2,
+      "credentials": {
+        "slackApi": {
+          "id": "PIpTArlKnbd7nATj",
+          "name": "Slack account"
+        }
+      }
     },
     {
       "parameters": {
@@ -807,6 +845,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-19T16:04:26.818Z",
-  "versionId": "9933018e-53dd-4bc4-9cb4-bd43847660c2"
+  "updatedAt": "2025-04-23T22:21:42.386Z",
+  "versionId": "7503fb88-0506-4ba8-9ea7-2458a87fdacf"
 }
