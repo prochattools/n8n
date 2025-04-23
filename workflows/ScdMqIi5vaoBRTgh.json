@@ -96,7 +96,7 @@
     "templateId": "3586",
     "templateCredsSetupCompleted": true
   },
-  "name": "AI WhatsApp Chatbot with memory 🧠",
+  "name": "Conversation AI WhatsApp Chatbot with memory 🧠",
   "nodes": [
     {
       "parameters": {
@@ -495,6 +495,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-19T22:57:19.654Z",
-  "versionId": "d96cb8be-0d5d-4a17-a714-620ed4fe3476"
+  "updatedAt": "2025-04-22T21:32:47.094Z",
+  "versionId": "c3ea8b9c-51dd-4166-84b1-0e407e44fc4b"
 }
