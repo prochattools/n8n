@@ -506,7 +506,7 @@
       "credentials": {
         "githubApi": {
           "id": "RYs3uyTwV88gYwkw",
-          "name": "GitHub account 2"
+          "name": "ProChat - GitHub Account"
         }
       }
     },
@@ -540,7 +540,7 @@
       "credentials": {
         "githubApi": {
           "id": "RYs3uyTwV88gYwkw",
-          "name": "GitHub account 2"
+          "name": "ProChat - GitHub Account"
         }
       }
     },
@@ -639,7 +639,7 @@
       "credentials": {
         "githubApi": {
           "id": "RYs3uyTwV88gYwkw",
-          "name": "GitHub account 2"
+          "name": "ProChat - GitHub Account"
         }
       },
       "continueOnFail": true
@@ -664,7 +664,7 @@
               "id": "81c4dc54-86bf-4432-a23f-22c7ea831e74",
               "name": "repo.path",
               "type": "string",
-              "value": "=workflows/{{ $json.tags[0].name }}"
+              "value": "=workflows/"
             }
           ]
         },
@@ -834,6 +834,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-19T16:45:41.979Z",
-  "versionId": "33e95022-1de4-49a0-b9d5-4637dfcd8793"
+  "updatedAt": "2025-04-23T21:51:51.321Z",
+  "versionId": "75a5c856-7eb8-433a-9260-1335ef471d5e"
 }
