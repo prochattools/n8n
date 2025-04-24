@@ -49,12 +49,7 @@
       "main": [
         [
           {
-            "node": "Awaz Calls",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Zapier: Call Awaz Contact",
+            "node": "Switch1",
             "type": "main",
             "index": 0
           }
@@ -211,6 +206,31 @@
           }
         ]
       ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Zapier: Call Awaz Contact",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Zapier: Call Awaz Contact1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Zapier: Call Awaz Contact2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-12T17:13:28.235Z",
@@ -274,8 +294,6 @@
       "parameters": {
         "method": "POST",
         "url": "https://api.awaz.ai/v1/contacts",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -315,17 +333,7 @@
         -100
       ],
       "id": "7ae5de5a-ccbb-4b42-a0a0-dffcb3c25af0",
-      "name": "Add Awaz Contact",
-      "credentials": {
-        "httpBasicAuth": {
-          "id": "bI6NjDCoBkPkq3bq",
-          "name": "Unnamed credential"
-        },
-        "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
-        }
-      }
+      "name": "Add Awaz Contact"
     },
     {
       "parameters": {
@@ -376,7 +384,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://hooks.zapier.com/hooks/catch/22497523/20lqgyx/",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5kh2/",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -395,8 +403,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1620,
-        100
+        1980,
+        -420
       ],
       "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
       "name": "Zapier: Call Awaz Contact"
@@ -425,23 +433,23 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1540,
-        -380
+        1900,
+        -860
       ],
       "id": "27cfdc5d-1495-4fd1-9143-561eb93913d9",
       "name": "Sticky Note1"
     },
     {
       "parameters": {
-        "content": "## Via Zapier\nNeeds to be renewed every 14 days.",
+        "content": "## Call US Agent (Zapier)\nNeeds to be renewed every 14 days.",
         "height": 280,
         "width": 260
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1540,
-        0
+        1900,
+        -540
       ],
       "id": "e09afc4c-2434-4b65-8c6a-62da0d7a99eb",
       "name": "Sticky Note2"
@@ -604,8 +612,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1620,
-        -300
+        1980,
+        -760
       ],
       "id": "5d8e3d6c-a73e-4cc1-a08a-43caf61b8b27",
       "name": "Awaz Calls",
@@ -777,6 +785,177 @@
         440
       ],
       "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py9de4/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        -100
+      ],
+      "id": "7c4190f8-d1be-4531-b0b1-0aecad3da9a4",
+      "name": "Zapier: Call Awaz Contact1"
+    },
+    {
+      "parameters": {
+        "content": "## Call NL Agent (Zapier)\nNeeds to be renewed every 14 days.",
+        "height": 280,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        -200
+      ],
+      "id": "91059d28-5cc0-40d0-85be-ca05b0ed6843",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5gxz/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        240
+      ],
+      "id": "67e800b0-422e-42ee-8900-cc2fc9d50a26",
+      "name": "Zapier: Call Awaz Contact2"
+    },
+    {
+      "parameters": {
+        "content": "## Call PT Agent (Zapier)\nNeeds to be renewed every 14 days.",
+        "height": 280,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        140
+      ],
+      "id": "718f46c6-890a-4b19-b4c9-b504796e24d3",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (us)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "b5ee5e49-b48a-472e-b044-b7ad5a701b04"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "27170b7b-19df-4dd3-a9ee-e5da1371ab71",
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (nl)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "525f1c33-e01e-4cdf-ac67-644574622760",
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (pt)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1580,
+        -100
+      ],
+      "id": "7e8902e0-9830-4a56-8cf1-cb7cbdbee0c3",
+      "name": "Switch1"
     }
   ],
   "pinData": {},
@@ -786,6 +965,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-24T17:46:31.826Z",
-  "versionId": "c4dcd9b8-e92b-4c0d-9c19-d6957aad4c69"
+  "updatedAt": "2025-04-24T18:51:49.751Z",
+  "versionId": "1b6cc014-0a94-4209-bd43-3367e57b1c9e"
 }
