@@ -548,7 +548,7 @@
     },
     {
       "parameters": {
-        "content": "## Voice AI Demo (PT) account\n**Login email** smiths.fights-5v@icloud.com\n**username** voice_ai_demo_pt",
+        "content": "## Voice AI Demo (PT) account\n**Login email** parties.clank-0w@icloud.com\n**username** voice_ai_demo_pt",
         "height": 320,
         "width": 340
       },
@@ -786,6 +786,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-24T09:23:49.197Z",
-  "versionId": "142a8e3b-b992-499a-9f24-bf75a358c523"
+  "updatedAt": "2025-04-24T16:55:24.733Z",
+  "versionId": "8fa107a6-baa6-4a81-8fef-8154b71e65be"
 }
