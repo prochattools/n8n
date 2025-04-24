@@ -1,0 +1,30 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-04-24T08:53:14.312Z",
+  "id": "GlluxfC2pOfAhetB",
+  "meta": null,
+  "name": "My workflow X",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b0bd8154-708c-4fcc-b532-e62b5a78ca8b",
+      "name": "When clicking ‘Test workflow’"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-24T08:53:14.312Z",
+  "versionId": "124bb0c5-9f2d-493b-8868-d3ca727396eb"
+}
