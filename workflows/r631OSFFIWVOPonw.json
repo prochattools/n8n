@@ -281,7 +281,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer 2e5fc4b1-2ddf-46c1-b9e6-c6d94a6993aa"
+              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
             }
           ]
         },
@@ -335,7 +335,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer 2e5fc4b1-2ddf-46c1-b9e6-c6d94a6993aa"
+              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
             }
           ]
         },
@@ -358,7 +358,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer 2e5fc4b1-2ddf-46c1-b9e6-c6d94a6993aa"
+              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
             }
           ]
         },
@@ -570,7 +570,7 @@
           "parameters": [
             {
               "name": "Authorization",
-              "value": "Bearer 2e5fc4b1-2ddf-46c1-b9e6-c6d94a6993aa"
+              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
             }
           ]
         },
@@ -609,8 +609,7 @@
       ],
       "id": "5d8e3d6c-a73e-4cc1-a08a-43caf61b8b27",
       "name": "Awaz Calls",
-      "alwaysOutputData": false,
-      "disabled": true
+      "alwaysOutputData": false
     },
     {
       "parameters": {
@@ -729,7 +728,7 @@
     },
     {
       "parameters": {
-        "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_rpbqb3xgsBeyac4iMiAmZeHfigIhpV16yKQw",
+        "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_eARdhx8ngIZntuFWDbe4xH9JVEV0y20AMLwZ",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
@@ -763,7 +762,8 @@
     },
     {
       "parameters": {
-        "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_rpbqb3xgsBeyac4iMiAmZeHfigIhpV16yKQw",
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_WmbtPdpWbWkpWKAMz9HuHWWDLFHcnA3pvoGw",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
@@ -786,6 +786,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-24T16:55:24.733Z",
-  "versionId": "8fa107a6-baa6-4a81-8fef-8154b71e65be"
+  "updatedAt": "2025-04-24T17:46:31.826Z",
+  "versionId": "c4dcd9b8-e92b-4c0d-9c19-d6957aad4c69"
 }
