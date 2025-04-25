@@ -34,39 +34,6 @@
         ]
       ]
     },
-    "Add Awaz Contact": {
-      "main": [
-        [
-          {
-            "node": "Retrieve Awaz Agents",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Retrieve Awaz Agents": {
-      "main": [
-        [
-          {
-            "node": "Switch1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Retrieve Awaz Lists": {
-      "main": [
-        [
-          {
-            "node": "Add Awaz Contact",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Zapier: Call Awaz Contact": {
       "main": [
         []
@@ -145,7 +112,7 @@
       "main": [
         [
           {
-            "node": "Retrieve Awaz Lists",
+            "node": "Zapier: Call Awaz Contact",
             "type": "main",
             "index": 0
           }
@@ -156,7 +123,7 @@
       "main": [
         [
           {
-            "node": "Retrieve Awaz Lists",
+            "node": "Zapier: Call Awaz Contact1",
             "type": "main",
             "index": 0
           }
@@ -167,7 +134,7 @@
       "main": [
         [
           {
-            "node": "Retrieve Awaz Lists",
+            "node": "Zapier: Call Awaz Contact2",
             "type": "main",
             "index": 0
           }
@@ -207,25 +174,22 @@
         ]
       ]
     },
-    "Switch1": {
+    "Add Awaz Contact": {
       "main": [
         [
           {
-            "node": "Zapier: Call Awaz Contact",
+            "node": "Retrieve Awaz Agents",
             "type": "main",
             "index": 0
           }
-        ],
+        ]
+      ]
+    },
+    "Retrieve Awaz Lists": {
+      "main": [
         [
           {
-            "node": "Zapier: Call Awaz Contact1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Zapier: Call Awaz Contact2",
+            "node": "Add Awaz Contact",
             "type": "main",
             "index": 0
           }
@@ -289,97 +253,6 @@
       ],
       "id": "77a0f352-e0bb-4eca-a4ba-c602167a69aa",
       "name": "Simple Memory"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.awaz.ai/v1/contacts",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "extras.scraped_website_info",
-              "value": "={{ $('AI Agent (NL)').item.json.output }}"
-            },
-            {
-              "name": "extras.company",
-              "value": "={{ $('Webhook').item.json.query.bedrijfsnaam }}"
-            },
-            {
-              "name": "=phone",
-              "value": "={{ $('Webhook').item.json.query.phone }}"
-            },
-            {
-              "name": "email",
-              "value": "={{ $('Webhook').item.json.query.email }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1040,
-        -100
-      ],
-      "id": "7ae5de5a-ccbb-4b42-a0a0-dffcb3c25af0",
-      "name": "Add Awaz Contact"
-    },
-    {
-      "parameters": {
-        "url": "https://api.awaz.ai/v1/agents",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1300,
-        -100
-      ],
-      "id": "cd81f0b3-0511-42ad-ae17-74f1ac459ba0",
-      "name": "Retrieve Awaz Agents"
-    },
-    {
-      "parameters": {
-        "url": "https://api.awaz.ai/v1/contact_lists",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        780,
-        -100
-      ],
-      "id": "80372955-b053-48cd-b373-324ea8909a89",
-      "name": "Retrieve Awaz Lists"
     },
     {
       "parameters": {
@@ -537,7 +410,8 @@
         -100
       ],
       "id": "c4f6a6ed-163f-45e6-8a42-a85c4cd61cc1",
-      "name": "Switch"
+      "name": "Switch",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -707,7 +581,7 @@
     {
       "parameters": {
         "promptType": "define",
-        "text": "=Write me custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{ $json.text }}",
+        "text": "=Write me custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{ $json.metadata.description }}\n{{ $json.metadata.jsonLd[1].address }}{{ $json.text }}",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -800,6 +674,10 @@
             {
               "name": "phone",
               "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
             }
           ]
         },
@@ -874,88 +752,87 @@
     },
     {
       "parameters": {
-        "rules": {
-          "values": [
+        "method": "POST",
+        "url": "https://api.awaz.ai/v1/contacts",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
             {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $json.query.source }}",
-                    "rightValue": "demo voice ai (us)",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals"
-                    },
-                    "id": "b5ee5e49-b48a-472e-b044-b7ad5a701b04"
-                  }
-                ],
-                "combinator": "and"
-              }
+              "name": "Authorization",
+              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $('AI Agent (NL)').item.json.output }}"
             },
             {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "27170b7b-19df-4dd3-a9ee-e5da1371ab71",
-                    "leftValue": "={{ $json.query.source }}",
-                    "rightValue": "demo voice ai (nl)",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              }
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "525f1c33-e01e-4cdf-ac67-644574622760",
-                    "leftValue": "={{ $json.query.source }}",
-                    "rightValue": "demo voice ai (pt)",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              }
+              "name": "=phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
             }
           ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.2,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        1580,
-        -100
+        1340,
+        -640
       ],
-      "id": "7e8902e0-9830-4a56-8cf1-cb7cbdbee0c3",
-      "name": "Switch1"
+      "id": "ea7fcf46-5b2d-4596-ac41-066210c4ec0d",
+      "name": "Add Awaz Contact"
+    },
+    {
+      "parameters": {
+        "url": "https://api.awaz.ai/v1/agents",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1600,
+        -640
+      ],
+      "id": "8bd7e69b-bc2e-4915-8387-80b30806e35d",
+      "name": "Retrieve Awaz Agents"
+    },
+    {
+      "parameters": {
+        "url": "https://api.awaz.ai/v1/contact_lists",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 7d2c4ba7-338c-4d52-9279-bc427d4c141e"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1080,
+        -640
+      ],
+      "id": "da0439ac-ded4-4066-8fe7-09eff4c027f6",
+      "name": "Retrieve Awaz Lists",
+      "alwaysOutputData": false
     }
   ],
   "pinData": {},
@@ -965,6 +842,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-24T18:51:49.751Z",
-  "versionId": "1b6cc014-0a94-4209-bd43-3367e57b1c9e"
+  "updatedAt": "2025-04-24T23:06:17.421Z",
+  "versionId": "b0a2c9e1-eb09-4459-a2f5-6921707a2108"
 }
