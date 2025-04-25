@@ -1197,7 +1197,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1221,7 +1221,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1245,7 +1245,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1269,7 +1269,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1293,7 +1293,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1317,7 +1317,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1338,7 +1338,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1359,7 +1359,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1380,7 +1380,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1401,7 +1401,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1422,7 +1422,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -1432,6 +1432,15 @@
         "url": "https://www.traccar.org/sms",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "doDoIkBQT1mJwisn9m2DPW:APA91bGDPjg3V4WX4Po8L-m27EbdKkLPFeXVeAZV23xwHIz94zpswk7_q8PRYfgOs38jLi3bB3-s1T13Axh3PVpP6Rdk1hSVUTS8YmOVIO1ATgIHELASAp0"
+            }
+          ]
+        },
         "sendBody": true,
         "contentType": "raw",
         "rawContentType": "application/json",
@@ -1449,8 +1458,16 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
+        },
+        "httpBearerAuth": {
+          "id": "oVFDYfi5rhKQ6cEL",
+          "name": "Bearer Auth account"
+        },
+        "httpBasicAuth": {
+          "id": "bI6NjDCoBkPkq3bq",
+          "name": "Traccar API"
         }
       }
     },
@@ -1477,8 +1494,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1505,8 +1522,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1533,8 +1550,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1561,8 +1578,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1589,8 +1606,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1617,8 +1634,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1645,8 +1662,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1673,8 +1690,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1701,8 +1718,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -1729,8 +1746,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -2092,8 +2109,8 @@
       "alwaysOutputData": false,
       "credentials": {
         "httpHeaderAuth": {
-          "id": "iywM3XJKefBE7mp5",
-          "name": "Header Auth account"
+          "id": "MN44qlo6jXMcWPTF",
+          "name": "Traccar NEW"
         }
       }
     },
@@ -2463,7 +2480,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -2487,7 +2504,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -2527,7 +2544,7 @@
       "credentials": {
         "highLevelOAuth2Api": {
           "id": "67TI5Cl6OW9YWniD",
-          "name": "HighLevel account"
+          "name": "HighLevel OAuth2 account"
         }
       }
     },
@@ -2629,6 +2646,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 3,
-  "updatedAt": "2025-04-18T15:11:54.983Z",
-  "versionId": "2a8c62f2-033c-40b1-862a-baa3a3026326"
+  "updatedAt": "2025-04-24T23:36:15.556Z",
+  "versionId": "28c4b7eb-37f1-4a67-abb1-9aed8b0b9520"
 }
