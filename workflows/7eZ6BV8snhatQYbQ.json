@@ -399,7 +399,7 @@
   "meta": {
     "templateCredsSetupCompleted": true
   },
-  "name": "My workflow",
+  "name": "Social Media Content Publisher",
   "nodes": [
     {
       "parameters": {
@@ -794,7 +794,7 @@
       "credentials": {
         "linkedInOAuth2Api": {
           "id": "HUGjfbfR8kxtrDj6",
-          "name": "LinkedIn account"
+          "name": "LinkedIn OAuth2 API"
         }
       },
       "onError": "continueRegularOutput"
@@ -1666,6 +1666,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-24T11:41:36.925Z",
-  "versionId": "5c7274b8-8734-4f78-a66d-a56331be0a3d"
+  "updatedAt": "2025-04-25T08:43:00.689Z",
+  "versionId": "a9852bb6-3fc3-4ccd-9327-76c20f0c5e5b"
 }
