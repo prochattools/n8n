@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Scrape Lead Website (NL)",
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -48,7 +48,13 @@
             "index": 0
           }
         ],
-        [],
+        [
+          {
+            "node": "Scrape Lead Website (NL)",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "Scrape Lead Website (PT)",
@@ -233,8 +239,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -480,
-        -100
+        -1060,
+        60
       ],
       "id": "8f9e2329-9989-4727-9f5d-b283f48f4950",
       "name": "Webhook",
@@ -278,6 +284,7 @@
     {
       "parameters": {
         "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5kh2/",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -288,6 +295,14 @@
             {
               "name": "phone",
               "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
             }
           ]
         },
@@ -426,8 +441,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -1380,
-        -80
+        -680,
+        -180
       ],
       "id": "c4f6a6ed-163f-45e6-8a42-a85c4cd61cc1",
       "name": "Switch",
@@ -660,7 +675,7 @@
       "name": "Scrape Lead Website (NL)",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        -40,
+        -60,
         -100
       ],
       "typeVersion": 4.2
@@ -739,6 +754,7 @@
     {
       "parameters": {
         "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5gxz/",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -749,6 +765,14 @@
             {
               "name": "phone",
               "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
             }
           ]
         },
@@ -959,6 +983,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-25T14:46:31.599Z",
-  "versionId": "2d9ca09b-3c85-4fcd-bc1e-f72eaa01bf76"
+  "updatedAt": "2025-04-25T15:39:53.001Z",
+  "versionId": "f80a05c9-174e-42b5-869e-f39414d05671"
 }
