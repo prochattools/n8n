@@ -411,7 +411,7 @@
       ],
       "id": "c4f6a6ed-163f-45e6-8a42-a85c4cd61cc1",
       "name": "Switch",
-      "alwaysOutputData": true
+      "alwaysOutputData": false
     },
     {
       "parameters": {
@@ -842,6 +842,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-25T09:47:32.328Z",
-  "versionId": "4fffc453-15c3-465c-accf-8c1daaef01c1"
+  "updatedAt": "2025-04-25T10:49:35.379Z",
+  "versionId": "4024e87d-7d1d-4db9-992b-308759aa59bd"
 }
