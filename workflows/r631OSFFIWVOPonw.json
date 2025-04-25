@@ -300,8 +300,7 @@
         -600
       ],
       "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
-      "name": "Zapier: Call Awaz Contact",
-      "disabled": true
+      "name": "Zapier: Call Awaz Contact"
     },
     {
       "parameters": {
@@ -603,7 +602,7 @@
     {
       "parameters": {
         "promptType": "define",
-        "text": "=Write me custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{ $json.metadata }}\n{{ $json.text }}\n{{ $json.markdown }}",
+        "text": "=Write me custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{ $json.text }}",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -702,6 +701,10 @@
             {
               "name": "extras.scraped_website_info",
               "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
             }
           ]
         },
@@ -808,7 +811,7 @@
       "typeVersion": 4.2,
       "position": [
         160,
-        -1020
+        -1840
       ],
       "id": "ea7fcf46-5b2d-4596-ac41-066210c4ec0d",
       "name": "Add Awaz Contact"
@@ -831,7 +834,7 @@
       "typeVersion": 4.2,
       "position": [
         420,
-        -1020
+        -1840
       ],
       "id": "8bd7e69b-bc2e-4915-8387-80b30806e35d",
       "name": "Retrieve Awaz Agents"
@@ -854,7 +857,7 @@
       "typeVersion": 4.2,
       "position": [
         -100,
-        -1020
+        -1840
       ],
       "id": "da0439ac-ded4-4066-8fe7-09eff4c027f6",
       "name": "Retrieve Awaz Lists",
@@ -956,6 +959,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-25T13:30:53.201Z",
-  "versionId": "7bd002d5-a11d-475f-b733-3dd870ee7b89"
+  "updatedAt": "2025-04-25T14:46:31.599Z",
+  "versionId": "2d9ca09b-3c85-4fcd-bc1e-f72eaa01bf76"
 }
