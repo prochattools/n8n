@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "Scrape Lead Website (NL)",
             "type": "main",
             "index": 0
           }
@@ -48,13 +48,7 @@
             "index": 0
           }
         ],
-        [
-          {
-            "node": "Scrape Lead Website (NL)",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         [
           {
             "node": "Scrape Lead Website (PT)",
@@ -239,7 +233,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -920,
+        -480,
         -100
       ],
       "id": "8f9e2329-9989-4727-9f5d-b283f48f4950",
@@ -248,13 +242,13 @@
     },
     {
       "parameters": {
-        "modelName": "models/gemini-1.5-pro",
+        "modelName": "models/gemini-1.5-flash-8b-001",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        280,
+        240,
         120
       ],
       "id": "dd92317e-f7d9-4e9f-8a5c-dca36276ae5d",
@@ -275,7 +269,7 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        440,
+        400,
         120
       ],
       "id": "77a0f352-e0bb-4eca-a4ba-c602167a69aa",
@@ -392,7 +386,7 @@
                   {
                     "id": "27170b7b-19df-4dd3-a9ee-e5da1371ab71",
                     "leftValue": "={{ $json.query.source }}",
-                    "rightValue": "demo voice ai (nl)",
+                    "rightValue": "=demo voice ai (nl)",
                     "operator": {
                       "type": "string",
                       "operation": "equals",
@@ -433,12 +427,13 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -660,
-        -100
+        -1380,
+        -80
       ],
       "id": "c4f6a6ed-163f-45e6-8a42-a85c4cd61cc1",
       "name": "Switch",
-      "alwaysOutputData": false
+      "alwaysOutputData": false,
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -608,7 +603,7 @@
     {
       "parameters": {
         "promptType": "define",
-        "text": "=Write me custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{ $json.metadata.description }}\n{{ $json.metadata.jsonLd[1].address }}{{ $json.text }}",
+        "text": "=Write me custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{ $json.metadata }}\n{{ $json.text }}\n{{ $json.markdown }}",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -619,7 +614,8 @@
       ],
       "id": "da135b2f-d135-4df6-8292-8967ff93b03f",
       "name": "AI Agent (NL)",
-      "executeOnce": true
+      "executeOnce": false,
+      "alwaysOutputData": false
     },
     {
       "parameters": {
@@ -697,11 +693,11 @@
           "parameters": [
             {
               "name": "name",
-              "value": "={{ $('Switch').item.json.query.name }}"
+              "value": "={{ $('Webhook').item.json.query.name }}"
             },
             {
               "name": "phone",
-              "value": "={{ $('Switch').item.json.query.phone }}"
+              "value": "={{ $('Webhook').item.json.query.phone }}"
             },
             {
               "name": "extras.scraped_website_info",
@@ -900,7 +896,7 @@
       "typeVersion": 4.2,
       "position": [
         1040,
-        -260
+        -360
       ],
       "id": "afa30753-2708-490e-b0c0-740f09091b37",
       "name": "Add Awaz Contact1"
@@ -923,7 +919,7 @@
       "typeVersion": 4.2,
       "position": [
         1260,
-        -260
+        -440
       ],
       "id": "797c75ab-cdda-4933-8b25-207d66cbe116",
       "name": "Retrieve Awaz Agents1"
@@ -946,7 +942,7 @@
       "typeVersion": 4.2,
       "position": [
         800,
-        -260
+        -360
       ],
       "id": "d3c9090b-960f-48b5-b9c8-d50b6e62a361",
       "name": "Retrieve Awaz Lists1",
@@ -960,6 +956,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-25T12:44:59.888Z",
-  "versionId": "6a76cb7d-d16f-482e-b98a-93a9771795ed"
+  "updatedAt": "2025-04-25T13:30:53.201Z",
+  "versionId": "7bd002d5-a11d-475f-b733-3dd870ee7b89"
 }
