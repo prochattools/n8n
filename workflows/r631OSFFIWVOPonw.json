@@ -276,7 +276,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1980,
+        920,
         -420
       ],
       "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
@@ -306,7 +306,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1900,
+        840,
         -860
       ],
       "id": "27cfdc5d-1495-4fd1-9143-561eb93913d9",
@@ -321,7 +321,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1900,
+        840,
         -540
       ],
       "id": "e09afc4c-2434-4b65-8c6a-62da0d7a99eb",
@@ -486,7 +486,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1980,
+        920,
         -760
       ],
       "id": "5d8e3d6c-a73e-4cc1-a08a-43caf61b8b27",
@@ -686,7 +686,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1980,
+        920,
         -100
       ],
       "id": "7c4190f8-d1be-4531-b0b1-0aecad3da9a4",
@@ -701,7 +701,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1900,
+        840,
         -200
       ],
       "id": "91059d28-5cc0-40d0-85be-ca05b0ed6843",
@@ -729,7 +729,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1980,
+        920,
         240
       ],
       "id": "67e800b0-422e-42ee-8900-cc2fc9d50a26",
@@ -744,7 +744,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1900,
+        840,
         140
       ],
       "id": "718f46c6-890a-4b19-b4c9-b504796e24d3",
@@ -781,8 +781,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1340,
-        -640
+        160,
+        -1020
       ],
       "id": "ea7fcf46-5b2d-4596-ac41-066210c4ec0d",
       "name": "Add Awaz Contact"
@@ -804,8 +804,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1600,
-        -640
+        420,
+        -1020
       ],
       "id": "8bd7e69b-bc2e-4915-8387-80b30806e35d",
       "name": "Retrieve Awaz Agents"
@@ -827,8 +827,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1080,
-        -640
+        -100,
+        -1020
       ],
       "id": "da0439ac-ded4-4066-8fe7-09eff4c027f6",
       "name": "Retrieve Awaz Lists",
@@ -842,6 +842,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-24T23:06:17.421Z",
-  "versionId": "b0a2c9e1-eb09-4459-a2f5-6921707a2108"
+  "updatedAt": "2025-04-25T09:47:32.328Z",
+  "versionId": "4fffc453-15c3-465c-accf-8c1daaef01c1"
 }
