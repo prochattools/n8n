@@ -34,11 +34,6 @@
         ]
       ]
     },
-    "Zapier: Call Awaz Contact": {
-      "main": [
-        []
-      ]
-    },
     "Switch": {
       "main": [
         [
@@ -117,7 +112,7 @@
       "main": [
         [
           {
-            "node": "Switch1",
+            "node": "Aggregate",
             "type": "main",
             "index": 0
           }
@@ -215,21 +210,48 @@
       "main": [
         [
           {
-            "node": "Zapier: Call Awaz Contact",
+            "node": "Zapier: Call Awaz US",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Zapier: Call Awaz Contact1",
+            "node": "Zapier: Call Awaz NL",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Zapier: Call Awaz Contact2",
+            "node": "Zapier: Call Awaz PT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zapier: Call Awaz US": {
+      "main": [
+        []
+      ]
+    },
+    "Item List Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent (NL)",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
             "type": "main",
             "index": 0
           }
@@ -261,7 +283,7 @@
     },
     {
       "parameters": {
-        "modelName": "models/gemini-1.5-flash-8b-001",
+        "modelName": "models/gemini-1.5-flash-002",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
@@ -293,42 +315,6 @@
       ],
       "id": "77a0f352-e0bb-4eca-a4ba-c602167a69aa",
       "name": "Simple Memory"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5kh2/",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "name",
-              "value": "={{ $('Webhook').item.json.query.name }}"
-            },
-            {
-              "name": "phone",
-              "value": "={{ $('Webhook').item.json.query.phone }}"
-            },
-            {
-              "name": "extras.scraped_website_info",
-              "value": "={{ $json.output }}"
-            },
-            {
-              "name": "extras.company",
-              "value": "={{ $('Webhook').item.json.query.company }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1700,
-        -600
-      ],
-      "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
-      "name": "Zapier: Call Awaz Contact"
     },
     {
       "parameters": {
@@ -630,7 +616,8 @@
     {
       "parameters": {
         "promptType": "define",
-        "text": "=Write me custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake is a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 200 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nThe entire website text is down below:\n{{ $json.text }}",
+        "text": "=Write me a custom instruction for a Awaz AI calling agent for my client based off of their website.\n\nMake a sales agent that answers questions, handles objections, does discovery and identifies if its a good fit and books the client in on an appointment.\n\nMake the Awaz AI prompt 400 words.\n\nMake sure to include critical and relevant information from the page text in the training base and knowledge base of the bot of the website.\n\nMake one output document as one big prompt. So not multiple outputs.\n\nThe entire website text is down below:\n{{ $json.text }}",
+        "hasOutputParser": true,
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -664,7 +651,7 @@
         "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_eARdhx8ngIZntuFWDbe4xH9JVEV0y20AMLwZ",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
+        "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $('Webhook').item.json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
         "options": {}
       },
       "id": "506f15b8-604a-4417-9e93-08f9f5107787",
@@ -681,7 +668,7 @@
         "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_rpbqb3xgsBeyac4iMiAmZeHfigIhpV16yKQw",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
+        "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $('Webhook').item.json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
         "options": {}
       },
       "id": "543ae0ea-d3e7-4549-a934-dcd8a55f2950",
@@ -699,7 +686,7 @@
         "url": "https://api.apify.com/v2/acts/apify~website-content-crawler/run-sync-get-dataset-items?token=apify_api_WmbtPdpWbWkpWKAMz9HuHWWDLFHcnA3pvoGw",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
+        "jsonBody": "={\n    \"aggressivePrune\": false,\n    \"clickElementsCssSelector\": \"[aria-expanded=\\\"false\\\"]\",\n    \"clientSideMinChangePercentage\": 15,\n    \"crawlerType\": \"playwright:adaptive\",\n    \"debugLog\": false,\n    \"debugMode\": false,\n    \"expandIframes\": true,\n    \"ignoreCanonicalUrl\": false,\n    \"keepUrlFragments\": false,\n    \"proxyConfiguration\": {\n        \"useApifyProxy\": true\n    },\n    \"readableTextCharThreshold\": 100,\n    \"removeCookieWarnings\": true,\n    \"removeElementsCssSelector\": \"nav, footer, script, style, noscript, svg, img[src^='data:'],\\n[role=\\\"alert\\\"],\\n[role=\\\"banner\\\"],\\n[role=\\\"dialog\\\"],\\n[role=\\\"alertdialog\\\"],\\n[role=\\\"region\\\"][aria-label*=\\\"skip\\\" i],\\n[aria-modal=\\\"true\\\"]\",\n    \"renderingTypeDetectionPercentage\": 10,\n    \"saveFiles\": false,\n    \"saveHtml\": false,\n    \"saveHtmlAsFile\": false,\n    \"saveMarkdown\": true,\n    \"saveScreenshots\": false,\n    \"startUrls\": [\n        {\n            \"url\": \"{{ $('Webhook').item.json.query.website }}\",\n            \"method\": \"GET\"\n        }\n    ],\n    \"useSitemaps\": false\n}",
         "options": {}
       },
       "id": "edd0db57-98db-4478-bc0e-bc6f0a5edf4a",
@@ -710,44 +697,6 @@
         440
       ],
       "typeVersion": 4.2
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py9de4/",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "name",
-              "value": "={{ $('Webhook').item.json.query.name }}"
-            },
-            {
-              "name": "phone",
-              "value": "={{ $('Webhook').item.json.query.phone }}"
-            },
-            {
-              "name": "extras.scraped_website_info",
-              "value": "={{ $json.output }}"
-            },
-            {
-              "name": "extras.company",
-              "value": "={{ $('Webhook').item.json.query.company }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1700,
-        -100
-      ],
-      "id": "7c4190f8-d1be-4531-b0b1-0aecad3da9a4",
-      "name": "Zapier: Call Awaz Contact1",
-      "alwaysOutputData": false,
-      "executeOnce": true
     },
     {
       "parameters": {
@@ -763,43 +712,6 @@
       ],
       "id": "91059d28-5cc0-40d0-85be-ca05b0ed6843",
       "name": "Sticky Note5"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5gxz/",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "name",
-              "value": "={{ $('Webhook').item.json.query.name }}"
-            },
-            {
-              "name": "phone",
-              "value": "={{ $('Webhook').item.json.query.phone }}"
-            },
-            {
-              "name": "extras.scraped_website_info",
-              "value": "={{ $json.output }}"
-            },
-            {
-              "name": "extras.company",
-              "value": "={{ $('Webhook').item.json.query.company }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1700,
-        440
-      ],
-      "id": "67e800b0-422e-42ee-8900-cc2fc9d50a26",
-      "name": "Zapier: Call Awaz Contact2",
-      "disabled": true
     },
     {
       "parameters": {
@@ -1002,7 +914,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.query.source }}",
+                    "leftValue": "={{ $('Webhook').item.json.query.source }}",
                     "rightValue": "demo voice ai (us)",
                     "operator": {
                       "type": "string",
@@ -1025,7 +937,7 @@
                 "conditions": [
                   {
                     "id": "27170b7b-19df-4dd3-a9ee-e5da1371ab71",
-                    "leftValue": "={{ $json.query.source }}",
+                    "leftValue": "={{ $('Webhook').item.json.query.source }}",
                     "rightValue": "=demo voice ai (nl)",
                     "operator": {
                       "type": "string",
@@ -1048,7 +960,7 @@
                 "conditions": [
                   {
                     "id": "525f1c33-e01e-4cdf-ac67-644574622760",
-                    "leftValue": "={{ $json.query.source }}",
+                    "leftValue": "={{ $('Webhook').item.json.query.source }}",
                     "rightValue": "demo voice ai (pt)",
                     "operator": {
                       "type": "string",
@@ -1067,13 +979,160 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        900,
+        1240,
         -100
       ],
       "id": "1805e585-b537-4a1c-b4cd-d02f2eb5309f",
       "name": "Switch1",
       "alwaysOutputData": false,
       "notesInFlow": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5kh2/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        -600
+      ],
+      "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
+      "name": "Zapier: Call Awaz US"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py9de4/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        -100
+      ],
+      "id": "7c4190f8-d1be-4531-b0b1-0aecad3da9a4",
+      "name": "Zapier: Call Awaz NL",
+      "alwaysOutputData": false,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5gxz/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1700,
+        440
+      ],
+      "id": "67e800b0-422e-42ee-8900-cc2fc9d50a26",
+      "name": "Zapier: Call Awaz PT",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "options": {
+          "numberOfItems": -1,
+          "separator": "\\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserItemList",
+      "typeVersion": 1,
+      "position": [
+        800,
+        160
+      ],
+      "id": "e08bce97-9b1e-4091-a445-8360a48fe0a0",
+      "name": "Item List Output Parser"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "output"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        900,
+        -100
+      ],
+      "id": "f014fb05-b071-4806-8ca8-f142742d78dd",
+      "name": "Aggregate"
     }
   ],
   "pinData": {},
@@ -1083,6 +1142,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-26T13:36:28.963Z",
-  "versionId": "3c3606ea-fbe8-4ff2-8aa5-26114339273f"
+  "updatedAt": "2025-04-26T20:29:21.512Z",
+  "versionId": "45b2b72a-16f5-4eca-8eec-35e77e0672ed"
 }
