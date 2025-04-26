@@ -1,0 +1,34 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-04-26T21:29:59.304Z",
+  "id": "y8km0gmFs16fBpT9",
+  "meta": null,
+  "name": "VAPI",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "b7e22faf-b05d-4435-9816-88a4aeeddd21",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "40215c53-1af0-472c-bc87-77db7ac81a14",
+      "name": "Webhook",
+      "webhookId": "b7e22faf-b05d-4435-9816-88a4aeeddd21"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-26T21:35:09.484Z",
+  "versionId": "6a70bd1b-e573-43dc-b1c3-13df6d12f7c3"
+}
