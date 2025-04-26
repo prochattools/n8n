@@ -110,20 +110,14 @@
     },
     "AI Agent (US)": {
       "main": [
-        [
-          {
-            "node": "Zapier: Call Awaz Contact",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "AI Agent (NL)": {
       "main": [
         [
           {
-            "node": "Zapier: Call Awaz Contact1",
+            "node": "Switch1",
             "type": "main",
             "index": 0
           }
@@ -132,20 +126,14 @@
     },
     "AI Agent (PT)": {
       "main": [
-        [
-          {
-            "node": "Zapier: Call Awaz Contact2",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Scrape Lead Website (US)": {
       "main": [
         [
           {
-            "node": "AI Agent (US)",
+            "node": "AI Agent (NL)",
             "type": "main",
             "index": 0
           }
@@ -167,7 +155,7 @@
       "main": [
         [
           {
-            "node": "AI Agent (PT)",
+            "node": "AI Agent (NL)",
             "type": "main",
             "index": 0
           }
@@ -222,6 +210,31 @@
       "main": [
         []
       ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Zapier: Call Awaz Contact",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Zapier: Call Awaz Contact1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Zapier: Call Awaz Contact2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-12T17:13:28.235Z",
@@ -239,8 +252,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -1060,
-        60
+        -800,
+        -100
       ],
       "id": "8f9e2329-9989-4727-9f5d-b283f48f4950",
       "name": "Webhook",
@@ -254,8 +267,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        240,
-        120
+        460,
+        180
       ],
       "id": "dd92317e-f7d9-4e9f-8a5c-dca36276ae5d",
       "name": "Google Gemini Chat Model",
@@ -275,8 +288,8 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        400,
-        120
+        620,
+        180
       ],
       "id": "77a0f352-e0bb-4eca-a4ba-c602167a69aa",
       "name": "Simple Memory"
@@ -441,8 +454,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -680,
-        -180
+        -600,
+        -100
       ],
       "id": "c4f6a6ed-163f-45e6-8a42-a85c4cd61cc1",
       "name": "Switch",
@@ -537,8 +550,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        280,
-        -380
+        -660,
+        -760
       ],
       "id": "a3031a75-900b-47cd-a65a-9d6011bfbd45",
       "name": "Google Gemini Chat Model1",
@@ -558,8 +571,8 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        440,
-        -380
+        -500,
+        -760
       ],
       "id": "abd13a3f-bdf9-401a-9734-18453be6954d",
       "name": "Simple Memory1"
@@ -572,8 +585,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
       "position": [
-        280,
-        660
+        -780,
+        600
       ],
       "id": "6746730d-d63a-4c18-84b6-e19e1bf4a467",
       "name": "Google Gemini Chat Model2",
@@ -593,8 +606,8 @@
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
       "position": [
-        440,
-        660
+        -620,
+        600
       ],
       "id": "9b415e94-072c-411c-834b-0b2d287c08c9",
       "name": "Simple Memory2"
@@ -608,8 +621,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        320,
-        -600
+        -620,
+        -980
       ],
       "id": "0c5946cc-cb50-4c69-b16b-d4d1ac075788",
       "name": "AI Agent (US)"
@@ -623,7 +636,7 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        320,
+        520,
         -100
       ],
       "id": "da135b2f-d135-4df6-8292-8967ff93b03f",
@@ -640,8 +653,8 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.8,
       "position": [
-        320,
-        440
+        -740,
+        380
       ],
       "id": "6e64f22f-158f-4518-ace5-8cd63644d6e5",
       "name": "AI Agent (PT)"
@@ -922,8 +935,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1040,
-        -360
+        1460,
+        -920
       ],
       "id": "afa30753-2708-490e-b0c0-740f09091b37",
       "name": "Add Awaz Contact1"
@@ -945,8 +958,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1260,
-        -440
+        1680,
+        -1000
       ],
       "id": "797c75ab-cdda-4933-8b25-207d66cbe116",
       "name": "Retrieve Awaz Agents1"
@@ -968,12 +981,99 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        800,
-        -360
+        1220,
+        -920
       ],
       "id": "d3c9090b-960f-48b5-b9c8-d50b6e62a361",
       "name": "Retrieve Awaz Lists1",
       "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (us)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "b5ee5e49-b48a-472e-b044-b7ad5a701b04"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "27170b7b-19df-4dd3-a9ee-e5da1371ab71",
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "=demo voice ai (nl)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "525f1c33-e01e-4cdf-ac67-644574622760",
+                    "leftValue": "={{ $json.query.source }}",
+                    "rightValue": "demo voice ai (pt)",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        900,
+        -100
+      ],
+      "id": "1805e585-b537-4a1c-b4cd-d02f2eb5309f",
+      "name": "Switch1",
+      "alwaysOutputData": false,
+      "notesInFlow": false
     }
   ],
   "pinData": {},
@@ -983,6 +1083,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-25T18:30:39.065Z",
-  "versionId": "d1f7398c-b50c-4d1e-9635-71c562af371f"
+  "updatedAt": "2025-04-26T13:36:28.963Z",
+  "versionId": "3c3606ea-fbe8-4ff2-8aa5-26114339273f"
 }
