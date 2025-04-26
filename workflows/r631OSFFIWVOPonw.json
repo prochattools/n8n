@@ -210,7 +210,7 @@
       "main": [
         [
           {
-            "node": "Zapier: Call Awaz US",
+            "node": "Call w/ VAPI Agent US",
             "type": "main",
             "index": 0
           }
@@ -229,11 +229,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Zapier: Call Awaz US": {
-      "main": [
-        []
       ]
     },
     "Item List Output Parser": {
@@ -256,6 +251,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Call w/ VAPI Agent US": {
+      "main": [
+        []
       ]
     }
   },
@@ -348,15 +348,15 @@
     },
     {
       "parameters": {
-        "content": "## Call US Agent (Zapier)\nNeeds to be renewed every 14 days.",
+        "content": "## Call w/ VAPI Agent US",
         "height": 280,
-        "width": 260
+        "width": 280
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1620,
-        -720
+        2200,
+        -740
       ],
       "id": "e09afc4c-2434-4b65-8c6a-62da0d7a99eb",
       "name": "Sticky Note2"
@@ -707,8 +707,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1620,
-        -200
+        2200,
+        -220
       ],
       "id": "91059d28-5cc0-40d0-85be-ca05b0ed6843",
       "name": "Sticky Note5"
@@ -722,8 +722,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1620,
-        340
+        2200,
+        320
       ],
       "id": "718f46c6-890a-4b19-b4c9-b504796e24d3",
       "name": "Sticky Note6"
@@ -990,42 +990,6 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5kh2/",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "name",
-              "value": "={{ $('Webhook').item.json.query.name }}"
-            },
-            {
-              "name": "phone",
-              "value": "={{ $('Webhook').item.json.query.phone }}"
-            },
-            {
-              "name": "extras.scraped_website_info",
-              "value": "={{ $json.output }}"
-            },
-            {
-              "name": "extras.company",
-              "value": "={{ $('Webhook').item.json.query.company }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1700,
-        -600
-      ],
-      "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
-      "name": "Zapier: Call Awaz US"
-    },
-    {
-      "parameters": {
-        "method": "POST",
         "url": "https://hooks.zapier.com/hooks/catch/22654626/2py9de4/",
         "sendBody": true,
         "bodyParameters": {
@@ -1053,8 +1017,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1700,
-        -100
+        2280,
+        -120
       ],
       "id": "7c4190f8-d1be-4531-b0b1-0aecad3da9a4",
       "name": "Zapier: Call Awaz NL",
@@ -1091,8 +1055,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1700,
-        440
+        2280,
+        420
       ],
       "id": "67e800b0-422e-42ee-8900-cc2fc9d50a26",
       "name": "Zapier: Call Awaz PT",
@@ -1133,6 +1097,211 @@
       ],
       "id": "f014fb05-b071-4806-8ca8-f142742d78dd",
       "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "content": "## Call US Agent (Zapier)\nNeeds to be renewed every 14 days.",
+        "height": 280,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        -720
+      ],
+      "id": "4ac78424-d97e-411a-b49f-91b375765726",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "## Call NL Agent (Zapier)\nNeeds to be renewed every 14 days.",
+        "height": 280,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        -200
+      ],
+      "id": "fd58daf1-9643-4aae-b61e-a4a037406054",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## Call PT Agent (Zapier)\nNeeds to be renewed every 14 days.",
+        "height": 280,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        340
+      ],
+      "id": "947e9ac5-0ea1-4943-b633-a153e4474602",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5kh2/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2620,
+        -600
+      ],
+      "id": "1a2f6c83-ea21-49bb-9269-6cc53f9cae60",
+      "name": "Zapier: Call Awaz US1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py9de4/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2620,
+        -100
+      ],
+      "id": "e5bbdafc-a2a4-4ae9-85b9-16fb0534b848",
+      "name": "Zapier: Call Awaz NL1",
+      "alwaysOutputData": false,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.zapier.com/hooks/catch/22654626/2py5gxz/",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2620,
+        440
+      ],
+      "id": "6f1afebe-b7db-4afb-80c8-80c6e5534149",
+      "name": "Zapier: Call Awaz PT1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://ap.vapi.ai/call/phone",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 06bb0544-c7c5-4267-9ae7-d4f7a0fb44fa"
+            },
+            {
+              "name": "Content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $('Webhook').item.json.query.name }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $('Webhook').item.json.query.phone }}"
+            },
+            {
+              "name": "extras.scraped_website_info",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "extras.company",
+              "value": "={{ $('Webhook').item.json.query.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2280,
+        -620
+      ],
+      "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
+      "name": "Call w/ VAPI Agent US"
     }
   ],
   "pinData": {},
@@ -1142,6 +1311,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-26T20:29:21.512Z",
-  "versionId": "45b2b72a-16f5-4eca-8eec-35e77e0672ed"
+  "updatedAt": "2025-04-26T21:47:18.768Z",
+  "versionId": "a2bbb84e-4cf7-4f9d-b359-362b8edeb4e7"
 }
