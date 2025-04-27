@@ -1028,7 +1028,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://ap.vapi.ai/call/phone",
+        "url": "https://ap.vapi.ai/call/",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -1182,6 +1182,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-04-27T08:43:24.616Z",
-  "versionId": "66e455a2-f66d-4c51-945c-1cb3b1421bf1"
+  "updatedAt": "2025-04-27T13:00:03.752Z",
+  "versionId": "54eb57cf-99ba-4c08-9d88-f05cd9266fd7"
 }
