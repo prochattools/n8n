@@ -162,7 +162,7 @@
       "main": [
         [
           {
-            "node": "Call w/ VAPI Agent US",
+            "node": "VAPI Create Assistant",
             "type": "main",
             "index": 0
           }
@@ -199,20 +199,20 @@
         ]
       ]
     },
-    "Call w/ VAPI Agent US": {
-      "main": [
-        []
-      ]
-    },
     "Webhook1": {
       "main": [
         [
           {
-            "node": "Call w/ VAPI Agent US",
+            "node": "VAPI Create Assistant",
             "type": "main",
             "index": 0
           }
         ]
+      ]
+    },
+    "VAPI Create Assistant": {
+      "main": [
+        []
       ]
     }
   },
@@ -1039,37 +1039,6 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.vapi.ai/call/",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer 06bb0544-c7c5-4267-9ae7-d4f7a0fb44fa"
-            },
-            {
-              "name": "Content-type",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\n  \"customer\": {\n    \"numberE164CheckEnabled\": true,\n    \"number\": \"+19497762428\"\n  },\n  \"assistantId\": \"c020f049-49d2-4d68-844a-4a375c72ba60\",\n  \"phoneNumberId\": \"5bf9285e-da65-43d1-a5fd-040fbbb96813\"\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1760,
-        -420
-      ],
-      "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
-      "name": "Call w/ VAPI Agent US"
-    },
-    {
-      "parameters": {
-        "method": "POST",
         "url": "https://ap.vapi.ai/call/phone",
         "sendHeaders": true,
         "headerParameters": {
@@ -1181,6 +1150,99 @@
       "id": "1f55d939-378b-4970-b1e0-2090b7c67101",
       "name": "Webhook1",
       "webhookId": "7f6c05e1-bd17-424f-a566-18a4a28335a1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.vapi.ai/call/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 06bb0544-c7c5-4267-9ae7-d4f7a0fb44fa"
+            },
+            {
+              "name": "Content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"customer\": {\n    \"numberE164CheckEnabled\": true,\n    \"number\": \"+19497762428\"\n  },\n  \"assistantId\": \"c020f049-49d2-4d68-844a-4a375c72ba60\",\n  \"phoneNumberId\": \"5bf9285e-da65-43d1-a5fd-040fbbb96813\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2280,
+        -440
+      ],
+      "id": "2263f218-b156-41c8-8169-e767db7c8a8e",
+      "name": "VAPI Make Call"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "https://api.vapi.ai/assistant/929ea293-4296-4e3d-9c77-a3e6677e31af",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 06bb0544-c7c5-4267-9ae7-d4f7a0fb44fa"
+            },
+            {
+              "name": "Content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"model\": {\n    \"systemPrompt\": \"Your new dynamic system prompt generated from website data.\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4.1-mini\"\n  },\n  \"firstMessage\": \"this is a test4\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2040,
+        -440
+      ],
+      "id": "9d87fff2-4a49-4d7e-9459-2bb627533172",
+      "name": "VAPI Patch Assistant1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.vapi.ai/assistant",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 06bb0544-c7c5-4267-9ae7-d4f7a0fb44fa"
+            },
+            {
+              "name": "Content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": {\n    \"systemPrompt\": \"{{ $json.output }}\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4.1-mini\"\n  },\n  \"firstMessage\": \"this is a test5\",\n  \"name\": \"Hello My name is\",\n  \"firstMessage\": \"Hello\"\n} {{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        -420
+      ],
+      "id": "3640df18-7df8-4d5e-adb3-9878260c6116",
+      "name": "VAPI Create Assistant"
     }
   ],
   "pinData": {
@@ -1568,6 +1630,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-04-28T11:38:45.055Z",
-  "versionId": "2f5f7a6c-3e96-4142-b445-33c15b1efce0"
+  "updatedAt": "2025-04-29T18:03:18.950Z",
+  "versionId": "af282073-561b-499b-b585-2492eca4b831"
 }
