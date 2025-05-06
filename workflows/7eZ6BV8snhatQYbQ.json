@@ -111,13 +111,7 @@
     },
     "gpt-4o-mini": {
       "ai_languageModel": [
-        [
-          {
-            "node": "Prepare Content Review Email",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Image Choice": {
@@ -392,6 +386,17 @@
           }
         ]
       ]
+    },
+    "Google Gemini LLM1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Prepare Content Review Email",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-24T10:48:44.231Z",
@@ -474,7 +479,7 @@
       "name": "Social Media Content",
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "position": [
-        580,
+        620,
         760
       ],
       "typeVersion": 1.2
@@ -499,8 +504,7 @@
           "id": "yi8KqlGWFGkOajJj",
           "name": "Google Gemini(PaLM) API account"
         }
-      },
-      "disabled": true
+      }
     },
     {
       "parameters": {
@@ -518,7 +522,7 @@
       "name": "gpt-4o-mini",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "position": [
-        1380,
+        1340,
         760
       ],
       "typeVersion": 1.2,
@@ -545,7 +549,7 @@
       "name": "gpt-4o",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "position": [
-        1520,
+        1600,
         760
       ],
       "typeVersion": 1.2,
@@ -1564,7 +1568,7 @@
       "type": "@n8n/n8n-nodes-langchain.toolSerpApi",
       "position": [
         480,
-        820
+        760
       ],
       "typeVersion": 1,
       "credentials": {
@@ -1645,6 +1649,28 @@
         }
       },
       "disabled": true
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-exp",
+        "options": {
+          "temperature": 0.4
+        }
+      },
+      "id": "a776a1af-b511-4119-9c00-eb495cf2888d",
+      "name": "Google Gemini LLM1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "position": [
+        1480,
+        760
+      ],
+      "typeVersion": 1,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) API account"
+        }
+      }
     }
   ],
   "pinData": {
@@ -1666,6 +1692,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-06T21:42:03.200Z",
-  "versionId": "97064bd5-5bc5-4059-9eb6-eb8aa95d1832"
+  "updatedAt": "2025-05-06T22:04:36.231Z",
+  "versionId": "dad71b0c-9e5f-4f61-9357-9a24bd46fb5e"
 }
