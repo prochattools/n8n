@@ -928,7 +928,7 @@
     {
       "parameters": {
         "operation": "sendAndWait",
-        "sendTo": "={{ $env.EMAIL_ADDRESS_JOE }} ",
+        "sendTo": "=info@prochat.tools",
         "subject": "=🔥FOR APPROVAL🔥{{ $('Social Media Content Factory').item.json.output.name }} - {{ $('Social Media Content Factory').item.json.output.description }}",
         "message": "={{ $json.output }}",
         "approvalOptions": {
@@ -1692,6 +1692,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-06T22:04:36.231Z",
-  "versionId": "dad71b0c-9e5f-4f61-9357-9a24bd46fb5e"
+  "updatedAt": "2025-05-06T23:04:37.700Z",
+  "versionId": "1f3aa81f-c511-48ce-bf73-b46f9371066a"
 }
