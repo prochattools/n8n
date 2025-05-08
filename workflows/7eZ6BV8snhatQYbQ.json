@@ -662,8 +662,8 @@
       "name": "Save Image to imgbb.com3",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        500,
-        1160
+        520,
+        1140
       ],
       "typeVersion": 4.2
     },
@@ -1710,7 +1710,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=507792683133-oc1vgmpudb9f3urphcqiumsgoj7mcaqa.apps.googleusercontent.com",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBvTVK6GzfbvemdT9J01ljiVQknusCYyAw",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
@@ -1722,26 +1722,26 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"{{ $json.prompt }}\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"maxOutputTokens\": 2048 // Adjust as needed\n  },\n  \"safetySettings\": [ // Adjust safety settings as required\n    {\n      \"category\": \"HARM_CATEGORY_HARASSMENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_HATE_SPEECH\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_SEXUALLY_EXPLICIT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_DANGEROUS_CONTENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    }\n  ]\n}",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"{{ $('Social Media Content Factory').item.json.output.platform_posts.Instagram.caption }}\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"maxOutputTokens\": 2048\n  },\n  \"safetySettings\": [\n    {\n      \"category\": \"HARM_CATEGORY_HARASSMENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_HATE_SPEECH\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_SEXUALLY_EXPLICIT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_DANGEROUS_CONTENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    }\n  ]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
         180,
-        1300
+        1240
       ],
       "id": "d2f0617c-1bb8-4f6f-8bea-c83b211c6585",
       "name": "HTTP Request"
     },
     {
       "parameters": {
-        "jsCode": "const response = items[0].json.candidates[0].content.parts.find(part => part.image);\n\nif (response && response.image && response.image.data) {\n  return [\n    {\n      binary: {\n        \"image\": Buffer.from(response.image.data, 'base64').toString('binary'),\n      },\n      json: {},\n    },\n  ];\n} else {\n  throw new Error(\"Image data not found in Gemini API response.\");\n}"
+        "jsCode": "const response = items[0].json.candidates[0].content.parts.find(part => part.inlineData && part.inlineData.mimeType && part.inlineData.data);\n\nif (response && response.inlineData && response.inlineData.data) {\n  return [\n    {\n      binary: {\n        \"image\": Buffer.from(response.inlineData.data, 'base64').toString('binary'),\n      },\n      json: {\n        mimeType: response.inlineData.mimeType, // You might need this later for ImgBB\n      },\n    },\n  ];\n} else {\n  throw new Error(\"Image data not found in Gemini API response.\");\n}"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        320,
+        340,
         1140
       ],
       "id": "a2d03a19-d4c8-49dd-8056-3e6142e303f7",
@@ -1767,6 +1767,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-08T20:28:04.294Z",
-  "versionId": "7895f543-f50c-4aaa-a05e-66979da4b50d"
+  "updatedAt": "2025-05-08T21:25:12.027Z",
+  "versionId": "da5916db-d594-4281-b680-c50faadc0fe1"
 }
