@@ -39,27 +39,6 @@
         ]
       ]
     },
-    "OpenAI": {
-      "main": [
-        [
-          {
-            "node": "Save Image to imgbb.com3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 1
-          },
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
     "X Post": {
       "main": [
         [
@@ -271,7 +250,7 @@
       "main": [
         [
           {
-            "node": "OpenAI",
+            "node": "AI Agent",
             "type": "main",
             "index": 0
           }
@@ -394,6 +373,38 @@
             "node": "Prepare Content Review Email",
             "type": "ai_languageModel",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Save Image to imgbb.com3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -615,7 +626,7 @@
             },
             {
               "name": "key",
-              "value": "={{ $env.IMGBB_API_KEY}} "
+              "value": "=4977887e5bad8ae06c86537cc678a49c"
             }
           ]
         },
@@ -802,28 +813,6 @@
         }
       },
       "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "resource": "image",
-        "prompt": "={{ $('Social Media Content Factory').item.json.output.platform_posts.Instagram.caption }}",
-        "options": {}
-      },
-      "id": "80324785-754c-44b6-afe3-9763a1d52e1c",
-      "name": "OpenAI",
-      "type": "@n8n/n8n-nodes-langchain.openAi",
-      "position": [
-        60,
-        1280
-      ],
-      "typeVersion": 1.8,
-      "alwaysOutputData": true,
-      "credentials": {
-        "openAiApi": {
-          "id": "7DoXhU7NSUqdtAIC",
-          "name": "OpenAi account"
-        }
-      }
     },
     {
       "parameters": {
@@ -1671,6 +1660,63 @@
           "name": "Google Gemini(PaLM) API account"
         }
       }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "prompt": "={{ $('Social Media Content Factory').item.json.output.platform_posts.Instagram.caption }}",
+        "options": {}
+      },
+      "id": "72b7cb0f-021e-4660-9e49-9b0f57d93681",
+      "name": "OpenAI1",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "position": [
+        -200,
+        1080
+      ],
+      "typeVersion": 1.8,
+      "alwaysOutputData": true,
+      "credentials": {
+        "openAiApi": {
+          "id": "7DoXhU7NSUqdtAIC",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/learnlm-1.5-pro-experimental",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        20,
+        1440
+      ],
+      "id": "042ad8d2-303f-41e6-9f5f-c909636573c0",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) API account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Social Media Content Factory').item.json.output.platform_posts.Instagram.caption }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        20,
+        1260
+      ],
+      "id": "f3c4af20-eace-49d5-b7a1-1f72aee0bbff",
+      "name": "AI Agent"
     }
   ],
   "pinData": {
@@ -1692,6 +1738,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-06T23:04:37.700Z",
-  "versionId": "1f3aa81f-c511-48ce-bf73-b46f9371066a"
+  "updatedAt": "2025-05-08T18:50:00.371Z",
+  "versionId": "d1e5e0ba-4033-491b-98fc-871fe735c28e"
 }
