@@ -1183,8 +1183,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2280,
-        -440
+        2100,
+        -420
       ],
       "id": "2263f218-b156-41c8-8169-e767db7c8a8e",
       "name": "VAPI Make Call"
@@ -1239,7 +1239,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": {\n    \"systemPrompt\": \"{{ $('AI Agent (NL)').item.json.output }}\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4.1-mini\"\n  },\n  \"firstMessage\": \"this is a test5\",\n  \"name\": \"Hello My name is\",\n  \"firstMessage\": \"Hello\"\n}",
+        "jsonBody": "={\n  \"model\": {\n    \"systemPrompt\": \"{{ $json.output }}\",\n    \"provider\": \"openai\",\n    \"model\": \"gpt-4.1-mini\"\n  },\n  \"firstMessage\": \"this is a test5\",\n  \"name\": \"Hello My name is\",\n  \"firstMessage\": \"Hello\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -1622,6 +1622,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2025-04-30T21:55:16.955Z",
-  "versionId": "2a4be44a-ffe2-41ac-bd37-f906dce46f9e"
+  "updatedAt": "2025-05-08T14:54:34.746Z",
+  "versionId": "7221de40-896d-496e-b750-fb7954924093"
 }
