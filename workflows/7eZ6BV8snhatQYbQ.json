@@ -250,7 +250,7 @@
       "main": [
         [
           {
-            "node": "AI Agent",
+            "node": "Code",
             "type": "main",
             "index": 0
           }
@@ -377,25 +377,20 @@
         ]
       ]
     },
-    "Google Gemini Chat Model": {
-      "ai_languageModel": [
+    "Code": {
+      "main": [
         [
           {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
+            "node": "HTTP Request",
+            "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "AI Agent": {
+    "HTTP Request": {
       "main": [
         [
-          {
-            "node": "Save Image to imgbb.com3",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "Merge",
             "type": "main",
@@ -405,6 +400,22 @@
             "node": "Merge2",
             "type": "main",
             "index": 1
+          },
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Save Image to imgbb.com3",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -651,7 +662,7 @@
       "name": "Save Image to imgbb.com3",
       "type": "n8n-nodes-base.httpRequest",
       "position": [
-        380,
+        500,
         1160
       ],
       "typeVersion": 4.2
@@ -1685,38 +1696,56 @@
     },
     {
       "parameters": {
-        "modelName": "models/learnlm-1.5-pro-experimental",
-        "options": {}
+        "jsCode": "const prompt = \"{{ $('Social Media Content Factory').item.json.output.platform_posts.Instagram.caption }}\";\n\nreturn [\n  {\n    json: {\n      prompt: prompt,\n    },\n  },\n];"
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [
         20,
-        1440
+        1280
       ],
-      "id": "042ad8d2-303f-41e6-9f5f-c909636573c0",
-      "name": "Google Gemini Chat Model",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
-        }
-      }
+      "id": "af14f98f-0cd5-4dff-9592-346d698ebeea",
+      "name": "Code"
     },
     {
       "parameters": {
-        "promptType": "define",
-        "text": "={{ $('Social Media Content Factory').item.json.output.platform_posts.Instagram.caption }}",
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=507792683133-oc1vgmpudb9f3urphcqiumsgoj7mcaqa.apps.googleusercontent.com",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [\n    {\n      \"parts\": [\n        {\n          \"text\": \"{{ $json.prompt }}\"\n        }\n      ]\n    }\n  ],\n  \"generationConfig\": {\n    \"maxOutputTokens\": 2048 // Adjust as needed\n  },\n  \"safetySettings\": [ // Adjust safety settings as required\n    {\n      \"category\": \"HARM_CATEGORY_HARASSMENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_HATE_SPEECH\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_SEXUALLY_EXPLICIT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    },\n    {\n      \"category\": \"HARM_CATEGORY_DANGEROUS_CONTENT\",\n      \"threshold\": \"BLOCK_MEDIUM_AND_ABOVE\"\n    }\n  ]\n}",
         "options": {}
       },
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.9,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        20,
-        1260
+        180,
+        1300
       ],
-      "id": "f3c4af20-eace-49d5-b7a1-1f72aee0bbff",
-      "name": "AI Agent"
+      "id": "d2f0617c-1bb8-4f6f-8bea-c83b211c6585",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = items[0].json.candidates[0].content.parts.find(part => part.image);\n\nif (response && response.image && response.image.data) {\n  return [\n    {\n      binary: {\n        \"image\": Buffer.from(response.image.data, 'base64').toString('binary'),\n      },\n      json: {},\n    },\n  ];\n} else {\n  throw new Error(\"Image data not found in Gemini API response.\");\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        1140
+      ],
+      "id": "a2d03a19-d4c8-49dd-8056-3e6142e303f7",
+      "name": "Code1"
     }
   ],
   "pinData": {
@@ -1738,6 +1767,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-08T18:50:00.371Z",
-  "versionId": "d1e5e0ba-4033-491b-98fc-871fe735c28e"
+  "updatedAt": "2025-05-08T20:28:04.294Z",
+  "versionId": "7895f543-f50c-4aaa-a05e-66979da4b50d"
 }
