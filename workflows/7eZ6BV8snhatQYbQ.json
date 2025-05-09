@@ -1652,7 +1652,7 @@
     },
     {
       "parameters": {
-        "modelName": "models/gemini-2.0-flash-exp",
+        "modelName": "models/gemini-1.5-pro",
         "options": {
           "temperature": 0.4
         }
@@ -1767,6 +1767,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-08T21:25:12.027Z",
-  "versionId": "da5916db-d594-4281-b680-c50faadc0fe1"
+  "updatedAt": "2025-05-09T11:27:39.581Z",
+  "versionId": "c7be1e64-b915-4fa6-bcd3-6f67d72e4ec8"
 }
