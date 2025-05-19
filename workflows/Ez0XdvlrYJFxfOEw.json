@@ -275,6 +275,7 @@
   },
   "createdAt": "2025-04-15T15:00:19.014Z",
   "id": "Ez0XdvlrYJFxfOEw",
+  "isArchived": false,
   "meta": {
     "templateId": "1534",
     "templateCredsSetupCompleted": true
