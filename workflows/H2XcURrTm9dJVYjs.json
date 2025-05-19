@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "AI Agent": {
       "main": [
@@ -280,7 +280,8 @@
   "id": "H2XcURrTm9dJVYjs",
   "isArchived": false,
   "meta": {
-    "templateId": "2466"
+    "templateId": "2466",
+    "templateCredsSetupCompleted": true
   },
   "name": "Respond to WhatsApp Messages with AI Like a Pro!",
   "nodes": [
@@ -299,7 +300,13 @@
         680
       ],
       "webhookId": "0b1b3a9b-2f6a-4f5a-8385-6365d96f4802",
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "ZW8dzU3uIbM7wLXO",
+          "name": "WhatsApp OAuth account"
+        }
+      }
     },
     {
       "parameters": {
@@ -315,7 +322,13 @@
         220
       ],
       "typeVersion": 1,
-      "webhookId": "0333fd0d-9d13-4e3a-a1cf-44220b6d1579"
+      "webhookId": "0333fd0d-9d13-4e3a-a1cf-44220b6d1579",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "SunYwLISRaNobq8k",
+          "name": "WhatsApp account"
+        }
+      }
     },
     {
       "parameters": {
@@ -331,7 +344,13 @@
         580
       ],
       "typeVersion": 1,
-      "webhookId": "9e477b45-b446-454c-b6ec-0cae72440ed0"
+      "webhookId": "9e477b45-b446-454c-b6ec-0cae72440ed0",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "SunYwLISRaNobq8k",
+          "name": "WhatsApp account"
+        }
+      }
     },
     {
       "parameters": {
@@ -347,7 +366,13 @@
         920
       ],
       "typeVersion": 1,
-      "webhookId": "6ea20e50-c1ec-470d-8910-a6a192a1b525"
+      "webhookId": "6ea20e50-c1ec-470d-8910-a6a192a1b525",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "SunYwLISRaNobq8k",
+          "name": "WhatsApp account"
+        }
+      }
     },
     {
       "parameters": {
@@ -363,7 +388,13 @@
         1900,
         580
       ],
-      "typeVersion": 4.2
+      "typeVersion": 4.2,
+      "credentials": {
+        "whatsAppApi": {
+          "id": "SunYwLISRaNobq8k",
+          "name": "WhatsApp account"
+        }
+      }
     },
     {
       "parameters": {
@@ -379,7 +410,13 @@
         1900,
         220
       ],
-      "typeVersion": 4.2
+      "typeVersion": 4.2,
+      "credentials": {
+        "whatsAppApi": {
+          "id": "SunYwLISRaNobq8k",
+          "name": "WhatsApp account"
+        }
+      }
     },
     {
       "parameters": {
@@ -395,7 +432,13 @@
         1900,
         920
       ],
-      "typeVersion": 4.2
+      "typeVersion": 4.2,
+      "credentials": {
+        "whatsAppApi": {
+          "id": "SunYwLISRaNobq8k",
+          "name": "WhatsApp account"
+        }
+      }
     },
     {
       "parameters": {
@@ -713,7 +756,13 @@
         860
       ],
       "typeVersion": 1,
-      "webhookId": "e3aee883-a346-42b2-9f19-7dc8c5b0f14a"
+      "webhookId": "e3aee883-a346-42b2-9f19-7dc8c5b0f14a",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "SunYwLISRaNobq8k",
+          "name": "WhatsApp account"
+        }
+      }
     },
     {
       "parameters": {
@@ -818,7 +867,13 @@
         2960,
         940
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) API account"
+        }
+      }
     },
     {
       "parameters": {
@@ -862,7 +917,13 @@
         2340,
         220
       ],
-      "typeVersion": 4.2
+      "typeVersion": 4.2,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) API account"
+        }
+      }
     },
     {
       "parameters": {
@@ -891,7 +952,13 @@
         2340,
         580
       ],
-      "typeVersion": 4.2
+      "typeVersion": 4.2,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) API account"
+        }
+      }
     },
     {
       "parameters": {
@@ -905,11 +972,17 @@
         2400,
         1060
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) API account"
+        }
+      }
     },
     {
       "parameters": {
-        "modelName": "models/gemini-1.5-pro-002",
+        "modelName": "models/gemini-2.5-flash-preview-04-17-thinking",
         "options": {}
       },
       "id": "8832dac3-9433-4dcc-a805-346408042bf2",
@@ -919,7 +992,13 @@
         2400,
         1360
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yi8KqlGWFGkOajJj",
+          "name": "Google Gemini(PaLM) API account"
+        }
+      }
     },
     {
       "parameters": {
@@ -989,7 +1068,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-04-23T21:45:22.653Z",
-  "versionId": "b2619250-cd45-410a-aab9-bcd1744d87ef"
+  "triggerCount": 1,
+  "updatedAt": "2025-05-19T21:45:05.640Z",
+  "versionId": "90ac65ce-7150-409a-9e4e-6ff8fdce70a9"
 }
