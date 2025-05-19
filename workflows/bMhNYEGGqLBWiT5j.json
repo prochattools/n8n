@@ -154,6 +154,7 @@
   },
   "createdAt": "2025-04-05T09:53:30.770Z",
   "id": "bMhNYEGGqLBWiT5j",
+  "isArchived": false,
   "meta": null,
   "name": "Voice AI Agent",
   "nodes": [
