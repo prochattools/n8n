@@ -525,7 +525,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -1669,7 +1669,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -1768,6 +1768,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-09T11:27:39.581Z",
-  "versionId": "c7be1e64-b915-4fa6-bcd3-6f67d72e4ec8"
+  "updatedAt": "2025-05-20T20:03:15.579Z",
+  "versionId": "938d4a60-ee81-490b-a714-6e19a87f068b"
 }
