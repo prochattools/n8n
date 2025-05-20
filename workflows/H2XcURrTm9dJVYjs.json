@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "AI Agent": {
       "main": [
@@ -743,7 +743,7 @@
     {
       "parameters": {
         "operation": "send",
-        "phoneNumberId": "477115632141067",
+        "phoneNumberId": "342165748989753",
         "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.messages[0].from }}",
         "textBody": "={{ $json.output }}",
         "additionalFields": {}
@@ -871,7 +871,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -921,7 +921,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -956,7 +956,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -976,7 +976,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -996,7 +996,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -1069,6 +1069,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-05-20T10:59:23.919Z",
-  "versionId": "2017f4fa-880e-4993-a5bf-1a1d8400d6f1"
+  "updatedAt": "2025-05-20T11:11:43.964Z",
+  "versionId": "e23bdae5-0bda-4c75-8832-2a6164afdce6"
 }
