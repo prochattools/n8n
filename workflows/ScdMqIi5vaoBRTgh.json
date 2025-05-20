@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Text": {
       "main": [
@@ -486,7 +486,7 @@
       "credentials": {
         "googlePalmApi": {
           "id": "yi8KqlGWFGkOajJj",
-          "name": "Google Gemini(PaLM) API account"
+          "name": "Google Gemini(PaLM) API account (info@prochat.tools)"
         }
       }
     },
@@ -498,8 +498,8 @@
       "type": "@n8n/n8n-nodes-langchain.memoryManager",
       "typeVersion": 1.1,
       "position": [
-        2240,
-        2380
+        2360,
+        2340
       ],
       "id": "270c3654-85c4-4ae1-bb44-88f670969c9e",
       "name": "Chat Memory Manager"
@@ -510,6 +510,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-05-19T21:39:12.929Z",
-  "versionId": "29efa017-2926-4a50-91f6-bfd39694d9e1"
+  "updatedAt": "2025-05-20T11:12:37.780Z",
+  "versionId": "2d679580-6775-465b-98df-045c3902910b"
 }
