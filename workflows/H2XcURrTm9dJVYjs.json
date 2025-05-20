@@ -857,7 +857,7 @@
     },
     {
       "parameters": {
-        "modelName": "models/gemini-1.5-pro-002",
+        "modelName": "models/gemini-2.5-flash-preview-04-17",
         "options": {}
       },
       "id": "8dd972be-305b-4d26-aa05-1dee17411d8a",
@@ -1069,6 +1069,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-05-19T21:45:05.640Z",
-  "versionId": "90ac65ce-7150-409a-9e4e-6ff8fdce70a9"
+  "updatedAt": "2025-05-20T10:59:23.919Z",
+  "versionId": "2017f4fa-880e-4993-a5bf-1a1d8400d6f1"
 }
