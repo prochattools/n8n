@@ -472,7 +472,7 @@
     },
     {
       "parameters": {
-        "modelName": "models/gemini-2.5-pro-exp-03-25",
+        "modelName": "models/gemini-1.5-flash-latest",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
@@ -510,6 +510,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-05-20T20:07:33.770Z",
-  "versionId": "a64e9596-7b2a-4e51-889f-3729dc69914d"
+  "updatedAt": "2025-05-21T20:42:38.899Z",
+  "versionId": "3eb6838b-424c-4050-af70-ebfcb7efc905"
 }
