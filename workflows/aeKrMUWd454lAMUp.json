@@ -619,7 +619,7 @@
     },
     {
       "parameters": {
-        "url": "=https://prochat.tools",
+        "url": "={{ $json.website}}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -646,7 +646,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const data = $input.first().json.data\n \nconst regex = /https?:\\/\\/[^\\/]+/g\n \nurls = data.match(regex)\n \nreturn urls.map(url => ({json: {url: url}}))"
+        "jsCode": "// Regex for emails/domains to exclude\nconst excludeRegex = /(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.1o|sentry\\.io|iml1\\.com|test@|example@|\\.webp|\\.svg)/i;\n\n// Access emails from input\nconst emails = $input.items.json.email || [];\n\n// Filter out unwanted emails\nconst cleanedEmails = emails.filter(email => !excludeRegex.test(email));\n\n// Convert to newline-separated string\nconst cleanedEmailsString = cleanedEmails.join('\\n');\nconsole.log(cleanedEmails);\n\n// Clone original data and replace only the emails field\nconst output = {\n  ...$input.item.json,\nemail: cleanedEmailsString\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1712,15 +1712,6 @@
           "keyword": "Makelaar"
         }
       }
-    ],
-    "When Executed by Another Workflow": [
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Arnhem",
-          "keyword": "Makelaar"
-        }
-      }
     ]
   },
   "settings": {
@@ -1729,6 +1720,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-22T18:56:07.877Z",
-  "versionId": "c5cf1a2a-64cb-4074-b46b-f28aabf844e5"
+  "updatedAt": "2025-05-22T19:55:09.253Z",
+  "versionId": "5fcc54b4-1f68-4313-ba01-ca8f62284000"
 }
