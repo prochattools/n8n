@@ -72,24 +72,6 @@
         ]
       ]
     },
-    "Has No Website?": {
-      "main": [
-        [
-          {
-            "node": "Append Items (no website & no email)",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Has Email? Email, no website",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Merge items with HTML": {
       "main": [
         [
@@ -128,7 +110,7 @@
       "main": [
         [
           {
-            "node": "Has No Website?",
+            "node": "No website, no email",
             "type": "main",
             "index": 0
           }
@@ -140,6 +122,11 @@
         [
           {
             "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -246,7 +233,25 @@
         ]
       ]
     },
-    "Has Email? Email, no website": {
+    "No website, no email": {
+      "main": [
+        [
+          {
+            "node": "Append Items (no website & no email)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Email, no website",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email, no website": {
       "main": [
         [
           {
@@ -263,6 +268,24 @@
           },
           {
             "node": "Merge items with HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Append Items",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -511,50 +534,6 @@
       "name": "Set Output Fields"
     },
     {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "c637fa6f-45d7-4523-a313-a87f28135026",
-              "leftValue": "={{ $json.email }}",
-              "rightValue": "={{ $json.website }}",
-              "operator": {
-                "type": "string",
-                "operation": "notExists",
-                "singleValue": true
-              }
-            },
-            {
-              "id": "13207168-4a46-4aed-b7c6-7f585a50a691",
-              "leftValue": "={{ $json.website }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "notExists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        680,
-        140
-      ],
-      "id": "36dabb0b-1abc-4913-a838-3d9baadc063f",
-      "name": "Has No Website?"
-    },
-    {
       "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
@@ -619,7 +598,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $json.website}}",
+        "url": "={{ $json.website }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -646,7 +625,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Regex for emails/domains to exclude\nconst excludeRegex = /(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.1o|sentry\\.io|iml1\\.com|test@|example@|\\.webp|\\.svg)/i;\n\n// Access emails from input\nconst emails = $input.items.json.email || [];\n\n// Filter out unwanted emails\nconst cleanedEmails = emails.filter(email => !excludeRegex.test(email));\n\n// Convert to newline-separated string\nconst cleanedEmailsString = cleanedEmails.join('\\n');\nconsole.log(cleanedEmails);\n\n// Clone original data and replace only the emails field\nconst output = {\n  ...$input.item.json,\nemail: cleanedEmailsString\n};"
+        "jsCode": "// Regex for emails/domains to exclude\nconst excludeRegex = /(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.1o|sentry\\.io|iml1\\.com|test@|example@|\\.webp|\\.svg)/i;\n\n// Access emails from input\nconst emails = $input.item.json.email || [];\n\n// Filter out unwanted emails\nconst cleanedEmails = emails.filter(email => !excludeRegex.test(email));\n\n// Convert to newline-separated string\nconst cleanedEmailsString = cleanedEmails.join('\\n');\nconsole.log(cleanedEmails);\n\n// Clone original data and replace only the emails field\nconst output = {\n  ...$input.item.json,\nemail: cleanedEmailsString\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -707,14 +686,27 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
+          "value": "1TfOHUXAamKv2ATxwtgz_t8dC5n5y1OGEjfoz9vyIbXY",
           "mode": "list",
-          "value": ""
+          "cachedResultName": "Review AI Prospecting",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TfOHUXAamKv2ATxwtgz_t8dC5n5y1OGEjfoz9vyIbXY/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
+          "value": "gid=0",
           "mode": "list",
-          "value": ""
-        }
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TfOHUXAamKv2ATxwtgz_t8dC5n5y1OGEjfoz9vyIbXY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
@@ -723,7 +715,13 @@
         180
       ],
       "id": "b89e1f06-fadb-4df5-97be-30bda44e0e40",
-      "name": "Google Sheets"
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "MwuWtMwZJq2kcSq3",
+          "name": "Google Sheets account"
+        }
+      }
     },
     {
       "parameters": {
@@ -873,6 +871,50 @@
             {
               "id": "c637fa6f-45d7-4523-a313-a87f28135026",
               "leftValue": "={{ $json.email }}",
+              "rightValue": "={{ $json.website }}",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "13207168-4a46-4aed-b7c6-7f585a50a691",
+              "leftValue": "={{ $json.website }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        680,
+        140
+      ],
+      "id": "36dabb0b-1abc-4913-a838-3d9baadc063f",
+      "name": "No website, no email"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c637fa6f-45d7-4523-a313-a87f28135026",
+              "leftValue": "={{ $json.email }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
@@ -902,7 +944,41 @@
         260
       ],
       "id": "2c2a8801-b3a0-4b36-8dd3-6814efd53ccd",
-      "name": "Has Email? Email, no website"
+      "name": "Email, no website"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c00f7bb6-8253-43d5-8798-b96d44a20567",
+              "leftValue": "={{ $json.website }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1660,
+        740
+      ],
+      "id": "beb05f43-c595-46ea-9cc4-76f2c9c78602",
+      "name": "If"
     }
   ],
   "pinData": {
@@ -1712,14 +1788,24 @@
           "keyword": "Makelaar"
         }
       }
+    ],
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "outarea": "Gelderland",
+          "inarea": "Arnhem",
+          "keyword": "Makelaar"
+        }
+      }
     ]
   },
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-22T19:55:09.253Z",
-  "versionId": "5fcc54b4-1f68-4313-ba01-ca8f62284000"
+  "updatedAt": "2025-05-22T20:49:03.428Z",
+  "versionId": "538b8d4f-30a5-4129-9656-e1a21598e9ec"
 }
