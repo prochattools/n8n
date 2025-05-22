@@ -110,7 +110,7 @@
       "main": [
         [
           {
-            "node": "No website, no email",
+            "node": "True = no website, no email. False = website",
             "type": "main",
             "index": 0
           }
@@ -122,11 +122,6 @@
         [
           {
             "node": "Loop Over Items",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -233,7 +228,7 @@
         ]
       ]
     },
-    "No website, no email": {
+    "True = no website, no email. False = website": {
       "main": [
         [
           {
@@ -244,14 +239,14 @@
         ],
         [
           {
-            "node": "Email, no website",
+            "node": "True = Has Email, has website. False = No email, has webite",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Email, no website": {
+    "True = Has Email, has website. False = No email, has webite": {
       "main": [
         [
           {
@@ -268,24 +263,6 @@
           },
           {
             "node": "Merge items with HTML",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If": {
-      "main": [
-        [
-          {
-            "node": "Append Items",
-            "type": "main",
-            "index": 1
-          }
-        ],
-        [
-          {
-            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -604,7 +581,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1020,
+        1120,
         740
       ],
       "id": "2e058077-23d0-48cc-909c-67aa4fd6d607",
@@ -612,7 +589,8 @@
     },
     {
       "parameters": {
-        "jsCode": "const pageHTML = $json.data;\n\nlet uniqueEmails = null;\n\ntry {\n  const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?!png|jpg|gif|jpeg)[a-zA-Z]{2,}/g;  \n  const emails = pageHTML.match(emailRegex);\n\n  if (emails && emails. length > 0) {\n    uniqueEmails = [...new Set(emails)];\n  } \n} catch (error) {\n  uniqueEmails = null;\n}\n\nreturn {\n  json: {\n    name: $json.name,\n    city: $json.city,\n    postcode: $json.postcode,\n    street: $json.street,\n    openinghours: $json.openinghours,\n    email: $json.email,\n    phone: $json.phone,\n    website: $json.website,\n    facebook: $json.facebook,\n    instagram: $json.instagram,\n    twitter: $json.twitter\n  }\n};"
+        "mode": "runOnceForEachItem",
+        "jsCode": "const pageHTML = $json.data;\n\nlet uniqueEmails = null;\n\ntry {\n  const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?!png|jpg|gif|jpeg)[a-zA-Z]{2,}/g;  \n  const emails = pageHTML.match(emailRegex);\n\n  if (emails && emails. length > 0) {\n    uniqueEmails = [...new Set(emails)];\n  } \n} catch (error) {\n  uniqueEmails = null;\n}\n\nreturn {\n  json: {\n    name: $json.name,\n    city: $json.city,\n    postcode: $json.postcode,\n    street: $json.street,\n    openinghours: $json.openinghours,\n    email: uniqueEmails,\n    phone: $json.phone,\n    website: $json.website,\n    facebook: $json.facebook,\n    instagram: $json.instagram,\n    twitter: $json.twitter\n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -900,7 +878,7 @@
         140
       ],
       "id": "36dabb0b-1abc-4913-a838-3d9baadc063f",
-      "name": "No website, no email"
+      "name": "True = no website, no email. False = website"
     },
     {
       "parameters": {
@@ -925,10 +903,10 @@
             {
               "id": "39a18172-ccec-4652-b3d2-b74d8fc4b59a",
               "leftValue": "={{ $json.website }}",
-              "rightValue": "",
+              "rightValue": "null",
               "operator": {
                 "type": "string",
-                "operation": "notExists",
+                "operation": "exists",
                 "singleValue": true
               }
             }
@@ -940,45 +918,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        860,
+        920,
         260
       ],
       "id": "2c2a8801-b3a0-4b36-8dd3-6814efd53ccd",
-      "name": "Email, no website"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "c00f7bb6-8253-43d5-8798-b96d44a20567",
-              "leftValue": "={{ $json.website }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "notExists",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1660,
-        740
-      ],
-      "id": "beb05f43-c595-46ea-9cc4-76f2c9c78602",
-      "name": "If"
+      "name": "True = Has Email, has website. False = No email, has webite"
     }
   ],
   "pinData": {
@@ -1806,6 +1750,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-22T20:49:03.428Z",
-  "versionId": "538b8d4f-30a5-4129-9656-e1a21598e9ec"
+  "updatedAt": "2025-05-22T21:08:58.761Z",
+  "versionId": "0bcab8fd-5576-4306-8b0d-0b79f34ced97"
 }
