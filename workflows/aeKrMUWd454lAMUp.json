@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Format Keyword",
+            "node": "Loop Over Items1",
             "type": "main",
             "index": 0
           }
@@ -223,6 +223,51 @@
           }
         ]
       ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Format Keyword",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-05-22T15:08:15.196Z",
@@ -238,8 +283,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -120,
-        -20
+        -1200,
+        -160
       ],
       "id": "226661a5-65b9-441d-908e-7edccbb55a68",
       "name": "When clicking ‘Test workflow’"
@@ -543,6 +588,84 @@
       ],
       "id": "b89e1f06-fadb-4df5-97be-30bda44e0e40",
       "name": "Google Sheets"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -200,
+        -140
+      ],
+      "id": "6d1e7701-91ae-44d2-bf49-7115c9c2038f",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -980,
+        -160
+      ],
+      "id": "b4ac3bca-8700-4fc5-afec-71976d226e14",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        40
+      ],
+      "id": "db7f9c71-1849-4529-82f1-f818ae0cc376"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -760,
+        -60
+      ],
+      "id": "64299abb-eaa6-4ad8-9faa-1cc03c20dabd",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {
+        "content": "## Add your queries\nSet your Gemini generated list of queries in this node. You can combine regions and business for specific prospecting.\n",
+        "height": 220,
+        "width": 180
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1240,
+        -420
+      ],
+      "id": "5139fea9-9f07-4fc3-9cd8-fd72f8b6edef",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Important\nSet wait time between each query workflow execution.\n\nThe longer the delay the less risk for rate-limits and similar issues.",
+        "height": 220,
+        "width": 180
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        -220
+      ],
+      "id": "1c652a5c-6c23-481b-9a84-c337c577ba36",
+      "name": "Sticky Note1"
     }
   ],
   "pinData": {
@@ -560,6 +683,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-22T16:00:04.233Z",
-  "versionId": "7d38d8bc-fb56-4845-b833-5dc3ac8cbdbe"
+  "updatedAt": "2025-05-22T16:05:13.834Z",
+  "versionId": "bf86fcce-ae29-4126-9ae2-0e02cb424d77"
 }
