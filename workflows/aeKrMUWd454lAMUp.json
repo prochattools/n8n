@@ -83,30 +83,7 @@
         ],
         [
           {
-            "node": "Has Email?",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Has Email?": {
-      "main": [
-        [
-          {
-            "node": "Append Items (no website & no email)",
-            "type": "main",
-            "index": 1
-          }
-        ],
-        [
-          {
-            "node": "Loop Over Items",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge items with HTML",
+            "node": "Has Email? Email, no website",
             "type": "main",
             "index": 0
           }
@@ -268,6 +245,29 @@
           }
         ]
       ]
+    },
+    "Has Email? Email, no website": {
+      "main": [
+        [
+          {
+            "node": "Append Items (no website & no email)",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge items with HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-05-22T15:08:15.196Z",
@@ -371,7 +371,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        420,
+        460,
         -140
       ],
       "id": "e51b26cb-04ba-4276-81ce-f105b76f370a",
@@ -393,6 +393,112 @@
     },
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7ea9fbbe-b02e-460b-8612-bdea1634e083",
+              "name": "name",
+              "value": "={{ $json.tags.name }}",
+              "type": "string"
+            },
+            {
+              "id": "bc674edc-8bbc-47ee-84d3-8f552b9edff8",
+              "name": "website",
+              "value": "={{ $json.tags.website }}",
+              "type": "string"
+            },
+            {
+              "id": "db6b289a-348a-4649-9b84-77a798074fc4",
+              "name": "city",
+              "value": "={{ $json.tags[\"addr:city\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "b2a71db4-90cb-427e-b4b8-68a359d1a41e",
+              "name": "postcode",
+              "value": "={{ $json.tags[\"addr:postcode\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "399d86ea-aa49-40a1-9e8c-7d86b18140c3",
+              "name": "street",
+              "value": "={{ $json.tags[\"addr:street\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "5739eb61-f9c8-4d5e-a57c-6b1b4e02b6fb",
+              "name": "openinghours",
+              "value": "={{ $json.tags['opening_hours'] }}",
+              "type": "string"
+            },
+            {
+              "id": "dbc9c6f3-b12e-4ac5-b1d9-170c25da71ea",
+              "name": "phone",
+              "value": "={{ $json.tags.phone }}",
+              "type": "string"
+            },
+            {
+              "id": "93019593-cd23-4590-a034-d66dfa0dccf3",
+              "name": "email",
+              "value": "={{ $json.tags.email }}",
+              "type": "string"
+            },
+            {
+              "id": "2aba47a2-78fb-452e-a30a-d7e75290f845",
+              "name": "facebook",
+              "value": "={{ $json.tags.facebook }}",
+              "type": "string"
+            },
+            {
+              "id": "54ad9b49-b0e3-491b-911a-400b20b3950e",
+              "name": "contact:facebook",
+              "value": "={{ $json.tags['contact:facebook'] }}",
+              "type": "string"
+            },
+            {
+              "id": "bc4e4a4a-e81a-491e-a730-4b009b7ddf9f",
+              "name": "instgram",
+              "value": "={{ $json.tags.instagram }}",
+              "type": "string"
+            },
+            {
+              "id": "a3e677fe-4f4e-448a-b162-a47102786d5f",
+              "name": "contact:instagram",
+              "value": "={{ $json.tags['contact:instagram'] }}",
+              "type": "string"
+            },
+            {
+              "id": "58773057-e1c1-4d59-aa01-283c2acdca12",
+              "name": "twitter",
+              "value": "={{ $json.tags.twitter }}",
+              "type": "string"
+            },
+            {
+              "id": "f93fb8d7-c1c8-4be6-a7ba-dd86b23388e9",
+              "name": "contact:twitter",
+              "value": "={{ $json.tags['contact:twitter'] }}",
+              "type": "string"
+            },
+            {
+              "id": "c7fd4145-ec8f-457d-b485-64605fac01a1",
+              "name": "contact:email",
+              "value": "={{ $json.tags['contact:email'] }}",
+              "type": "string"
+            },
+            {
+              "id": "7dfcdf46-2dca-401c-99af-d070cca6fbd6",
+              "name": "contact:phone",
+              "value": "={{ $json.tags['contact:phone'] }}",
+              "type": "string"
+            },
+            {
+              "id": "32d1f436-0353-437f-ba0a-e6baf2b88583",
+              "name": "contact:website",
+              "value": "={{ $json.tags['contact:website'] }}",
+              "type": "string"
+            }
+          ]
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.set",
@@ -416,12 +522,22 @@
           "conditions": [
             {
               "id": "c637fa6f-45d7-4523-a313-a87f28135026",
-              "leftValue": "",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "={{ $json.website }}",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "13207168-4a46-4aed-b7c6-7f585a50a691",
+              "leftValue": "={{ $json.website }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
+                "operation": "notExists",
+                "singleValue": true
               }
             }
           ],
@@ -439,40 +555,6 @@
       "name": "Has No Website?"
     },
     {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "c637fa6f-45d7-4523-a313-a87f28135026",
-              "leftValue": "",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        860,
-        260
-      ],
-      "id": "2c2a8801-b3a0-4b36-8dd3-6814efd53ccd",
-      "name": "Has Email?"
-    },
-    {
       "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
@@ -484,7 +566,11 @@
       "name": "Append Items (no website & no email)"
     },
     {
-      "parameters": {},
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
       "position": [
@@ -520,7 +606,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const data = $input.first().json.data\n \nconst regex = /https?:\\/\\/[^\\/]+/g\n \nurls = data.match(regex)\n \nreturn urls.map(url => ({json: {url: url}}))"
+        "jsCode": "const items = $input.all()\nconst fields = ['email', 'phone', 'website', 'facebook', 'instagram', 'twitter'];\n\nreturn items.map(item => {\n  let data = item. json;\n  let result = {\n    \"name\": data. name,\n    \"city\": data.city,\n    \"postcode\": data.postcode,\n    \"street\": data.street,\n    \"openinghours\": data.openinghours\n};\n\n  fields. forEach(field => {\n    if (data[field]) {\n      result[field] = data[field];\n    } else if (data[`contact:${field}`]) {\n      result[field] = data[`contact:${field}`];\n    } else {\n      result[field] = null;\n    }\n  });\n  return { json: result };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -533,6 +619,7 @@
     },
     {
       "parameters": {
+        "url": "=https://prochat.tools",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -546,7 +633,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const data = $input.first().json.data\n \nconst regex = /https?:\\/\\/[^\\/]+/g\n \nurls = data.match(regex)\n \nreturn urls.map(url => ({json: {url: url}}))"
+        "jsCode": "const pageHTML = $json.data;\n\nlet uniqueEmails = null;\n\ntry {\n  const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?!png|jpg|gif|jpeg)[a-zA-Z]{2,}/g;  \n  const emails = pageHTML.match(emailRegex);\n\n  if (emails && emails. length > 0) {\n    uniqueEmails = [...new Set(emails)];\n  } \n} catch (error) {\n  uniqueEmails = null;\n}\n\nreturn {\n  json: {\n    name: $json.name,\n    city: $json.city,\n    postcode: $json.postcode,\n    street: $json.street,\n    openinghours: $json.openinghours,\n    email: $json.email,\n    phone: $json.phone,\n    website: $json.website,\n    facebook: $json.facebook,\n    instagram: $json.instagram,\n    twitter: $json.twitter\n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -772,6 +859,50 @@
       "id": "5c65b72b-c217-4cc4-bb52-6aecaa48780c",
       "name": "Wait",
       "webhookId": "0531720a-2103-422b-8949-887cbc2cfb9e"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c637fa6f-45d7-4523-a313-a87f28135026",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "39a18172-ccec-4652-b3d2-b74d8fc4b59a",
+              "leftValue": "={{ $json.website }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        860,
+        260
+      ],
+      "id": "2c2a8801-b3a0-4b36-8dd3-6814efd53ccd",
+      "name": "Has Email? Email, no website"
     }
   ],
   "pinData": {
@@ -1598,6 +1729,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-22T18:00:38.899Z",
-  "versionId": "b36d083c-6b8b-48a8-8021-7abd0708e2b4"
+  "updatedAt": "2025-05-22T18:56:07.877Z",
+  "versionId": "c5cf1a2a-64cb-4074-b46b-f28aabf844e5"
 }
