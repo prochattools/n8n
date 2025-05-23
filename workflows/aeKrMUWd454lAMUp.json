@@ -519,7 +519,8 @@
         160
       ],
       "id": "56e34d28-e65d-4765-a24c-1167a8e171c3",
-      "name": "Append Items (no website & no email)"
+      "name": "Append Items (no website & no email)",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -543,8 +544,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        860,
-        660
+        920,
+        620
       ],
       "id": "9bff1106-2fb9-4391-b3de-c0a820c07111",
       "name": "Loop Over Items"
@@ -581,8 +582,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1120,
-        740
+        1180,
+        700
       ],
       "id": "2e058077-23d0-48cc-909c-67aa4fd6d607",
       "name": "Get Website HTML"
@@ -604,7 +605,7 @@
     {
       "parameters": {
         "mode": "runOnceForEachItem",
-        "jsCode": "// Regex for emails/domains to exclude\nconst excludeRegex = /(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.1o|sentry\\.io|iml1\\.com|test@|example@|\\.webp|\\.svg)/i;\n\n// Access emails from input\nconst emails = $input.item.json.email || [];\n\n// Filter out unwanted emails\nconst cleanedEmails = emails.filter(email => !excludeRegex.test(email));\n\n// Convert to newline-separated string\nconst cleanedEmailsString = cleanedEmails.join('\\n');\nconsole.log(cleanedEmails);\n\n// Clone original data and replace only the emails field\nconst output = {\n  ...$input.item.json,\nemail: cleanedEmailsString\n};"
+        "jsCode": "// Regex for emails/domains to exclude\nconst excludeRegex = /(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.1o|sentry\\.io|iml1\\.com|test@|example@|\\.webp|\\.svg)/i;\n\n// Access emails from input\nconst emails = $input.item.json.email || [];\n\n// Filter out unwanted emails\nconst cleanedEmails = emails.filter(email => !excludeRegex.test(email));\n\n// Convert to newline-separated string\nconst cleanedEmailsString = cleanedEmails.join('\\n');\nconsole.log(cleanedEmails);\n\n// Clone original data and replace only the emails field\nconst output = {\n  ...$input.item.json,\nemail: cleanedEmailsString\n};\n\n// **ADD THIS LINE**\nreturn output;"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -624,7 +625,8 @@
         180
       ],
       "id": "a570007c-a2a4-4cbd-9f34-07bfe15eda8c",
-      "name": "Append Items"
+      "name": "Append Items",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -679,9 +681,132 @@
         },
         "columns": {
           "mappingMode": "defineBelow",
-          "value": {},
+          "value": {
+            "name": "={{ $json.name }}",
+            "city": "={{ $json.city }}",
+            "postcode": "={{ $json.postcode }}",
+            "street": "={{ $json.street }}",
+            "openinghours": "={{ $json.openinghours }}",
+            "email": "={{ $json.email }}",
+            "phone": "={{ $json.phone }}",
+            "website": "={{ $json.website }}",
+            "facebook": "={{ $json.facebook }}",
+            "instagram": "={{ $json.instagram }}",
+            "twitter": "={{ $json.twitter }}"
+          },
           "matchingColumns": [],
-          "schema": [],
+          "schema": [
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "city",
+              "displayName": "city",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "postcode",
+              "displayName": "postcode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "street",
+              "displayName": "street",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "openinghours",
+              "displayName": "openinghours",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "facebook",
+              "displayName": "facebook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "instagram",
+              "displayName": "instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "twitter",
+              "displayName": "twitter",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
           "attemptToConvertTypes": false,
           "convertFieldsToString": false
         },
@@ -930,722 +1055,85 @@
     "When clicking ‘Test workflow’": [
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Markt",
+          "outarea": "Nederland",
+          "inarea": "Groningen",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Weverstraat",
+          "outarea": "Nederland",
+          "inarea": "Friesland",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Rijnstraat",
+          "outarea": "Nederland",
+          "inarea": "Drenthe",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Janssingel",
+          "outarea": "Nederland",
+          "inarea": "Overijssel",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Stationsplein",
+          "outarea": "Nederland",
+          "inarea": "Gelderland",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Utrechtsestraat",
+          "outarea": "Nederland",
+          "inarea": "Utrecht",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Hommelstraat",
+          "outarea": "Nederland",
+          "inarea": "Flevoland",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Spijkerbuurt",
+          "outarea": "Nederland",
+          "inarea": "Noord-Holland",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Boulevardwijk",
+          "outarea": "Nederland",
+          "inarea": "Zuid-Holland",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Bij+de+John+Frostbrug",
+          "outarea": "Nederland",
+          "inarea": "Zeeland",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Statenkwartier",
+          "outarea": "Nederland",
+          "inarea": "Noord-Brabant",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Arnhem",
-          "inarea": "Arnhemse+Broek",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Van+Verschuerbuurt",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Industrieterrein",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Presikhaaf+I",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Presikhaaf+II",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Presikhaaf+III",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Over+het+Lange+Water",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Elsweide",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Winkelcentrum+Presikhaaf",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "IJsseloord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Sint+Marten",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Graaf+Ottoplein+en+omgeving",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Klarendal-Zuid",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Klarendal-Noord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Onder+de+Linden",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Sint+Janskerkstraat+en+omgeving",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Velperweg-Noord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Molenbeke",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Fabrieksterrein+Enka",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Plattenburg",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Angerenstein",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Paasberg",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Sonsbeek-Noord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Hazegrietje",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Alteveer-Cranevelt",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Geitenkamp",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Monnikenhuizen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Arnhemse+Allee",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Klarenbeek",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Transvaalbuurt",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Burgemeesterswijk",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Gulden+Bodem",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Sterrenberg",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Hoogkamp",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Sonsbeek,+Zijpendaal",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Bakenberg",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Schaarsbergen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Westelijk+van+Schaarsbergen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Noordoostelijk+van+Schaarsbergen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Lombok",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Brouwerijweg+en+omgeving",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Heijenoord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Klingelbeek",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Het+Dorp,+Mariëndaal",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Meinerswijk+en+De+Praets",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Malburgen-West",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Groene+Weide",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Kamillehof+en+Bakenhof",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "t+Duifje",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Immerloo+I",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Immerloo+II",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Middelgraaflaan+e.o.",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Zeegsingel+e.o.",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "De+Laar-West",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "De+Laar-Oost",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Eimersweide",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Holthuizen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Kronenburg",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Vredenburg",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Elden",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Elderveld-Zuid",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Elderveld-Noord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Elderhof",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Rijkerswoerd-Oost",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Rijkerswoerd-Midden",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Rijkerswoerd-West",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Overmaat",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Schuytgraaf-Noord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Schuytgraaf-Midden",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Schuytgraaf-Zuid",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "De+Praets",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Het+Broek",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "De+Steenen+Kamer",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Nieuw+Monnikenhuizen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Stadsweiden",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+11+Centrum",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+12+Spijkerkwartier",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+13+Sint+Marten+-+Klarendal",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+14+Velperweg+-+Larenstein",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+15+Angerenstein+-+Plattenburg",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+16+Geitenkamp",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+17+Sonsbeekkwartier",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+18+Burgemeesterswijk+-+Hoogkamp",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+19+Alteveer+-+Cranevelt",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+20+Heijenoord+-+Lombok",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+21+Oude+Delen+Noord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+22+Presikhaaf",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+23+IJsseloord",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+24+Over+het+Lange+Water",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+31+Malburgen-Oost+(noord)",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+32+Malburgen-Oost+(zuid)",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Arnhem",
-          "inarea": "Wijk+33+Malburgen-West",
+          "outarea": "Nederland",
+          "inarea": "Limburg",
           "keyword": "Makelaar"
         }
       }
@@ -1658,6 +1146,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-23T10:54:46.624Z",
-  "versionId": "25adb6b5-2925-402b-84ec-088accdf7ca8"
+  "updatedAt": "2025-05-23T11:58:31.267Z",
+  "versionId": "b27b5dd7-4356-4bfc-81f8-3af4125ba93a"
 }
