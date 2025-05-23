@@ -535,7 +535,8 @@
         420
       ],
       "id": "689ecafb-97df-4bf0-9ed9-ad08265d3c3b",
-      "name": "Merge items with HTML"
+      "name": "Merge items with HTML",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -955,7 +956,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -560,
+        -540,
         60
       ],
       "id": "5c65b72b-c217-4cc4-bb52-6aecaa48780c",
@@ -1146,6 +1147,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-23T11:58:31.267Z",
-  "versionId": "b27b5dd7-4356-4bfc-81f8-3af4125ba93a"
+  "updatedAt": "2025-05-23T13:47:59.248Z",
+  "versionId": "d2e7ba81-cc20-4405-999c-1ed3062bdeb1"
 }
