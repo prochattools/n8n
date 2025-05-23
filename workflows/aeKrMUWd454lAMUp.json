@@ -555,8 +555,8 @@
       "name": "No operation, do nothing",
       "typeVersion": 1,
       "position": [
-        240,
-        200
+        260,
+        300
       ],
       "id": "4c23025a-ddfb-46aa-b7d2-8c0f054862f5"
     },
@@ -603,6 +603,7 @@
     },
     {
       "parameters": {
+        "mode": "runOnceForEachItem",
         "jsCode": "// Regex for emails/domains to exclude\nconst excludeRegex = /(google|gstatic|ggpht|schema\\.org|example\\.com|sentry\\.wixpress\\.com|sentry-next\\.wixpress\\.com|ingest\\.sentry\\.1o|sentry\\.io|iml1\\.com|test@|example@|\\.webp|\\.svg)/i;\n\n// Access emails from input\nconst emails = $input.item.json.email || [];\n\n// Filter out unwanted emails\nconst cleanedEmails = emails.filter(email => !excludeRegex.test(email));\n\n// Convert to newline-separated string\nconst cleanedEmailsString = cleanedEmails.join('\\n');\nconsole.log(cleanedEmails);\n\n// Clone original data and replace only the emails field\nconst output = {\n  ...$input.item.json,\nemail: cleanedEmailsString\n};"
       },
       "type": "n8n-nodes-base.code",
@@ -929,815 +930,722 @@
     "When clicking ‘Test workflow’": [
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Arnhem",
+          "outarea": "Arnhem",
+          "inarea": "Markt",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Nijmegen",
+          "outarea": "Arnhem",
+          "inarea": "Weverstraat",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Apeldoorn",
+          "outarea": "Arnhem",
+          "inarea": "Rijnstraat",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ede",
+          "outarea": "Arnhem",
+          "inarea": "Janssingel",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Doetinchem",
+          "outarea": "Arnhem",
+          "inarea": "Stationsplein",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Zutphen",
+          "outarea": "Arnhem",
+          "inarea": "Utrechtsestraat",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Harderwijk",
+          "outarea": "Arnhem",
+          "inarea": "Hommelstraat",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Tiel",
+          "outarea": "Arnhem",
+          "inarea": "Spijkerbuurt",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Wageningen",
+          "outarea": "Arnhem",
+          "inarea": "Boulevardwijk",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Zevenaar",
+          "outarea": "Arnhem",
+          "inarea": "Bij+de+John+Frostbrug",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Winterswijk",
+          "outarea": "Arnhem",
+          "inarea": "Statenkwartier",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Barneveld",
+          "outarea": "Arnhem",
+          "inarea": "Arnhemse+Broek",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Culemborg",
+          "outarea": "Arnhem",
+          "inarea": "Van+Verschuerbuurt",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Doesburg",
+          "outarea": "Arnhem",
+          "inarea": "Industrieterrein",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Druten",
+          "outarea": "Arnhem",
+          "inarea": "Presikhaaf+I",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Duiven",
+          "outarea": "Arnhem",
+          "inarea": "Presikhaaf+II",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Elburg",
+          "outarea": "Arnhem",
+          "inarea": "Presikhaaf+III",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Epe",
+          "outarea": "Arnhem",
+          "inarea": "Over+het+Lange+Water",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ermelo",
+          "outarea": "Arnhem",
+          "inarea": "Elsweide",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Geldermalsen",
+          "outarea": "Arnhem",
+          "inarea": "Winkelcentrum+Presikhaaf",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Groenlo",
+          "outarea": "Arnhem",
+          "inarea": "IJsseloord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Hattem",
+          "outarea": "Arnhem",
+          "inarea": "Sint+Marten",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Heerde",
+          "outarea": "Arnhem",
+          "inarea": "Graaf+Ottoplein+en+omgeving",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Heumen",
+          "outarea": "Arnhem",
+          "inarea": "Klarendal-Zuid",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Lochem",
+          "outarea": "Arnhem",
+          "inarea": "Klarendal-Noord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Maasdriel",
+          "outarea": "Arnhem",
+          "inarea": "Onder+de+Linden",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Montferland",
+          "outarea": "Arnhem",
+          "inarea": "Sint+Janskerkstraat+en+omgeving",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Nijkerk",
+          "outarea": "Arnhem",
+          "inarea": "Velperweg-Noord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Nunspeet",
+          "outarea": "Arnhem",
+          "inarea": "Molenbeke",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Oldebroek",
+          "outarea": "Arnhem",
+          "inarea": "Fabrieksterrein+Enka",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Oost+Gelre",
+          "outarea": "Arnhem",
+          "inarea": "Plattenburg",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Oude+IJsselstreek",
+          "outarea": "Arnhem",
+          "inarea": "Angerenstein",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Overbetuwe",
+          "outarea": "Arnhem",
+          "inarea": "Paasberg",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Putten",
+          "outarea": "Arnhem",
+          "inarea": "Sonsbeek-Noord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Renkum",
+          "outarea": "Arnhem",
+          "inarea": "Hazegrietje",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Rheden",
+          "outarea": "Arnhem",
+          "inarea": "Alteveer-Cranevelt",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Rozendaal",
+          "outarea": "Arnhem",
+          "inarea": "Geitenkamp",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Scherpenzeel",
+          "outarea": "Arnhem",
+          "inarea": "Monnikenhuizen",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "West+Betuwe",
+          "outarea": "Arnhem",
+          "inarea": "Arnhemse+Allee",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "West+Maas+en+Waal",
+          "outarea": "Arnhem",
+          "inarea": "Klarenbeek",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Westervoort",
+          "outarea": "Arnhem",
+          "inarea": "Transvaalbuurt",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Wijchen",
+          "outarea": "Arnhem",
+          "inarea": "Burgemeesterswijk",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Zaltbommel",
+          "outarea": "Arnhem",
+          "inarea": "Gulden+Bodem",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Aalten",
+          "outarea": "Arnhem",
+          "inarea": "Sterrenberg",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Bronckhorst",
+          "outarea": "Arnhem",
+          "inarea": "Hoogkamp",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Brummen",
+          "outarea": "Arnhem",
+          "inarea": "Sonsbeek,+Zijpendaal",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Buren",
+          "outarea": "Arnhem",
+          "inarea": "Bakenberg",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Lingewaard",
+          "outarea": "Arnhem",
+          "inarea": "Schaarsbergen",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Neder-Betuwe",
+          "outarea": "Arnhem",
+          "inarea": "Westelijk+van+Schaarsbergen",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Voorst",
+          "outarea": "Arnhem",
+          "inarea": "Noordoostelijk+van+Schaarsbergen",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Eibergen",
+          "outarea": "Arnhem",
+          "inarea": "Lombok",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Borculo",
+          "outarea": "Arnhem",
+          "inarea": "Brouwerijweg+en+omgeving",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Neede",
+          "outarea": "Arnhem",
+          "inarea": "Heijenoord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ruurlo",
+          "outarea": "Arnhem",
+          "inarea": "Klingelbeek",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Gorssel",
+          "outarea": "Arnhem",
+          "inarea": "Het+Dorp,+Mariëndaal",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Laren",
+          "outarea": "Arnhem",
+          "inarea": "Meinerswijk+en+De+Praets",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Vorden",
+          "outarea": "Arnhem",
+          "inarea": "Malburgen-West",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Steenderen",
+          "outarea": "Arnhem",
+          "inarea": "Groene+Weide",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Hengelo+Gld",
+          "outarea": "Arnhem",
+          "inarea": "Kamillehof+en+Bakenhof",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Hummelo+en+Keppel",
+          "outarea": "Arnhem",
+          "inarea": "t+Duifje",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Zelhem",
+          "outarea": "Arnhem",
+          "inarea": "Immerloo+I",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Baak",
+          "outarea": "Arnhem",
+          "inarea": "Immerloo+II",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Drempt",
+          "outarea": "Arnhem",
+          "inarea": "Middelgraaflaan+e.o.",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Laag-Keppel",
+          "outarea": "Arnhem",
+          "inarea": "Zeegsingel+e.o.",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Olburgen",
+          "outarea": "Arnhem",
+          "inarea": "De+Laar-West",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Rha",
+          "outarea": "Arnhem",
+          "inarea": "De+Laar-Oost",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Toldijk",
+          "outarea": "Arnhem",
+          "inarea": "Eimersweide",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Velswijk",
+          "outarea": "Arnhem",
+          "inarea": "Holthuizen",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Westendorp",
+          "outarea": "Arnhem",
+          "inarea": "Kronenburg",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Zeddam",
+          "outarea": "Arnhem",
+          "inarea": "Vredenburg",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Gendringen",
+          "outarea": "Arnhem",
+          "inarea": "Elden",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ulft",
+          "outarea": "Arnhem",
+          "inarea": "Elderveld-Zuid",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Dinxperlo",
+          "outarea": "Arnhem",
+          "inarea": "Elderveld-Noord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Varsseveld",
+          "outarea": "Arnhem",
+          "inarea": "Elderhof",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Bredevoort",
+          "outarea": "Arnhem",
+          "inarea": "Rijkerswoerd-Oost",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Lichtenvoorde",
+          "outarea": "Arnhem",
+          "inarea": "Rijkerswoerd-Midden",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Zieuwent",
+          "outarea": "Arnhem",
+          "inarea": "Rijkerswoerd-West",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Harreveld",
+          "outarea": "Arnhem",
+          "inarea": "Overmaat",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Lievelde",
+          "outarea": "Arnhem",
+          "inarea": "Schuytgraaf-Noord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Beltrum",
+          "outarea": "Arnhem",
+          "inarea": "Schuytgraaf-Midden",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Achterhoek",
+          "outarea": "Arnhem",
+          "inarea": "Schuytgraaf-Zuid",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Rivierenland",
+          "outarea": "Arnhem",
+          "inarea": "De+Praets",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Veluwe",
+          "outarea": "Arnhem",
+          "inarea": "Het+Broek",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "De+Betuwe",
+          "outarea": "Arnhem",
+          "inarea": "De+Steenen+Kamer",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Bommelerwaard",
+          "outarea": "Arnhem",
+          "inarea": "Nieuw+Monnikenhuizen",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Land+van+Maas+en+Waal",
+          "outarea": "Arnhem",
+          "inarea": "Stadsweiden",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Lingewaard",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+11+Centrum",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Overbetuwe",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+12+Spijkerkwartier",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Lingewaal",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+13+Sint+Marten+-+Klarendal",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Neerijnen",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+14+Velperweg+-+Larenstein",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Geldermalsen",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+15+Angerenstein+-+Plattenburg",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Echteld",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+16+Geitenkamp",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Kesteren",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+17+Sonsbeekkwartier",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Opheusden",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+18+Burgemeesterswijk+-+Hoogkamp",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Dodewaard",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+19+Alteveer+-+Cranevelt",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ochten",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+20+Heijenoord+-+Lombok",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Wamel",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+21+Oude+Delen+Noord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Dreumel",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+22+Presikhaaf",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Boven-Leeuwen",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+23+IJsseloord",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Beneden-Leeuwen",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+24+Over+het+Lange+Water",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Puiflijk",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+31+Malburgen-Oost+(noord)",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Afferden",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+32+Malburgen-Oost+(zuid)",
           "keyword": "Makelaar"
         }
       },
       {
         "json": {
-          "outarea": "Gelderland",
-          "inarea": "Deest",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Horssen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Winssen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Beuningen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ewijk",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Weurt",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Berg+en+Dal",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Groesbeek",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Millingen+aan+de+Rijn",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ubbergen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Beek-Ubbergen",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Ooij",
-          "keyword": "Makelaar"
-        }
-      },
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Leuth",
-          "keyword": "Makelaar"
-        }
-      }
-    ],
-    "When Executed by Another Workflow": [
-      {
-        "json": {
-          "outarea": "Gelderland",
-          "inarea": "Arnhem",
+          "outarea": "Arnhem",
+          "inarea": "Wijk+33+Malburgen-West",
           "keyword": "Makelaar"
         }
       }
@@ -1750,6 +1658,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-22T21:08:58.761Z",
-  "versionId": "0bcab8fd-5576-4306-8b0d-0b79f34ced97"
+  "updatedAt": "2025-05-23T10:54:46.624Z",
+  "versionId": "25adb6b5-2925-402b-84ec-088accdf7ca8"
 }
